@@ -12,7 +12,7 @@ const main = async () => {
       description:
         "It's official! Hot dogs are sandwiches. And they are a staple for your summer BBQ festivities.",
       price: "$5.00",
-      review: "Five stars"
+      
     },
   ];
 
