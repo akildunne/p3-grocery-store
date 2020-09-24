@@ -62,6 +62,9 @@ https://xd.adobe.com/view/9d80768d-6618-4579-94c1-31d4cccd86ac-c8d3/
 |October 2| Presentations | Incomplete
 
 
+https://docs.google.com/document/d/152W83sVQkN-EaOo2Psnoli_zGX5GuqS_s_DRMIpbQq0/edit#
+
+
 ## Timeframes
 
 Out team was able to work on getting the hang of components during the practice project, so we will be building those as quickly as possible to leave enough time to figure out the carousel components and finish styling. 
