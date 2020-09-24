@@ -1,10 +1,10 @@
 # Project Overview
 
-# p3-grocery-store
+# DT's Grocery Store
 
 ## Project Description
 
-DT's grocery store...
+DT's grocery store, come on down and gobble up groceries to your heart's content!
 
 ## API and Data Sample
 
@@ -25,12 +25,12 @@ updatedAt: "2020-09-23T20:15:34.678Z"
 
 ## Component Hierarchy
 
-https://whimsical.com/2CrZwa5D6QXyvykwZUKQHW
+[Whimsical](https://whimsical.com/2CrZwa5D6QXyvykwZUKQHW)
 
 
 ## Wireframes
 
-https://xd.adobe.com/view/9d80768d-6618-4579-94c1-31d4cccd86ac-c8d3/
+[Prototype](https://xd.adobe.com/view/9d80768d-6618-4579-94c1-31d4cccd86ac-c8d3/)
 
 
 ### MVP/PostMVP  
@@ -52,17 +52,17 @@ https://xd.adobe.com/view/9d80768d-6618-4579-94c1-31d4cccd86ac-c8d3/
 |  Day | Deliverable | Status
 |---|---| ---|
 |September 24| Proposal / Wireframes / Priority Matrix / Timeframes / Project Approval | Incomplete
-|September 25| Core Application Structure (React, JS, CSS, etc.) set-up API | Incomplete
-|September 26| Work on Components | Incomplete
-|September 27| Work on Components | Incomplete
-|September 28| Work on Components / MVP | Incomplete
-|September 29| CSS Styling | Incomplete
-|September 30| Additional CSS  Styling | Incomplete
-|October 1| Additional CSS  Styling | Incomplete
+|September 25| Core Application Structure (React, JS, CSS, etc.) set-up API, Start components | Incomplete
+|September 26| Work on Components and Styling  | Incomplete
+|September 27| Work on Components, Styling, and Utilities | Incomplete
+|September 28| Work on Components, Styling, and Utilities / MVP | Incomplete
+|September 29| Work on Components, Styling, and Utilities and Post MVP | Incomplete
+|September 30| Work on Components, Styling, and Utilities and Post MVP | Incomplete
+|October 1| Post MVP | Incomplete
 |October 2| Presentations | Incomplete
 
 
-https://docs.google.com/document/d/152W83sVQkN-EaOo2Psnoli_zGX5GuqS_s_DRMIpbQq0/edit#
+[Team Commitments](https://docs.google.com/document/d/152W83sVQkN-EaOo2Psnoli_zGX5GuqS_s_DRMIpbQq0/edit#)
 
 
 ## Timeframes
