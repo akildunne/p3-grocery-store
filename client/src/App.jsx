@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.css';
 import Home from './screens/Home'
-// import Products from './screens/Products'
-// import ProductCreate from './screens/ProductCreate'
+import Products from './screens/Products'
+import ProductCreate from './screens/ProductCreate'
 // import ProductEdit from './screens/ProductEdit'
 // import ProductDetail from './screens/ProductDetail'
 import { Route, Switch } from 'react-router-dom'
@@ -13,10 +13,10 @@ function App() {
     <div className="App">
        <Switch>
         <Route exact path="/" component={Home} />
-        {/* <Route exact path="/products" component={Products} />
-        <Route exact path="/add-product" component={ProductCreate} />
-        <Route exact path="/products/:id/edit" component={ProductEdit} />
-        <Route exact path="/products/:id" component={ProductDetail} /> */}
+        <Route exact path="/api/products" component={Products} />
+        <Route exact path="/add-product" component={ProductCreate} /> 
+        {/* <Route exact path="/products/:id/edit" component={ProductEdit} /> */}
+        {/* <Route exact path="/products/:id" component={ProductDetail} /> */}
       </Switch>
     </div>
   );
