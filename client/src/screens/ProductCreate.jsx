@@ -46,6 +46,10 @@ const Wrapper = styled.div`
 
 `;
 
+const TextArea = styled.textarea`
+border-radius: 10px;
+`
+
 const ProductCreate = (props) => {
   const [product, setProduct] = useState({
     product: "",
@@ -96,8 +100,8 @@ const ProductCreate = (props) => {
         </Wrapper>
         <Wrapper>
           <LabelContainer>Description:</LabelContainer>
-          <textarea
-            type="text"
+          <TextArea
+            // type="text"
             rows={10}
             columns={20}
             value={product.description}
