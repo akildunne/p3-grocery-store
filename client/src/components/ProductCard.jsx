@@ -10,6 +10,7 @@ const CardContainer = styled.div`
   height: 245px;
   background-color: #22C380;
   border-radius: 15%;
+  margin: 20px;
 
   :hover {
     transform: scale(1.1);
@@ -35,7 +36,7 @@ const ProductCard = (props) => {
   return (
     <>
       <CardContainer>
-        <ProductLink  to={`/products/${props._id}`}>
+        <ProductLink  to={`/products/${props.id}`}>
           <ProductImage src={props.imgURL} alt={props.product} />
             <ProductName>{props.product}</ProductName>
             <div>{`${props.price}`}</div>
