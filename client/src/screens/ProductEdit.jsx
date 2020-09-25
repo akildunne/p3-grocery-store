@@ -120,7 +120,6 @@ const ProductEdit = (props) => {
             autoFocus
             onChange={handleChange}
           />
-
           <LabelContainer>Price</LabelContainer>
           <InputContainer
             type="text"
@@ -129,8 +128,7 @@ const ProductEdit = (props) => {
             required
             onChange={handleChange}
           />
-
-          <LabelContainer>Description:</LabelContainer>
+          <LabelTextArea>Description:</LabelTextArea>
           <TextArea
             rows={10}
             columns={20}
@@ -139,7 +137,6 @@ const ProductEdit = (props) => {
             required
             onChange={handleChange}
           />
-
           <LabelContainer>Img Link:</LabelContainer>
           <InputContainer
             type="text"
@@ -148,7 +145,6 @@ const ProductEdit = (props) => {
             required
             onChange={handleChange}
           />
-
           <Button>Save</Button>
         </Form>
       </DetailContainer>
