@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-// import Layout from '../components/shared/Layout';
-import { useParams, Link } from "react-router-dom";
+import Layout from "../components/shared/Layout";
+import { useParams, Link, Redirect } from "react-router-dom";
 import { getProduct, deleteProduct } from "../services/products";
 import styled from "styled-components";
 
@@ -22,6 +22,7 @@ const ImageContainer = styled.img`
 `;
 
 const ProductDetail = (props) => {
+  const [redirect, setRedirect] = useState(false);
   const [product, setProduct] = useState({
     product: "",
     imgURL: "",
@@ -39,23 +40,34 @@ const ProductDetail = (props) => {
     fetchProduct();
   }, [id]);
 
+  const productDeleted = (e) => {
+    deleteProduct(product._id);
+    setRedirect(true);
+  };
+
+  if (redirect === true) {
+    return <Redirect to="/products" />;
+  }
+
   return (
-    <>
+    <Layout user={props.user}>
       <ProductDetailContainer>
         <ImageContainer src={product.imgURL} alt={product.product} />
-          <div className="product">{product.product}</div>
-          <div className="price">{`${product.price}`}</div>
-          <div className="description">{product.description}</div>
-          <div className="button-container">
-
-                        <button className="edit-button"><Link className="edit-link" to={`/products/edit/${product.id}`}>Edit</Link></button>
-                        <button className="delete-button" onClick={() => deleteProduct(product._id)}>Delete</button>
-                    </div>
-
-
+        <div className="product">{product.product}</div>
+        <div className="price">{`${product.price}`}</div>
+        <div className="description">{product.description}</div>
+        <div className="button-container">
+          <button className="edit-button">
+            <Link className="edit-link" to={`/products/edit/${product._id}`}>
+              Edit
+            </Link>
+          </button>
+          <button className="delete-button" onClick={(e) => productDeleted(e)}>
+            Delete
+          </button>
+        </div>
       </ProductDetailContainer>
-
-    </>
+    </Layout>
   );
 };
 

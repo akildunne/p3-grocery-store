@@ -1,53 +1,72 @@
 import React, { useState, useEffect } from "react";
 import { useParams, Redirect } from "react-router-dom";
-// import Layout from '../../components/shared/Layout/Layout'
+import Layout from "../components/shared/Layout";
 import { getProduct, updateProduct } from "../services/products";
 import styled from "styled-components";
 
 const DetailContainer = styled.div`
   display: flex;
   justify-content: center;
-  padding: 10px;
+  margin: 50px auto;
 `;
+
 const Form = styled.form`
-  display: flex;
-  flex-direction: column;
-  width: 450px;
-  align-items: flex-end;
-`;
-const InputContainer = styled.input`
-  display: flex;
-  justify-content: space-evenly;
-  margin: 12px;
-  border-radius: 10%
-  border: 1px solid #707070;
-  border-radius: 22px;
+  display: grid;
+  grid-template-columns: 250px 500px;
+  margin: 0 auto;
+  align-items: center;
+  justify-items: flex-end;
 `;
 
 const LabelContainer = styled.label`
   color: #707070;
   font-size: 36px;
-  text-align: left;
 `;
-const Button = styled.button`
-  background-color: #2eaf56;
-  text-align: center;
-  font: normal normal bold 36px/47px Futura;
-  letter-spacing: 0px;
-  color: #ffffff;
-  border: 1px solid #707070;
-  border-radius: 22px;
-`;
-const Wrapper = styled.div`
-  display: flex;
-  border-radius: 10%
-  border: 1px solid #707070;
-  border-radius: 22px;
 
+const InputContainer = styled.input`
+  justify-self: flex-end;
+  width: 400px;
+  height: 40px;
+  margin: 24px;
+  border: 1px solid #707070;
+  border-radius: 22px;
+  padding: 15px;
+  font-size: 28px;
+`;
+
+const LabelTextArea = styled.label`
+  color: #707070;
+  font-size: 36px;
+  align-self: flex-start;
+  margin-top: 25px;
 `;
 
 const TextArea = styled.textarea`
-  border-radius: 10px;
+  border-radius: 22px;
+  width: 400px;
+  justify-self: flex-end;
+  margin: 24px;
+  padding: 15px;
+  font-size: 28px;
+`;
+
+const Button = styled.button`
+  background-color: #2eaf56;
+  font: normal normal bold 36px/47px Futura;
+  color: #ffffff;
+  border: 1px solid #707070;
+  border-radius: 22px;
+  grid-column: 1/-1;
+  width: 300px;
+  margin: 20px auto;
+  margin-top: 20px;
+  margin-left: 45%;
+  padding: 15px;
+  cursor: pointer;
+
+  :hover {
+    background-color: #299a4b;
+  }
 `;
 
 const ProductEdit = (props) => {
@@ -83,10 +102,15 @@ const ProductEdit = (props) => {
     const updated = await updateProduct(id, product);
     setUpdated(updated);
   };
+
+  if (isUpdated) {
+    return <Redirect to={`/products/${product._id}`} />;
+  }
+
   return (
-    <DetailContainer>
-      <Form onSubmit={handleSubmit}>
-        <Wrapper>
+    <Layout user={props.user}>
+      <DetailContainer>
+        <Form onSubmit={handleSubmit}>
           <LabelContainer>Product Name:</LabelContainer>
           <InputContainer
             type="text"
@@ -96,8 +120,7 @@ const ProductEdit = (props) => {
             autoFocus
             onChange={handleChange}
           />
-        </Wrapper>
-        <Wrapper>
+
           <LabelContainer>Price</LabelContainer>
           <InputContainer
             type="text"
@@ -106,8 +129,7 @@ const ProductEdit = (props) => {
             required
             onChange={handleChange}
           />
-        </Wrapper>
-        <Wrapper>
+
           <LabelContainer>Description:</LabelContainer>
           <TextArea
             rows={10}
@@ -117,20 +139,20 @@ const ProductEdit = (props) => {
             required
             onChange={handleChange}
           />
-        </Wrapper>
-        <Wrapper>
+
           <LabelContainer>Img Link:</LabelContainer>
           <InputContainer
             type="text"
-            value={product.imgUrl}
+            value={product.imgURL}
             name="imgURL"
             required
             onChange={handleChange}
           />
-        </Wrapper>
-        <Button>Add Product</Button>
-      </Form>
-    </DetailContainer>
+
+          <Button>Save</Button>
+        </Form>
+      </DetailContainer>
+    </Layout>
   );
 };
 

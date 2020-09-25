@@ -1,5 +1,7 @@
 import React from 'react';
+
 import { Link } from 'react-router-dom'
+
 
 const Nav = () => {
     const nav = {
@@ -33,6 +35,7 @@ const Nav = () => {
     const li = {
         fontSize: '20px',
         margin: '0px 10px',
+
         textDecoration: 'none',
         color: 'white'
     }
@@ -49,6 +52,7 @@ const Nav = () => {
                 <Link style={li} to='/add'>
                 <li>ADMIN</li>
                 </Link>
+
             </ul>
             <h4>"Gobble up groceries to your heart's content!"</h4>
         </nav>

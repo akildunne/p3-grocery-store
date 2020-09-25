@@ -12,4 +12,4 @@ const Footer = () =>
         </ul>
     </footer>
 
-export default Footer
+export default Footer;

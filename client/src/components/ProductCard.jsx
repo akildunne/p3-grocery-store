@@ -10,6 +10,7 @@ const CardContainer = styled.div`
   height: 245px;
   background-color: #22C380;
   border-radius: 15%;
+  margin: 20px;
 
   :hover {
     transform: scale(1.1);
