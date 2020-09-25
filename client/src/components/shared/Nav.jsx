@@ -10,7 +10,6 @@ const Nav = () => {
         height: '87px',
         background: '#40A48B',
         border: '1px solid #707070',
-        // opacity: '1'
         color: 'white',
         
     }
@@ -19,7 +18,6 @@ const Nav = () => {
         alignItems: 'center',
         width: '313px',
         height: '65px',
-        // paddingLeft: '0px',
         background: '#2EAF56',
         border: '1px solid #707070',
         opacity: '1',
