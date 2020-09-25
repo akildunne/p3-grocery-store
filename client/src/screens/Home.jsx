@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 const HomeMainContainer = styled.div`
   display: flex;
   flex-direction: column;
-  width: 1230px;
   margin: 0 auto;
 `;
 

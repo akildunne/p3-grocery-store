@@ -4,10 +4,11 @@ import Search from '../components/Search';
 import { getProducts } from '../services/products';
 import styled from "styled-components";
 
-const CardContainers = styled.div`
+const CardContainer = styled.div`
   display: flex;  
-  flex-direction: column;
-  justify-content: center;
+  flex-flow: row wrap;
+  margin: 200px auto;
+  justify-content: space-around;
 `
 
 const Products = () => {
@@ -27,9 +28,9 @@ const Products = () => {
   return (
     <>
       <Search />
-      <CardContainers>
+      <CardContainer>
         {productJSX}
-      </CardContainers>      
+      </CardContainer>      
     </>
 
   )
