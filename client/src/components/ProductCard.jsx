@@ -31,12 +31,6 @@ const ProductName = styled.div`
   margin-top: 8px;
 `;
 
-//Not sure if I need this. Couldn't get changes with only one style tag for both
-const ProductPrice = styled.div`
-
-`;
-
-
 const ProductCard = (props) => {
   return (
     <>
@@ -44,7 +38,7 @@ const ProductCard = (props) => {
         <ProductLink className="product" to={`/products/${props._id}`}>
           <ProductImage src={props.imgURL} alt={props.product} />
             <ProductName>{props.product}</ProductName>
-            <ProductPrice>{`${props.price}`}</ProductPrice>
+            <div>{`${props.price}`}</div>
         </ProductLink>
       </CardContainer>
     </>
