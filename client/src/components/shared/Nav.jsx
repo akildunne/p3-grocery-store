@@ -1,5 +1,5 @@
 import React from 'react';
-// import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 const Nav = () => {
     const nav = {
@@ -11,7 +11,6 @@ const Nav = () => {
         background: '#40A48B',
         border: '1px solid #707070',
         color: 'white',
-        
     }
 
     const h1 = {
@@ -21,6 +20,8 @@ const Nav = () => {
         background: '#2EAF56',
         border: '1px solid #707070',
         opacity: '1',
+        textDecoration: 'none',
+        color: 'white'
     }
 
     const ul = {
@@ -32,14 +33,22 @@ const Nav = () => {
     const li = {
         fontSize: '20px',
         margin: '0px 10px',
+        textDecoration: 'none',
+        color: 'white'
     }
     
     return (
         <nav style={nav}>
-            <h1 style={h1}>D.T.'S Pantry</h1>
+            <Link style={h1} to='/'>
+            <h1>D.T.'S Pantry</h1>
+            </Link>
             <ul style={ul}>
-                <li style={li}>PRODUCTS</li>
-                <li style={li}>ADMIN</li>
+                <Link style={li} to='/products'>
+                <li>PRODUCTS</li>
+                </Link>
+                <Link style={li} to='/add'>
+                <li>ADMIN</li>
+                </Link>
             </ul>
             <h4>"Gobble up groceries to your heart's content!"</h4>
         </nav>

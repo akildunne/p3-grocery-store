@@ -64,7 +64,6 @@ const Home = () => {
   return (
     <HomeMainContainer>
       <div>
-        <Nav />
         <CoverPhoto>
           <Banner>
             <HeadingContainer>
