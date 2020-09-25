@@ -20,7 +20,7 @@ export const getProduct = async id => {
 
 export const createProduct = async product => {
   try {
-      const response = await api.post('/products', product)
+      const response = await api.post('/add', product)
       return response.data
   } catch (error) {
       throw error

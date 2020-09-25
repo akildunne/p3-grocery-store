@@ -6,20 +6,28 @@ import styled from "styled-components";
 
 const DetailContainer = styled.div`
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   padding: 10px;
 `;
 const Form = styled.form`
-  display: grid;
-  grid-template-columns: 200px 200px;
-  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
   width: 450px;
-  justify-content: space-evenly;
+  align-items: flex-end;
 `;
 const InputContainer = styled.input`
   display: flex;
   justify-content: space-evenly;
-  margin: 8px;
+  margin: 12px;
+  border-radius: 10%
+  border: 1px solid #707070;
+  border-radius: 22px;
+`;
+
+const LabelContainer = styled.label`
+  color: #707070;
+  font-size: 36px;
+  text-align: left;
 `;
 const Button = styled.button`
   background-color: #2eaf56;
@@ -27,18 +35,25 @@ const Button = styled.button`
   font: normal normal bold 36px/47px Futura;
   letter-spacing: 0px;
   color: #ffffff;
-  opacity: 1;
+  border: 1px solid #707070;
+  border-radius: 22px;
+`;
+const Wrapper = styled.div`
+  display: flex;
+  border-radius: 10%
+  border: 1px solid #707070;
+  border-radius: 22px;
+
 `;
 
-const NewDiv = styled.div`
-  text-align: center;
-  margin: 0 auto;
-`;
+const TextArea = styled.textarea`
+border-radius: 10px;
+`
 
 const ProductCreate = (props) => {
   const [product, setProduct] = useState({
     product: "",
-    imgUrl: "",
+    imgURL: "",
     description: "",
     price: "",
   });
@@ -59,47 +74,56 @@ const ProductCreate = (props) => {
     setCreated({ created });
   };
 
+  if (isCreated) {
+    return <Redirect to={`/products`} />
+}
+
   return (
     <DetailContainer>
       <Form onSubmit={handleSubmit}>
-        <label>Product Name:</label>
-        <InputContainer
-          type="text"
-          value={product.product}
-          name="product"
-          required
-          autoFocus
-          onChange={handleChange}
-        />
-        <label>Price</label>
-        <InputContainer
-          type="text"
-          value={product.price}
-          name="price"
-          required
-          onChange={handleChange}
-        />
-        <label>Description</label>
-        <textarea
-          type="text"
-          rows={10}
-          columns={30}
-          value={product.description}
-          name="content"
-          required
-          onChange={handleChange}
-        />
-        <label>Img Link</label>
-        <InputContainer
-          type="text"
-          value={product.imgUrl}
-          name="imgUrl"
-          required
-          onChange={handleChange}
-        />
-        <NewDiv>
-          <Button>Add Product</Button>
-        </NewDiv>
+        <Wrapper>
+          <LabelContainer>Product Name:</LabelContainer>
+          <InputContainer
+            type="text"
+            value={product.product}
+            name="product"
+            required
+            autoFocus
+            onChange={handleChange}
+          />
+        </Wrapper>
+        <Wrapper>
+          <LabelContainer>Price</LabelContainer>
+          <InputContainer
+            type="text"
+            value={product.price}
+            name="price"
+            required
+            onChange={handleChange}
+          />
+        </Wrapper>
+        <Wrapper>
+          <LabelContainer>Description:</LabelContainer>
+          <TextArea
+            rows={10}
+            columns={20}
+            value={product.description}
+            name="description"
+            required
+            onChange={handleChange}
+          />
+        </Wrapper>
+        <Wrapper>
+          <LabelContainer>Img Link:</LabelContainer>
+          <InputContainer
+            type="text"
+            value={product.imgUrl}
+            name="imgURL"
+            required
+            onChange={handleChange}
+          />
+        </Wrapper>
+        <Button>Add Product</Button>
       </Form>
     </DetailContainer>
   );
