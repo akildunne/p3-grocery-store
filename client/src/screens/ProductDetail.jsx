@@ -51,8 +51,6 @@ const ProductDetail = (props) => {
                         <button className="edit-button"><Link className="edit-link" to={`/products/edit/${product.id}`}>Edit</Link></button>
                         <button className="delete-button" onClick={() => deleteProduct(product._id)}>Delete</button>
                     </div>
-        </div>
-      </div>
 
 
       </ProductDetailContainer>
