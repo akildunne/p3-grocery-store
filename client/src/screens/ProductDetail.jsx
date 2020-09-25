@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 // import Layout from '../components/shared/Layout';
-import { useParams } from 'react-router-dom';
-import { getProduct } from '../services/products';
+import { useParams, Link } from 'react-router-dom';
+import { getProduct, deleteProduct } from '../services/products';
 // import styled from "styled-components";
 
 const ProductDetail = (props) => {
@@ -30,6 +30,10 @@ const ProductDetail = (props) => {
           <div className="product">{product.product}</div>
           <div className="price">{`${product.price}`}</div>
           <div className="description">{product.description}</div>
+          <div className="button-container">
+                        <button className="edit-button"><Link className="edit-link" to={`/products/${product._id}/edit`}>Edit</Link></button>
+                        <button className="delete-button" onClick={() => deleteProduct(product._id)}>Delete</button>
+                    </div>
         </div>
       </div>
     </>
