@@ -127,10 +127,10 @@ const ProductCreate = (props) => {
           required
           onChange={handleChange}
         />
-        <LabelContainer>Img Link:</LabelContainer>
+        <LabelContainer>Image Link:</LabelContainer>
         <InputContainer
           type="text"
-          value={product.imgUrl}
+          value={product.imgURL}
           name="imgURL"
           required
           onChange={handleChange}
