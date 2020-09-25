@@ -35,7 +35,7 @@ const ProductCard = (props) => {
   return (
     <>
       <CardContainer>
-        <ProductLink  to={`/products/${props._id}`}>
+        <ProductLink  to={`/products/${props.id}`}>
           <ProductImage src={props.imgURL} alt={props.product} />
             <ProductName>{props.product}</ProductName>
             <div>{`${props.price}`}</div>

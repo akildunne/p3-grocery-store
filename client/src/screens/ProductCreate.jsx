@@ -53,7 +53,7 @@ border-radius: 10px;
 const ProductCreate = (props) => {
   const [product, setProduct] = useState({
     product: "",
-    imgUrl: "",
+    imgURL: "",
     description: "",
     price: "",
   });
@@ -118,7 +118,7 @@ const ProductCreate = (props) => {
           <InputContainer
             type="text"
             value={product.imgUrl}
-            name="imgUrl"
+            name="imgURL"
             required
             onChange={handleChange}
           />
