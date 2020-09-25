@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import Footer from '../components/shared/Footer'
 
 const HomeMainContainer = styled.div`
   display: flex;
@@ -80,6 +81,7 @@ const Home = () => {
         <h4>Our Story</h4>
         <p>Danger Turkey’s Pantry started off in 1971 as a small produce cart and meat stand outside of the tropical forests of New Guinea. Our mission then was to provide cassowaries with quality groceries so that they might stop attacking and eating humans. The cassowaries were mostly unimpressed with our plan, but we did get pretty good at procuring fine groceries at low costs. Today, we are proud to serve your community with a wide variety of top quality foods including all of the brands you know and love. Come on down and shop with us, and don’t feed the cassowaries!</p>
       </StoryContainer>
+      <Footer />
     </HomeMainContainer>
   );
 };
