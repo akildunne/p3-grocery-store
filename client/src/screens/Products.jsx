@@ -1,6 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import ProductCard from '../components/ProductCard';
 import { getProducts } from '../services/products';
+import styled from "styled-components";
+
+const CardContainers = styled.div`
+  display: flex;  
+  flex-direction: column;
+  justify-content: center;
+`
 
 const Products = () => {
   const [allProducts, setAllProducts] = useState([]);
@@ -14,13 +21,12 @@ const Products = () => {
   }, [])
 
   const productJSX = allProducts.map((product, index) =>
-    <ProductCard key={index} title={product.product} description={product.description} price={product.price} image={product.imgURL} id={product._id}/>)
+    <ProductCard key={index} product={product.product} description={product.description} price={product.price} imgURL={product.imgURL} id={product._id}/>)
 
   return (
-    <div>
+    <CardContainers>
       {productJSX}
-      <h4>Products!</h4>
-    </div>
+    </CardContainers>
   )
 }
 
