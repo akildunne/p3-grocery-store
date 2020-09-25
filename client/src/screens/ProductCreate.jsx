@@ -59,6 +59,8 @@ const Button = styled.button`
   grid-column: 1/-1;
   width: 300px;
   margin: 20px auto;
+  margin-top: 20px;
+  margin-left: 45%;
   padding: 15px;
   cursor: pointer;
 
