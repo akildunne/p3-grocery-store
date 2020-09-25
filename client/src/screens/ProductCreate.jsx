@@ -1,14 +1,15 @@
 import React, { useState } from "react";
-// import Layout from '../../components/shared/Layout'
+import Layout from "../components/shared/Layout";
 import { Redirect } from "react-router-dom";
 import { createProduct } from "../services/products";
+
 import styled from "styled-components";
 
 const DetailContainer = styled.div`
   display: flex;
   justify-content: center;
   margin: 50px auto;
-`
+`;
 
 const Form = styled.form`
   display: grid;
@@ -16,30 +17,30 @@ const Form = styled.form`
   margin: 0 auto;
   align-items: center;
   justify-items: flex-end;
-`
+`;
 
 const LabelContainer = styled.label`
   color: #707070;
   font-size: 36px;
-`
+`;
 
 const InputContainer = styled.input`
   justify-self: flex-end;
   width: 400px;
-  height: 40px; 
+  height: 40px;
   margin: 24px;
   border: 1px solid #707070;
   border-radius: 22px;
   padding: 15px;
   font-size: 28px;
-`
+`;
 
 const LabelTextArea = styled.label`
   color: #707070;
-  font-size: 36px;  
+  font-size: 36px;
   align-self: flex-start;
   margin-top: 25px;
-`
+`;
 
 const TextArea = styled.textarea`
   border-radius: 22px;
@@ -48,7 +49,7 @@ const TextArea = styled.textarea`
   margin: 24px;
   padding: 15px;
   font-size: 28px;
-`
+`;
 
 const Button = styled.button`
   background-color: #2eaf56;
@@ -65,10 +66,9 @@ const Button = styled.button`
   cursor: pointer;
 
   :hover {
-    background-color: #299A4B;
+    background-color: #299a4b;
   }
-`
-
+`;
 
 const ProductCreate = (props) => {
   const [product, setProduct] = useState({
@@ -95,49 +95,51 @@ const ProductCreate = (props) => {
   };
 
   if (isCreated) {
-    return <Redirect to={`/products`} />
-}
+    return <Redirect to={`/products`} />;
+  }
 
   return (
-    <DetailContainer>
-      <Form onSubmit={handleSubmit}>
-        <LabelContainer>Product Name:</LabelContainer>
-        <InputContainer
-          type="text"
-          value={product.product}
-          name="product"
-          required
-          autoFocus
-          onChange={handleChange}
-        />
-        <LabelContainer>Price:</LabelContainer>
-        <InputContainer
-          type="text"
-          value={product.price}
-          name="price"
-          required
-          onChange={handleChange}
-        />
-        <LabelTextArea>Description:</LabelTextArea>
-        <TextArea
-          rows={4}
-          columns={20}
-          value={product.description}
-          name="description"
-          required
-          onChange={handleChange}
-        />
-        <LabelContainer>Image Link:</LabelContainer>
-        <InputContainer
-          type="text"
-          value={product.imgURL}
-          name="imgURL"
-          required
-          onChange={handleChange}
-        />
-        <Button>Add Product</Button>
-      </Form>
-    </DetailContainer>
+    <Layout user={props.user}>
+      <DetailContainer>
+        <Form onSubmit={handleSubmit}>
+          <LabelContainer>Product Name:</LabelContainer>
+          <InputContainer
+            type="text"
+            value={product.product}
+            name="product"
+            required
+            autoFocus
+            onChange={handleChange}
+          />
+          <LabelContainer>Price:</LabelContainer>
+          <InputContainer
+            type="text"
+            value={product.price}
+            name="price"
+            required
+            onChange={handleChange}
+          />
+          <LabelTextArea>Description:</LabelTextArea>
+          <TextArea
+            rows={4}
+            columns={20}
+            value={product.description}
+            name="description"
+            required
+            onChange={handleChange}
+          />
+          <LabelContainer>Image Link:</LabelContainer>
+          <InputContainer
+            type="text"
+            value={product.imgURL}
+            name="imgURL"
+            required
+            onChange={handleChange}
+          />
+          <Button>Add Product</Button>
+        </Form>
+      </DetailContainer>
+    </Layout>
   );
 };
 

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-// import Layout from '../components/shared/Layout';
+import Layout from "../components/shared/Layout";
 import { useParams, Link, Redirect } from "react-router-dom";
 import { getProduct, deleteProduct } from "../services/products";
 import styled from "styled-components";
@@ -43,14 +43,14 @@ const ProductDetail = (props) => {
   const productDeleted = (e) => {
     deleteProduct(product._id);
     setRedirect(true);
-  }
+  };
 
   if (redirect === true) {
     return <Redirect to="/products" />;
   }
 
   return (
-    <>
+    <Layout user={props.user}>
       <ProductDetailContainer>
         <ImageContainer src={product.imgURL} alt={product.product} />
         <div className="product">{product.product}</div>
@@ -62,15 +62,12 @@ const ProductDetail = (props) => {
               Edit
             </Link>
           </button>
-          <button
-            className="delete-button"
-            onClick={(e) => productDeleted(e)}
-          >
+          <button className="delete-button" onClick={(e) => productDeleted(e)}>
             Delete
           </button>
         </div>
       </ProductDetailContainer>
-    </>
+    </Layout>
   );
 };
 
