@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 // import Layout from '../../components/shared/Layout'
-import { Redirect } from "react-router-dom";
+// import { Redirect } from "react-router-dom";
 import { createProduct } from "../services/products";
 import styled from "styled-components";
 
@@ -101,11 +101,10 @@ const ProductCreate = (props) => {
         <Wrapper>
           <LabelContainer>Description:</LabelContainer>
           <TextArea
-            // type="text"
             rows={10}
             columns={20}
             value={product.description}
-            name="content"
+            name="description"
             required
             onChange={handleChange}
           />

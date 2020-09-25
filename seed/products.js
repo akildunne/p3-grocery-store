@@ -5,6 +5,63 @@ db.on("error", console.error.bind(console, "MongoDB connection error:"));
 
 const main = async () => {
   const products = [
+    
+    {
+      product: "Banana ",
+      imgURL:
+        "https://bit.ly/32FdRU2",
+      description:
+        " Best bananas",
+      price: "$0.75/lb",
+      
+    },
+    {
+      product: "Pink Lady Apple",
+      imgURL:
+        "https://bit.ly/32FdRU2",
+      description:
+        " An apple a day keeps the doctor away ",
+      price: "$1.00/lb",
+      
+    },
+    {
+      product: "Avocado",
+      imgURL:
+        "https://bit.ly/32FdRU2",
+      description:
+        " Yummy",
+      price: "$1.00/lb",
+      
+    },
+    {
+      product: "Cream Cheese",
+      imgURL:
+        "https://bit.ly/32FdRU2",
+      description:
+        " Best cheese out there ",
+      price: "$",
+      
+    },
+    {
+      product: "White Chocolate ",
+      imgURL:
+        "https://bit.ly/32FdRU2",
+      description:
+        "Sweet delight",
+      price: "$3.50/lb",
+      
+    },
+    {
+      product: "Graham Crackers ",
+      imgURL:
+        "https://bit.ly/32FdRU2",
+      description:
+        "Yummy Crackers",
+      price: "$4.00",
+      
+    },
+
+
     {
       product: "Hotdogs",
       imgURL:
@@ -14,6 +71,35 @@ const main = async () => {
       price: "$5.00",
       
     },
+    {
+      product: "Ketchup",
+      imgURL:
+        "https://bit.ly/32FdRU2",
+      description:
+        "Who doesn't love ketchup? ",
+      price: "$5.00",
+      
+    },
+    {
+      product: "Rasberries ",
+      imgURL:
+        "https://bit.ly/32FdRU2",
+      description:
+        "Yummy in my tummy",
+      price: "$5.50",
+      
+    },
+    {
+      product: "Whole Milk ",
+      imgURL:
+        "https://bit.ly/32FdRU2",
+      description:
+        "Calcium",
+      price: "$6.50",
+      
+    },
+    
+
   ];
 
   await Product.insertMany(products);
