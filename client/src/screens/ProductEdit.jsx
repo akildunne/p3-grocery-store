@@ -83,6 +83,11 @@ const ProductEdit = (props) => {
     const updated = await updateProduct(id, product);
     setUpdated(updated);
   };
+
+  if (isUpdated) {
+    return <Redirect to={`/products/${product._id}`} />
+  }
+  
   return (
     <DetailContainer>
       <Form onSubmit={handleSubmit}>
@@ -122,13 +127,13 @@ const ProductEdit = (props) => {
           <LabelContainer>Img Link:</LabelContainer>
           <InputContainer
             type="text"
-            value={product.imgUrl}
+            value={product.imgURL}
             name="imgURL"
             required
             onChange={handleChange}
           />
         </Wrapper>
-        <Button>Add Product</Button>
+        <Button>Save</Button>
       </Form>
     </DetailContainer>
   );
