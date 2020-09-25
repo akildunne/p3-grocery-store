@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import ProductCard from '../components/ProductCard';
+import Search from '../components/Search';
 import { getProducts } from '../services/products';
 import styled from "styled-components";
 
@@ -24,9 +25,13 @@ const Products = () => {
     <ProductCard key={index} product={product.product} description={product.description} price={product.price} imgURL={product.imgURL} id={product._id}/>)
 
   return (
-    <CardContainers>
-      {productJSX}
-    </CardContainers>
+    <>
+      <Search />
+      <CardContainers>
+        {productJSX}
+      </CardContainers>      
+    </>
+
   )
 }
 
