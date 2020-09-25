@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 // import Layout from '../../components/shared/Layout'
-// import { Redirect } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import { createProduct } from "../services/products";
 import styled from "styled-components";
 
@@ -73,6 +73,10 @@ const ProductCreate = (props) => {
     const created = await createProduct(product);
     setCreated({ created });
   };
+
+  if (isCreated) {
+    return <Redirect to={`/products`} />
+}
 
   return (
     <DetailContainer>
