@@ -26,7 +26,7 @@ const LabelContainer = styled.label`
 const InputContainer = styled.input`
   justify-self: flex-end;
   width: 400px;
-  height: 60px; 
+  height: 40px; 
   margin: 24px;
   border: 1px solid #707070;
   border-radius: 22px;
@@ -118,7 +118,7 @@ const ProductCreate = (props) => {
         />
         <LabelTextArea>Description:</LabelTextArea>
         <TextArea
-          rows={10}
+          rows={4}
           columns={20}
           value={product.description}
           name="description"
