@@ -71,7 +71,7 @@ const Home = () => {
               <HeaderWelcome>We've got all of your grocery needs covered</HeaderWelcome>  
             </HeadingContainer>  
           </Banner>  
-          <Link to="/api/product">
+          <Link to="/api/products">
             <ShopNowButton>SHOP NOW</ShopNowButton>
           </Link>  
         </CoverPhoto> 
