@@ -12,7 +12,7 @@ const main = async () => {
         "https://bit.ly/32FdRU2",
       description:
         " Best bananas",
-      price: "$0.75/lb",
+      price: "0.75/lb",
       
     },
     {
@@ -21,7 +21,7 @@ const main = async () => {
         "https://bit.ly/32FdRU2",
       description:
         " An apple a day keeps the doctor away ",
-      price: "$1.00/lb",
+      price: "1.00/lb",
       
     },
     {
@@ -30,7 +30,7 @@ const main = async () => {
         "https://bit.ly/32FdRU2",
       description:
         " Yummy",
-      price: "$1.00/lb",
+      price: "1.00/lb",
       
     },
     {
@@ -39,7 +39,7 @@ const main = async () => {
         "https://bit.ly/32FdRU2",
       description:
         " Best cheese out there ",
-      price: "$",
+      price: "",
       
     },
     {
@@ -48,7 +48,7 @@ const main = async () => {
         "https://bit.ly/32FdRU2",
       description:
         "Sweet delight",
-      price: "$3.50/lb",
+      price: "3.50/lb",
       
     },
     {
@@ -57,7 +57,7 @@ const main = async () => {
         "https://bit.ly/32FdRU2",
       description:
         "Yummy Crackers",
-      price: "$4.00",
+      price: "4.00",
       
     },
 
@@ -68,7 +68,7 @@ const main = async () => {
         "https://bit.ly/32FdRU2",
       description:
         "It's official! Hot dogs are sandwiches. And they are a staple for your summer BBQ festivities.",
-      price: "$5.00",
+      price: "5.00",
       
     },
     {
@@ -77,7 +77,7 @@ const main = async () => {
         "https://bit.ly/32FdRU2",
       description:
         "Who doesn't love ketchup? ",
-      price: "$5.00",
+      price: "5.00",
       
     },
     {
@@ -86,7 +86,7 @@ const main = async () => {
         "https://bit.ly/32FdRU2",
       description:
         "Yummy in my tummy",
-      price: "$5.50",
+      price: "5.50",
       
     },
     {
@@ -95,7 +95,7 @@ const main = async () => {
         "https://bit.ly/32FdRU2",
       description:
         "Calcium",
-      price: "$6.50",
+      price: "6.50",
       
     },
     
