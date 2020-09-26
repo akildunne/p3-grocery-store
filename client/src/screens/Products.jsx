@@ -12,6 +12,10 @@ const CardContainer = styled.div`
   margin: 200px auto;
   justify-content: space-around;
 `;
+const FlexDiv = styled.div`
+display: flex;
+
+`
 
 const Products = (props) => {
   const [allProducts, setAllProducts] = useState([]);
@@ -37,8 +41,10 @@ const Products = (props) => {
 
   return (
     <Layout user={props.user}>
+      <FlexDiv>
       <Search />
-      <Sort />
+        <Sort />
+      </FlexDiv>
       <CardContainer>{productJSX}</CardContainer>
     </Layout>
   );

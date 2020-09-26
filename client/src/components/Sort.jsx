@@ -6,8 +6,8 @@ const Form = styled.form`
   align-content: flex-end;
   width: 20%;
   height: 35px;
-  // border: 2px solid #707070;
-  // border-radius: 20px;
+  //  border: 2px solid #707070;
+   border-radius:  10px;
   padding: 16px;
   text-align: left;
 `;
