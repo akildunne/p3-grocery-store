@@ -21,9 +21,8 @@ const CoverPhoto = styled.div`
 
 const Banner = styled.div`
   width: 100%;
-  background-color: #40a48b;
   border: 1px solid #707070;
-  opacity: 0.7;
+  background: rgba(64, 164, 139, 0.7);
 `;
 
 const HeadingContainer = styled.div`

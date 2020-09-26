@@ -9,12 +9,12 @@ import styled from "styled-components";
 const CardContainer = styled.div`
   display: flex;
   flex-flow: row wrap;
-  margin: 200px auto;
-  justify-content: space-around;
-`;
-const FlexDiv = styled.div`
-display: flex;
+  margin: 50px 200px;
+  justify-content: end;
+`
 
+const FlexDiv = styled.div`
+  display: flex;
 `
 
 const Products = (props) => {
