@@ -22,7 +22,7 @@ const ImageContainer = styled.img`
 `;
 
 const ProductDetail = (props) => {
-  const [redirect, setRedirect] = useState(false);
+  const [isDeleted, setIsDeleted] = useState(false);
   const [product, setProduct] = useState({
     product: "",
     imgURL: "",
@@ -40,12 +40,14 @@ const ProductDetail = (props) => {
     fetchProduct();
   }, [id]);
 
-  const productDeleted = (e) => {
-    deleteProduct(product._id);
-    setRedirect(true);
-  };
 
-  if (redirect === true) {
+  const productDeleted = async (event) => {
+    event.preventDefault();
+      const deleted = await deleteProduct(product._id);
+    setIsDeleted(deleted);
+    };
+
+  if (isDeleted) {
     return <Redirect to="/products" />;
   }
 
@@ -62,7 +64,7 @@ const ProductDetail = (props) => {
               Edit
             </Link>
           </button>
-          <button className="delete-button" onClick={(e) => productDeleted(e)}>
+          <button className="delete-button" onClick={productDeleted}>
             Delete
           </button>
         </div>
