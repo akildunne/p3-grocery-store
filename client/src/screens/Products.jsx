@@ -15,6 +15,7 @@ const CardContainer = styled.div`
 
 const FlexDiv = styled.div`
   display: flex;
+  margin: 100px;
 `
 
 const Products = (props) => {
