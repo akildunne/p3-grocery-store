@@ -39,7 +39,7 @@ const ProductCard = (props) => {
         <ProductLink  to={`/products/${props.id}`}>
           <ProductImage src={props.imgURL} alt={props.product} />
             <ProductName>{props.product}</ProductName>
-            <div>{`${props.price}`}</div>
+            <p>${props.price}</p>
         </ProductLink>
       </CardContainer>
     </>
