@@ -29,7 +29,7 @@ const main = async () => {
       imgURL:
         "https://bit.ly/32FdRU2",
       description:
-        " Yummy",
+        " Yummy ",
       price: "1.00/lb",
       
     },
@@ -39,7 +39,7 @@ const main = async () => {
         "https://bit.ly/32FdRU2",
       description:
         " Best cheese out there ",
-      price: "",
+      price: "2.00",
       
     },
     {
