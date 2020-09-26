@@ -16,6 +16,12 @@ const Nav = () => {
     color: 'white',
   }
 
+  const div = {
+    background: '#2EAF56',
+    width: "320px",
+    height: "90px",
+  }
+
   const ul = {
     display: 'flex',
     listStyle: 'none',
@@ -23,9 +29,9 @@ const Nav = () => {
   }
 
   const img = {  
-    width: "300px",
-    height: "90px",
-    padding: "5px",
+    width: "130px",
+    height: "60px",
+    padding: "15px",
   }
 
   const li = {
@@ -37,7 +43,9 @@ const Nav = () => {
   
   return (
     <nav style={nav}>
-      <Link to='/'><img style={img} src={DTPantryLogo} alt="DT Pantry Logo"/></Link>
+      <div style={div}>
+        <Link to='/'><img style={img} src={DTPantryLogo} alt="DT Pantry Logo"/></Link>
+      </div>     
       <ul style={ul}>
         <Link style={li} to='/products'><li>PRODUCTS</li></Link>
         <Link style={li} to='/add'><li>ADMIN</li></Link>        
