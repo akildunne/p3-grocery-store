@@ -7,6 +7,7 @@ const SearchBar = styled.input`
   border: 2px solid #707070;
   border-radius: 20px;
   padding: 16px;
+  
 `
 
 const Search = (props) => {

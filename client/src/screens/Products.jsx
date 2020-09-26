@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import ProductCard from "../components/ProductCard";
 import Search from "../components/Search";
+import Sort from "../components/Sort";
 import { getProducts } from "../services/products";
 import Layout from "../components/shared/Layout";
 import styled from "styled-components";
@@ -37,6 +38,7 @@ const Products = (props) => {
   return (
     <Layout user={props.user}>
       <Search />
+      <Sort />
       <CardContainer>{productJSX}</CardContainer>
     </Layout>
   );
