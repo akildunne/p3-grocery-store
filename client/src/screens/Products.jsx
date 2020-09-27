@@ -20,16 +20,28 @@ const FlexDiv = styled.div`
 
 const Products = (props) => {
   const [allProducts, setAllProducts] = useState([]);
+  const [queriedProducts, setQueriedProducts] = useState([]);
+
 
   useEffect(() => {
     const fetchProducts = async () => {
       const products = await getProducts();
       setAllProducts(products);
+      setQueriedProducts(products);
     };
     fetchProducts();
   }, []);
 
-  const productJSX = allProducts.map((product, index) => (
+  const handleSearch = (e) => {
+    const newQueriedProducts = allProducts.filter(search => search.product.toLowerCase().includes(e.target.value.toLowerCase()))
+    // setQueriedProducts(newQueriedProducts, () => handleSort(sortType))
+    setQueriedProducts(newQueriedProducts);
+  }
+
+  const handleSubmit = (e) => e.preventDefault();
+
+
+  const productJSX = queriedProducts.map((product, index) => (
     <ProductCard
       key={index}
       product={product.product}
@@ -43,7 +55,7 @@ const Products = (props) => {
   return (
     <Layout user={props.user}>
       <FlexDiv>
-      <Search />
+        <Search onSubmit={handleSubmit} onChange={handleSearch}/>
         <Sort />
       </FlexDiv>
       <CardContainer>{productJSX}</CardContainer>
