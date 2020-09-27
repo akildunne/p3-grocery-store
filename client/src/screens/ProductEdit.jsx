@@ -108,7 +108,7 @@ const ProductEdit = (props) => {
   }
 
   return (
-    <Layout user={props.user}>
+    <Layout>
       <DetailContainer>
         <Form onSubmit={handleSubmit}>
           <LabelContainer>Product Name:</LabelContainer>
