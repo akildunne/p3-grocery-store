@@ -4,18 +4,17 @@ import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 
 const NavBar = styled.nav`
-display: flex;
-height: 87px;
-background: #40A48B;
-border: 3px solid #707070;
-color: white;
-font-size: 22px;
+  display: flex;
+  height: 90px;
+  background: #40A48B;
+  border: 1px solid #707070;
+  color: white;
+  font-size: 22px;
 `
 
 const LogoContainer = styled.div`
   background: #2EAF56;
   width: 320px;
-  height: 90px;
   border: 1px solid #707070;
 `
 
@@ -24,7 +23,6 @@ const Img = styled.img`
   height: 60px;
   padding: 15px;
 `
-
 
 const NavOptionContainers = styled.div`
   display: flex;
@@ -53,7 +51,6 @@ const MottoContainer = styled.div`
 const MottoText = styled.h4`
   font-weight: 300;
 `
-
 
 const Nav = () => {  
   return (
