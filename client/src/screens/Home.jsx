@@ -67,10 +67,8 @@ const Home = () => {
           <CoverPhoto>
             <Banner>
               <HeadingContainer>
-                <HeaderWelcome>WELCOME TO D.T'S PANTRY!</HeaderWelcome>
-                <HeaderWelcome>
-                  We've got all of your grocery needs covered
-                </HeaderWelcome>
+                <HeaderWelcome>WELCOME TO D.T.'S PANTRY!</HeaderWelcome>
+                <HeaderWelcome>We've got all of your grocery needs covered</HeaderWelcome>
               </HeadingContainer>
             </Banner>
             <Link to="/products">
