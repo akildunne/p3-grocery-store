@@ -70,7 +70,7 @@ const Button = styled.button`
   }
 `;
 
-const ProductCreate = (props) => {
+const ProductCreate = () => {
   const [product, setProduct] = useState({
     product: "",
     imgURL: "",
@@ -102,7 +102,7 @@ const ProductCreate = (props) => {
   }
 
   return (
-    <Layout user={props.user}>
+    <Layout>
       <DetailContainer>
         <Form onSubmit={handleSubmit}>
           <LabelContainer>Product Name:</LabelContainer>
