@@ -43,6 +43,7 @@ const Products = (props) => {
   const [queriedProducts, setQueriedProducts] = useState([]);
   const [sortType, setSortType] = useState([]);
 
+
   useEffect(() => {
     const fetchProducts = async () => {
       const products = await getProducts();
@@ -81,6 +82,7 @@ const Products = (props) => {
   const handleSubmit = (event) => event.preventDefault();
 
   const productJSX = allProducts.map((product, index) => (
+
     <ProductCard
       key={index}
       product={product.product}

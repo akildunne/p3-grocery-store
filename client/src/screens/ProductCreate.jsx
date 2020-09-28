@@ -74,6 +74,9 @@ const ProductCreate = (props) => {
   const [product, setProduct] = useState({
     product: "",
     imgURL: "",
+    imgURL2: "",
+    imgURL3: "",
+    imgURL4: "",
     description: "",
     price: "",
   });
@@ -136,6 +139,30 @@ const ProductCreate = (props) => {
             required
             onChange={handleChange}
           />
+          <LabelContainer>Image Link 2:</LabelContainer>
+          <InputContainer
+            type="text"
+            value={product.imgURL2}
+            name="imgURL2"
+            required
+            onChange={handleChange}
+          />  
+          <LabelContainer>Image Link 3:</LabelContainer>
+          <InputContainer
+            type="text"
+            value={product.imgURL3}
+            name="imgURL3"
+            required
+            onChange={handleChange}
+          />   
+          <LabelContainer>Image Link 4:</LabelContainer>
+          <InputContainer
+            type="text"
+            value={product.imgURL4}
+            name="imgURL4"
+            required
+            onChange={handleChange}
+          />          
           <Button>Add Product</Button>
         </Form>
       </DetailContainer>
