@@ -54,10 +54,38 @@ const ShopNowButton = styled.button`
   }
 `;
 
+
 const StoryContainer = styled.div`
   width: 95%;
   margin: 0 auto;
 `;
+
+
+const OurStoryTitle = styled.h4`
+  font-size: 24px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+
+  @media (min-width: 1260px) {
+    font-size: 36px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+`;
+
+
+const OurStoryText = styled.p`
+  font-size: 18px;
+  margin-left: 75px;
+  margin-right: 75px;
+  
+  @media (min-width: 1260px) {
+    font-size: 24px;
+    margin-left: 100px;
+    margin-right: 100px;
+  }
+`;
+
 
 const Home = () => {
   return (
@@ -77,8 +105,8 @@ const Home = () => {
           </CoverPhoto>
         </div>
         <StoryContainer>
-          <h4>Our Story</h4>
-          <p>
+          <OurStoryTitle>Our Story</OurStoryTitle>
+          <OurStoryText>
             Danger Turkey’s Pantry started off in 1971 as a small produce cart
             and meat stand outside of the tropical forests of New Guinea. Our
             mission then was to provide cassowaries with quality groceries so
@@ -88,7 +116,7 @@ const Home = () => {
             your community with a wide variety of top quality foods including
             all of the brands you know and love. Come on down and shop with us,
             and don’t feed the cassowaries!
-          </p>
+          </OurStoryText>
         </StoryContainer>
       </HomeMainContainer>
     </Layout>
