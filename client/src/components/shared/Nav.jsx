@@ -5,52 +5,75 @@ import { Link } from 'react-router-dom'
 
 const NavBar = styled.nav`
 display: flex;
-align-items: center;
 height: 87px;
 background: #40A48B;
-border-bottom: 5px solid #707070;
+border: 3px solid #707070;
 color: white;
-fontSize: 22px;
+font-size: 22px;
 `
-const Div = styled.div`
+
+const LogoContainer = styled.div`
   background: #2EAF56;
   width: 320px;
   height: 90px;
+  border: 1px solid #707070;
 `
-const Ul = styled.ul`
-  display: flex;
-  list-style: none;
-  font-size: 20px;
-`
+
 const Img = styled.img`
   width: 130px;
   height: 60px;
   padding: 15px;
 `
-const Li = styled.li`
-  fontSize: 30px;
-  margin: 0px 20px;
-  textDecoration: none;
+
+
+const NavOptionContainers = styled.div`
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+`
+
+const NavItemsContainer = styled.div`
+  display: flex;
+`
+
+const NavOptions = styled.p`
+  font-size: 24px;
+  margin: 0px 50px;
+  text-decoration: none;
   color: white;
-  align-content: left;
+  font-weight: 600;
 `
-const H4 = styled.h4`
-  
+
+const MottoContainer = styled.div`
+  text-align: right;
+  flex-grow: 1;
+  margin: auto 50px;
 `
+
+const MottoText = styled.h4`
+  font-weight: 300;
+`
+
+
 const Nav = () => {
   
   return (
     <NavBar>
-      <Div>
+      <LogoContainer>
         <Link to='/'><Img src={DTPantryLogo} alt="D.T.'S Pantry Logo"/></Link>
-      </Div>     
-      <Ul>
-        <Link to='/products'><Li>PRODUCTS</Li></Link>
-        <Link to='/add'><Li>ADMIN</Li></Link>        
-      </Ul>
-      <div>
-      <H4>"Gobble up groceries to your heart's content!"</H4>
-      </div>
+      </LogoContainer>     
+      <NavOptionContainers>
+        <NavItemsContainer>
+          <Link to='/products'><NavOptions>PRODUCTS</NavOptions></Link>
+          <Link to='/add'><NavOptions>ADMIN</NavOptions></Link>          
+        </NavItemsContainer> 
+        <MottoContainer>
+          <MottoText>"Gobble up groceries to your heart's content!"</MottoText>
+        </MottoContainer>        
+      </NavOptionContainers>
+     
+        
+      
     </NavBar>
   );
 };
