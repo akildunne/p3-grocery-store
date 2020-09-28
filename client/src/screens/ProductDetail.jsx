@@ -34,14 +34,32 @@ const ProductDetailContainer = styled.div`
   box-shadow: 0px 3px 6px #00000029;
 `;
 
-const ImageContainer = styled.img`
+const ImageContainer = styled.div`
+  display: flex;
+  flex-flow: column;
+  margin-left: 100px;
+`;
+
+const CoverPhoto = styled.img`
   display: flex;
   height: 251px;
   width: 251px;
-  margin-top: 77px;
-  margin-left: 123px;
+  margin: 77px auto;
   border-radius: 15%;
   border: 1px solid #707070;
+`;
+
+const ThumbnailContainer = styled.div`
+  align-items: top;
+  justify-content: center;
+`
+
+const Thumbnails = styled.img`
+  height: 92px;
+  width: 105px;
+  border-radius: 15%;
+  border: 1px solid #707070;
+  margin: 0px 15px;
 `;
 
 const ProductInfo = styled.div`
@@ -128,7 +146,7 @@ const ProductDetail = (props) => {
     const fetchProduct = async () => {
       const product = await getProduct(id);
       setProduct(product);
-      setActiveImage(product.imgURL)
+      setActiveImage(product.imgURL);
     };
     fetchProduct();
   }, [id]);
@@ -139,7 +157,6 @@ const ProductDetail = (props) => {
     setIsDeleted(deleted);
   };
 
-  
   if (isDeleted) {
     return <Redirect to="/products" />;
   }
@@ -152,7 +169,17 @@ const ProductDetail = (props) => {
         </BackButton>
       </BackDiv>
       <ProductDetailContainer>
-        <ImageContainer src={product.imgURL} alt={product.product} />
+        <ImageContainer>
+          <div>
+            <CoverPhoto src={activeImage} alt={product.product} />
+          </div>
+          <ThumbnailContainer>
+            <Thumbnails src={product.imgURL} alt={product.product} onClick={(e) => setActiveImage(e.target.src)} />
+            <Thumbnails src={product.imgURL2} alt={product.product} onClick={(e) => setActiveImage(e.target.src)}/>
+            <Thumbnails src={product.imgURL3} alt={product.product} onClick={(e) => setActiveImage(e.target.src)}/>
+            <Thumbnails src={product.imgURL4} alt={product.product} onClick={(e) => setActiveImage(e.target.src)}/>
+          </ThumbnailContainer>
+        </ImageContainer>
         <ProductInfo>
           <ProductName>{product.product}</ProductName>
           <ProductPrice>{`${product.price}`}</ProductPrice>
