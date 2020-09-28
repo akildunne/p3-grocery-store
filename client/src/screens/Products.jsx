@@ -36,19 +36,49 @@ const FlexDiv = styled.div`
   align-items: center;
   margin: 100px;
   padding: 30px;
-`
-
+`;
 
 const Products = (props) => {
   const [allProducts, setAllProducts] = useState([]);
+  const [queriedProducts, setQueriedProducts] = useState([]);
+  const [sortType, setSortType] = useState([]);
 
   useEffect(() => {
     const fetchProducts = async () => {
       const products = await getProducts();
       setAllProducts(products);
+      setQueriedProducts(products);
     };
     fetchProducts();
   }, []);
+
+  const handleSort = (type) => {
+    setSortType(type);
+    switch (type) {
+      case "name-ascending":
+        setQueriedProducts(AZ(queriedProducts));
+        break;
+      case "name-descending":
+        setQueriedProducts(ZA(queriedProducts));
+        break;
+      case "price-ascending":
+        setQueriedProducts(lowestFirst(queriedProducts));
+        break;
+      case "price-descending":
+        setQueriedProducts(highestFirst(queriedProducts));
+        break;
+      default:
+        break;
+    }
+  };
+  const handleSearch = (event) => {
+    const newQueriedProducts = allProducts.filter((product) =>
+      product.name.toLowerCase().includes(event.target.value.toLowerCase())
+    );
+    setQueriedProducts(newQueriedProducts, () => handleSort(sortType));
+  };
+
+  const handleSubmit = (event) => event.preventDefault();
 
   const productJSX = allProducts.map((product, index) => (
     <ProductCard
@@ -69,8 +99,8 @@ const Products = (props) => {
         </BackButton>
       </BackDiv>
       <FlexDiv>
-        <Search />
-        <Sort />
+        <Search onSubmit={handleSubmit} onChange={handleSearch} />
+        <Sort onSubmit={handleSubmit} onChange={handleSort} />
       </FlexDiv>
       <CardContainer>{productJSX}</CardContainer>
     </Layout>
