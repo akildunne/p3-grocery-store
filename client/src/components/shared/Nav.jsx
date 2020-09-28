@@ -1,57 +1,57 @@
 import React from 'react';
 import DTPantryLogo from '../assets/DTPantryLogo.png'
-
+import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 
-
+const NavBar = styled.nav`
+display: flex;
+align-items: center;
+height: 87px;
+background: #40A48B;
+border-bottom: 5px solid #707070;
+color: white;
+fontSize: 22px;
+`
+const Div = styled.div`
+  background: #2EAF56;
+  width: 320px;
+  height: 90px;
+`
+const Ul = styled.ul`
+  display: flex;
+  list-style: none;
+  font-size: 20px;
+`
+const Img = styled.img`
+  width: 130px;
+  height: 60px;
+  padding: 15px;
+`
+const Li = styled.li`
+  fontSize: 30px;
+  margin: 0px 20px;
+  textDecoration: none;
+  color: white;
+  align-content: left;
+`
+const H4 = styled.h4`
+  
+`
 const Nav = () => {
-  const nav = {
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    alignItems: 'center',
-    height: '87px',
-    background: '#40A48B',
-    border: '1px solid #707070',
-    color: 'white',
-  }
-
-  const div = {
-    background: '#2EAF56',
-    width: "320px",
-    height: "90px",
-  }
-
-  const ul = {
-    display: 'flex',
-    listStyle: 'none',
-    fontSize: '20px',
-  }
-
-  const img = {  
-    width: "130px",
-    height: "60px",
-    padding: "15px",
-  }
-
-  const li = {
-    fontSize: '20px',
-    margin: '0px 10px',
-    textDecoration: 'none',
-    color: 'white'
-  }
   
   return (
-    <nav style={nav}>
-      <div style={div}>
-        <Link to='/'><img style={img} src={DTPantryLogo} alt="DT Pantry Logo"/></Link>
-      </div>     
-      <ul style={ul}>
-        <Link style={li} to='/products'><li>PRODUCTS</li></Link>
-        <Link style={li} to='/add'><li>ADMIN</li></Link>        
-      </ul>
-      <h4>"Gobble up groceries to your heart's content!"</h4>
-    </nav>
+    <NavBar>
+      <Div>
+        <Link to='/'><Img src={DTPantryLogo} alt="D.T.'S Pantry Logo"/></Link>
+      </Div>     
+      <Ul>
+        <Link to='/products'><Li>PRODUCTS</Li></Link>
+        <Link to='/add'><Li>ADMIN</Li></Link>        
+      </Ul>
+      <div>
+      <H4>"Gobble up groceries to your heart's content!"</H4>
+      </div>
+    </NavBar>
   );
 };
 

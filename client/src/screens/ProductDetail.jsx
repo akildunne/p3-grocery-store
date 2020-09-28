@@ -111,9 +111,13 @@ const DeleteButton = styled.button`
 
 const ProductDetail = (props) => {
   const [isDeleted, setIsDeleted] = useState(false);
+  const [activeImage, setActiveImage] = useState("");
   const [product, setProduct] = useState({
     product: "",
     imgURL: "",
+    imgURL2: "",
+    imgURL3: "",
+    imgURL4: "",
     description: "",
     price: "",
   });
@@ -124,6 +128,7 @@ const ProductDetail = (props) => {
     const fetchProduct = async () => {
       const product = await getProduct(id);
       setProduct(product);
+      setActiveImage(product.imgURL)
     };
     fetchProduct();
   }, [id]);
@@ -134,6 +139,7 @@ const ProductDetail = (props) => {
     setIsDeleted(deleted);
   };
 
+  
   if (isDeleted) {
     return <Redirect to="/products" />;
   }
