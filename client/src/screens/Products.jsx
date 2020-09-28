@@ -33,8 +33,11 @@ const CardContainer = styled.div`
 
 const FlexDiv = styled.div`
   display: flex;
+  align-items: center;
   margin: 100px;
-`;
+  padding: 30px;
+`
+
 
 const Products = (props) => {
   const [allProducts, setAllProducts] = useState([]);
