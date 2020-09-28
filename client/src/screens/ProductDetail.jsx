@@ -4,21 +4,109 @@ import { useParams, Link, Redirect } from "react-router-dom";
 import { getProduct, deleteProduct } from "../services/products";
 import styled from "styled-components";
 
+const BackDiv = styled.div`
+  display: flex;
+  margin: 15px auto;
+  padding-left: 36px;
+`;
+
+const BackButton = styled(Link)`
+  display: flex;
+  text-decoration: none;
+  color: #939191;
+  font-size: 45px;
+  margin: 0;
+
+  :hover {
+    transform: scale(1.1);
+`;
+
 const ProductDetailContainer = styled.div`
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
   background-color: #40a48b;
   width: auto;
   height: 544px;
-  font: medium 22px/30px Futura;
+  font: medium Futura;
+  color: white;
+  box-shadow: 0px 3px 6px #00000029;
 `;
 
 const ImageContainer = styled.img`
+  display: flex;
   height: 251px;
   width: 251px;
+  margin-top: 77px;
   margin-left: 123px;
   border-radius: 15%;
+  border: 1px solid #707070;
+`;
+
+const ProductInfo = styled.div`
+  margin-top: 95px;
+  margin-left: 65px;
+`;
+
+const ProductName = styled.div`
+  display: flex;
+  font-size: 35px;
+  margin: 10px auto;
+`;
+const ProductPrice = styled.div`
+  display: flex;
+  font-size: 25px;
+  margin: 10px auto;
+`;
+
+const ProductDescription = styled.div`
+  display: flex;
+  font-size: 20px;
+  margin: 20px auto;
+`;
+
+const ButtonContainer = styled.div`
+  background-color: white;
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-left: 462px;
+`;
+
+const EditButton = styled.button`
+  text-decoration: none;
+  font-size: 25px;
+  font: medium 25px Futura;
+  color: #ffffff;
+  background-color: #2EAF56;
+  border-radius: 10px;
+  padding: 5px 25px;
+  margin: 20px;
+  border: none;
+  box-shadow: 5px 5px 6px #00000029;
+
+  :hover {
+    transform: scale(1.1);
+`;
+
+const DeleteButton = styled.button`
+  text-decoration: none;
+  font-size: 25px;
+  font: medium 25px Futura;
+  color: #ffffff;
+  opacity: 1;
+  background-color: #2EAF56;
+  border-radius: 10px;
+  padding: 5px 10px;
+  margin: 20px;
+  border: none;
+  box-shadow: 5px 5px 6px #00000029;
+
+  :hover {
+    transform: scale(1.1);
 `;
 
 const ProductDetail = (props) => {
@@ -40,35 +128,37 @@ const ProductDetail = (props) => {
     fetchProduct();
   }, [id]);
 
-
   const productDeleted = async (event) => {
     event.preventDefault();
-      const deleted = await deleteProduct(product._id);
+    const deleted = await deleteProduct(product._id);
     setIsDeleted(deleted);
-    };
+  };
 
   if (isDeleted) {
     return <Redirect to="/products" />;
   }
 
   return (
-    <Layout user={props.user}>
+    <Layout>
+      <BackDiv>
+        <BackButton to="/products">
+          <i className="fas fa-caret-left"></i>
+        </BackButton>
+      </BackDiv>
       <ProductDetailContainer>
         <ImageContainer src={product.imgURL} alt={product.product} />
-        <div className="product">{product.product}</div>
-        <div className="price">{`${product.price}`}</div>
-        <div className="description">{product.description}</div>
-        <div className="button-container">
-          <button className="edit-button">
-            <Link className="edit-link" to={`/products/edit/${product._id}`}>
-              Edit
-            </Link>
-          </button>
-          <button className="delete-button" onClick={productDeleted}>
-            Delete
-          </button>
-        </div>
+        <ProductInfo>
+          <ProductName>{product.product}</ProductName>
+          <ProductPrice>{`${product.price}`}</ProductPrice>
+          <ProductDescription>{product.description}</ProductDescription>
+        </ProductInfo>
       </ProductDetailContainer>
+      <ButtonContainer>
+        <Link to={`/products/edit/${product._id}`}>
+          <EditButton>Edit</EditButton>
+        </Link>
+        <DeleteButton onClick={productDeleted}>Delete</DeleteButton>
+      </ButtonContainer>
     </Layout>
   );
 };
