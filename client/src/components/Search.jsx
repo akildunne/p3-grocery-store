@@ -17,6 +17,7 @@ const Search = (props) => {
         value={props.value}
         onChange={(e) => props.onChange(e)}
         name="Search"
+        placeholder="Search"
         autoFocus
       />
     </form>
