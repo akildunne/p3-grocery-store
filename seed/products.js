@@ -7,7 +7,7 @@ const main = async () => {
   const products = [
     {
       product: "Banana ",
-      imgURL: "https://bit.ly/32FdRU2",
+      imgURL: "https://upload.wikimedia.org/wikipedia/commons/thumb/440px-Banana-Single.jpg",
       imgURL2: "",
       imgURL3: "",
       imgURL4: "",
