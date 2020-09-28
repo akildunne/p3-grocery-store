@@ -1,9 +1,25 @@
 import React, { useState } from "react";
 import Layout from "../components/shared/Layout";
-import { Redirect } from "react-router-dom";
+import { Redirect, Link } from "react-router-dom";
 import { createProduct } from "../services/products";
-
 import styled from "styled-components";
+
+const BackDiv = styled.div`
+  display: flex;
+  margin: 15px auto;
+  padding-left: 36px;
+`;
+
+const BackButton = styled(Link)`
+  display: flex;
+  text-decoration: none;
+  color: #939191;
+  font-size: 45px;
+  margin: 0;
+
+  :hover {
+    transform: scale(1.1);
+`;
 
 const DetailContainer = styled.div`
   display: flex;
@@ -60,7 +76,7 @@ const Button = styled.button`
   grid-column: 1/-1;
   width: 300px;
   margin: 20px auto;
-  margin-top: 20px;
+  margin-top: 50px;
   margin-left: 45%;
   padding: 15px;
   cursor: pointer;
@@ -103,6 +119,11 @@ const ProductCreate = () => {
 
   return (
     <Layout>
+      <BackDiv>
+        <BackButton to="/">
+          <i className="fas fa-caret-left"></i>
+        </BackButton>
+      </BackDiv>
       <DetailContainer>
         <Form onSubmit={handleSubmit}>
           <LabelContainer>Product Name:</LabelContainer>
@@ -146,7 +167,7 @@ const ProductCreate = () => {
             name="imgURL2"
             required
             onChange={handleChange}
-          />  
+          />
           <LabelContainer>Image Link 3:</LabelContainer>
           <InputContainer
             type="text"
@@ -154,7 +175,7 @@ const ProductCreate = () => {
             name="imgURL3"
             required
             onChange={handleChange}
-          />   
+          />
           <LabelContainer>Image Link 4:</LabelContainer>
           <InputContainer
             type="text"
@@ -162,7 +183,7 @@ const ProductCreate = () => {
             name="imgURL4"
             required
             onChange={handleChange}
-          />          
+          />
           <Button>Add Product</Button>
         </Form>
       </DetailContainer>

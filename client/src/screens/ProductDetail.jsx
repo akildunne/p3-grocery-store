@@ -37,14 +37,14 @@ const ProductDetailContainer = styled.div`
 const ImageContainer = styled.div`
   display: flex;
   flex-flow: column;
-  margin-left: 100px;
+  margin-left: 50px;
 `;
 
 const CoverPhoto = styled.img`
   display: flex;
   height: 251px;
   width: 251px;
-  margin: 77px auto;
+  margin: 77px auto 25px;
   border-radius: 15%;
   border: 1px solid #707070;
 `;
@@ -64,7 +64,7 @@ const Thumbnails = styled.img`
 
 const ProductInfo = styled.div`
   margin-top: 95px;
-  margin-left: 65px;
+  margin-left: 45px;
 `;
 
 const ProductName = styled.div`
@@ -91,7 +91,7 @@ const ButtonContainer = styled.div`
   flex-direction: row;
   justify-content: flex-start;
   align-items: flex-start;
-  margin-left: 462px;
+  margin-left: 602px;
 `;
 
 const EditButton = styled.button`
@@ -102,7 +102,7 @@ const EditButton = styled.button`
   background-color: #2EAF56;
   border-radius: 10px;
   padding: 5px 25px;
-  margin: 20px;
+  margin: 20px 30px;
   border: none;
   box-shadow: 5px 5px 6px #00000029;
   cursor: pointer;
@@ -120,7 +120,7 @@ const DeleteButton = styled.button`
   background-color: #2EAF56;
   border-radius: 10px;
   padding: 5px 10px;
-  margin: 20px;
+  margin: 20px 30px;
   border: none;
   box-shadow: 5px 5px 6px #00000029;
   cursor: pointer;

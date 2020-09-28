@@ -28,15 +28,17 @@ const BackButton = styled(Link)`
 const CardContainer = styled.div`
   display: flex;
   flex-flow: row wrap;
-  margin: 50px 200px;
-  justify-content: end;
+  justify-content: center;
+  margin: 50px 50px;
+  // justify-content: end;
 `;
 
-const FlexDiv = styled.div`
+const SearchDiv = styled.div`
   display: flex;
   align-items: center;
-  margin: 100px;
-  padding: 30px;
+  justify-content: center;
+  margin: 0px 30px;
+  padding: 15px 30px;
 `;
 
 const Products = (props) => {
@@ -101,10 +103,10 @@ const Products = (props) => {
           <i className="fas fa-caret-left"></i>
         </BackButton>
       </BackDiv>
-      <FlexDiv>
+      <SearchDiv>
         <Search onSubmit={handleSubmit} onChange={handleSearch} />
         <Sort onSubmit={handleSubmit} onChange={handleSort} /> 
-      </FlexDiv>
+      </SearchDiv>
       <CardContainer>{productJSX}</CardContainer>
     </Layout>
   );

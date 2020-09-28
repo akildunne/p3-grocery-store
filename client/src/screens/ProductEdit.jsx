@@ -1,8 +1,25 @@
 import React, { useState, useEffect } from "react";
-import { useParams, Redirect } from "react-router-dom";
+import { useParams, Redirect, Link } from "react-router-dom";
 import Layout from "../components/shared/Layout";
 import { getProduct, updateProduct } from "../services/products";
 import styled from "styled-components";
+
+const BackDiv = styled.div`
+  display: flex;
+  margin: 15px auto;
+  padding-left: 36px;
+`;
+
+const BackButton = styled(Link)`
+  display: flex;
+  text-decoration: none;
+  color: #939191;
+  font-size: 45px;
+  margin: 0;
+
+  :hover {
+    transform: scale(1.1);
+`;
 
 const DetailContainer = styled.div`
   display: flex;
@@ -59,7 +76,7 @@ const Button = styled.button`
   grid-column: 1/-1;
   width: 300px;
   margin: 20px auto;
-  margin-top: 20px;
+  margin-top: 50px;
   margin-left: 45%;
   padding: 15px;
   cursor: pointer;
@@ -109,6 +126,11 @@ const ProductEdit = (props) => {
 
   return (
     <Layout>
+            <BackDiv>
+        <BackButton to={`/products/${product._id}`}>
+          <i className="fas fa-caret-left"></i>
+        </BackButton>
+      </BackDiv>
       <DetailContainer>
         <Form onSubmit={handleSubmit}>
           <LabelContainer>Product Name:</LabelContainer>
