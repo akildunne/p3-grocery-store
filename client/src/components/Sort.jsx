@@ -7,7 +7,7 @@ const Form = styled.form`
   width: 20%;
   height: 35px;
   //  border: 2px solid #707070;
-   border-radius:  10px;
+  border-radius: 10px;
   padding: 40px;
   color: #707070;
 `;
@@ -16,19 +16,17 @@ const Option = styled.option`
 color: #707070;
 padding: 50px;
 text-align; left;
-`
+`;
 
 const Label = styled.label`
-padding: 8px;
-`
+  padding: 8px;
+`;
 const Select = styled.select`
  cursor: pointer;
 padding: 8px;
 :hover 
 text-align; left
 `;
-
-
 
 const Sort = (props) => {
   const handleChange = (event) => {
@@ -51,8 +49,7 @@ const Sort = (props) => {
         <Option value="name-descending">
           &nbsp; Alphabetically, Z-A &nbsp;
         </Option>
-        </Select>
-        
+      </Select>
     </Form>
   );
 };
