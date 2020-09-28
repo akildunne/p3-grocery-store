@@ -109,7 +109,7 @@ const DeleteButton = styled.button`
     transform: scale(1.1);
 `;
 
-const ProductDetail = (props) => {
+const ProductDetail = () => {
   const [isDeleted, setIsDeleted] = useState(false);
   const [activeImage, setActiveImage] = useState("");
   const [product, setProduct] = useState({
