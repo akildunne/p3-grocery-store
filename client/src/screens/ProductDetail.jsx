@@ -53,24 +53,9 @@ const ProductDetail = (props) => {
   }, [id]);
 
 
-  const handleImageClick = (value) => {
-    switch (value) {
-      case ("imgURL"):
-        setActiveImage(product.imgURL)
-        break;
-      case ("imgURL2"):
-        setActiveImage(product.imgURL2)
-        break;
-      case ("imgURL3"):
-        setActiveImage(product.imgURL3)
-        break;
-      case ("imgURL4"):
-        setActiveImage(product.imgURL4)
-        break;
-      default:
-        setActiveImage(product.imgURL)
-    }
-  } 
+  const handleImageClick = (e) => {
+    setActiveImage(e.target.src)
+  }
 
   const productDeleted = async (event) => {
     event.preventDefault();
@@ -89,26 +74,10 @@ const ProductDetail = (props) => {
         <div>
           <div><CoverImage src={activeImage} /></div>                              
           <div>
-            <ThumbnailImage
-              src={product.imgURL}
-              value="imgURL"
-              onClick={() => handleImageClick("imgURL")}
-            />
-            <ThumbnailImage
-              src={product.imgURL2}
-              value="imgURL2"
-              onClick={() => handleImageClick("imgURL2")}
-            />
-            <ThumbnailImage
-              src={product.imgURL3}
-              value="imgURL3"
-              onClick={() => handleImageClick("imgURL3")}
-            />
-            <ThumbnailImage
-              src={product.imgURL4}
-              value="imgURL4"
-              onClick={() => handleImageClick("imgURL4")}
-            />            
+            <ThumbnailImage src={product.imgURL} onClick={handleImageClick} />
+            <ThumbnailImage src={product.imgURL2} onClick={handleImageClick} />
+            <ThumbnailImage src={product.imgURL3} onClick={handleImageClick} />
+            <ThumbnailImage src={product.imgURL4} onClick={handleImageClick} />         
           </div>
         </div>
         <h3>{product.product}</h3>
