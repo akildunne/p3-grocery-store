@@ -78,12 +78,11 @@ const Products = (props) => {
       product.product.toLowerCase().includes(event.target.value.toLowerCase())
     );
      setQueriedProducts(newQueriedProducts, () => handleSort(sortType));
-    // setQueriedProducts(newQueriedProducts);
   };
 
   const handleSubmit = (event) => event.preventDefault();
 
-  const productJSX = allProducts.map((product, index) => (
+  const productJSX = queriedProducts.map((product, index) => (
 
     <ProductCard
       key={index}
