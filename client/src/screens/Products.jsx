@@ -2,21 +2,39 @@ import React, { useEffect, useState } from "react";
 import ProductCard from "../components/ProductCard";
 import Search from "../components/Search";
 import Sort from "../components/Sort";
+import { Link } from "react-router-dom";
 import { getProducts } from "../services/products";
 import Layout from "../components/shared/Layout";
 import styled from "styled-components";
+
+const BackDiv = styled.div`
+  display: flex;
+  margin: 15px auto;
+  padding-left: 36px;
+`;
+
+const BackButton = styled(Link)`
+  display: flex;
+  text-decoration: none;
+  color: #939191;
+  font-size: 45px;
+  margin: 0;
+
+  :hover {
+    transform: scale(1.1);
+`;
 
 const CardContainer = styled.div`
   display: flex;
   flex-flow: row wrap;
   margin: 50px 200px;
   justify-content: end;
-`
+`;
 
 const FlexDiv = styled.div`
   display: flex;
   margin: 100px;
-`
+`;
 
 const Products = (props) => {
   const [allProducts, setAllProducts] = useState([]);
@@ -41,9 +59,14 @@ const Products = (props) => {
   ));
 
   return (
-    <Layout user={props.user}>
+    <Layout>
+      <BackDiv>
+        <BackButton to="/">
+          <i className="fas fa-caret-left"></i>
+        </BackButton>
+      </BackDiv>
       <FlexDiv>
-      <Search />
+        <Search />
         <Sort />
       </FlexDiv>
       <CardContainer>{productJSX}</CardContainer>
