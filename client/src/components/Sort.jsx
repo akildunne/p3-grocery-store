@@ -30,7 +30,7 @@ text-align; left
 
 const Sort = (props) => {
   const handleChange = (event) => {
-    props.onChange(event.target.value);
+    props.onChange(event.target.value)
   };
 
   return (
