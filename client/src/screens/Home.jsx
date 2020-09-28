@@ -13,7 +13,7 @@ const CoverPhoto = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: url(https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80);
+  background: url(https://i.imgur.com/G85wd6P.png);
   background-repeat: no-repeat;
   background-size: cover;
   height: 750px;

@@ -4,29 +4,110 @@ import { useParams, Link, Redirect } from "react-router-dom";
 import { getProduct, deleteProduct } from "../services/products";
 import styled from "styled-components";
 
+const BackDiv = styled.div`
+  display: flex;
+  margin: 15px auto;
+  padding-left: 36px;
+`;
+
+const BackButton = styled(Link)`
+  display: flex;
+  text-decoration: none;
+  color: #939191;
+  font-size: 45px;
+  margin: 0;
+
+  :hover {
+    transform: scale(1.1);
+`;
+
 const ProductDetailContainer = styled.div`
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
   background-color: #40a48b;
   width: auto;
   height: 544px;
-  font: medium 22px/30px Futura;
-`
+  font: medium Futura;
+  color: white;
+  box-shadow: 0px 3px 6px #00000029;
+`;
 
-const CoverImage = styled.img`
+const ImageContainer = styled.img`
+  display: flex;
   height: 251px;
   width: 251px;
+  margin-top: 77px;
   margin-left: 123px;
   border-radius: 15%;
-`
+  border: 1px solid #707070;
+`;
 
-const ThumbnailImage = styled.img`
-  height: 50px;
-  width: 50px;
-  margin-left: 123px;
-  border-radius: 15%;
-`
+const ProductInfo = styled.div`
+  margin-top: 95px;
+  margin-left: 65px;
+`;
+
+const ProductName = styled.div`
+  display: flex;
+  font-size: 35px;
+  margin: 10px auto;
+`;
+const ProductPrice = styled.div`
+  display: flex;
+  font-size: 25px;
+  margin: 10px auto;
+`;
+
+const ProductDescription = styled.div`
+  display: flex;
+  font-size: 20px;
+  margin: 20px auto;
+`;
+
+const ButtonContainer = styled.div`
+  background-color: white;
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-left: 462px;
+`;
+
+const EditButton = styled.button`
+  text-decoration: none;
+  font-size: 25px;
+  font: medium 25px Futura;
+  color: #ffffff;
+  background-color: #2EAF56;
+  border-radius: 10px;
+  padding: 5px 25px;
+  margin: 20px;
+  border: none;
+  box-shadow: 5px 5px 6px #00000029;
+
+  :hover {
+    transform: scale(1.1);
+`;
+
+const DeleteButton = styled.button`
+  text-decoration: none;
+  font-size: 25px;
+  font: medium 25px Futura;
+  color: #ffffff;
+  opacity: 1;
+  background-color: #2EAF56;
+  border-radius: 10px;
+  padding: 5px 10px;
+  margin: 20px;
+  border: none;
+  box-shadow: 5px 5px 6px #00000029;
+
+  :hover {
+    transform: scale(1.1);
+`;
 
 const ProductDetail = (props) => {
   const [isDeleted, setIsDeleted] = useState(false);
@@ -52,31 +133,11 @@ const ProductDetail = (props) => {
     fetchProduct();
   }, [id]);
 
-
-  const handleImageClick = (value) => {
-    switch (value) {
-      case ("imgURL"):
-        setActiveImage(product.imgURL)
-        break;
-      case ("imgURL2"):
-        setActiveImage(product.imgURL2)
-        break;
-      case ("imgURL3"):
-        setActiveImage(product.imgURL3)
-        break;
-      case ("imgURL4"):
-        setActiveImage(product.imgURL4)
-        break;
-      default:
-        setActiveImage(product.imgURL)
-    }
-  } 
-
   const productDeleted = async (event) => {
     event.preventDefault();
-      const deleted = await deleteProduct(product._id);
+    const deleted = await deleteProduct(product._id);
     setIsDeleted(deleted);
-    };
+  };
 
   
   if (isDeleted) {
@@ -84,41 +145,26 @@ const ProductDetail = (props) => {
   }
 
   return (
-    <Layout user={props.user}>
+    <Layout>
+      <BackDiv>
+        <BackButton to="/products">
+          <i className="fas fa-caret-left"></i>
+        </BackButton>
+      </BackDiv>
       <ProductDetailContainer>
-        <div>
-          <div><CoverImage src={activeImage} /></div>                              
-          <div>
-            <ThumbnailImage
-              src={product.imgURL}
-              value="imgURL"
-              onClick={() => handleImageClick("imgURL")}
-            />
-            <ThumbnailImage
-              src={product.imgURL2}
-              value="imgURL2"
-              onClick={() => handleImageClick("imgURL2")}
-            />
-            <ThumbnailImage
-              src={product.imgURL3}
-              value="imgURL3"
-              onClick={() => handleImageClick("imgURL3")}
-            />
-            <ThumbnailImage
-              src={product.imgURL4}
-              value="imgURL4"
-              onClick={() => handleImageClick("imgURL4")}
-            />            
-          </div>
-        </div>
-        <h3>{product.product}</h3>
-        <p>${product.price}</p>
-        <p>{product.description}</p>
-        <div>
-          <Link to={`/products/edit/${product._id}`}><button>Edit</button></Link>        
-          <button onClick={productDeleted}>Delete</button>        
-        </div>
+        <ImageContainer src={product.imgURL} alt={product.product} />
+        <ProductInfo>
+          <ProductName>{product.product}</ProductName>
+          <ProductPrice>{`${product.price}`}</ProductPrice>
+          <ProductDescription>{product.description}</ProductDescription>
+        </ProductInfo>
       </ProductDetailContainer>
+      <ButtonContainer>
+        <Link to={`/products/edit/${product._id}`}>
+          <EditButton>Edit</EditButton>
+        </Link>
+        <DeleteButton onClick={productDeleted}>Delete</DeleteButton>
+      </ButtonContainer>
     </Layout>
   );
 };
