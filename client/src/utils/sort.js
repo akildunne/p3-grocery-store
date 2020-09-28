@@ -10,5 +10,5 @@ const compareKey = key =>
   }
 export const AZ = arr => arr.sort(compareKey('product'))
 export const ZA = arr => arr.sort(compareKey('product')).reverse()
-export const lowestFirst = arr => arr.sort((a, b) => parseInt(a.price) - parseInt(b.price))
-export const highestFirst = arr => arr.sort((a, b) => parseInt(b.price) - parseInt(a.price))
+export const lowestFirst = arr => arr.sort((a, b) => parseFloat(a.price) - parseFloat(b.price))
+export const highestFirst = arr => arr.sort((a, b) => parseFloat(b.price) - parseFloat(a.price))

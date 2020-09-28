@@ -87,6 +87,7 @@ const EditButton = styled.button`
   margin: 20px;
   border: none;
   box-shadow: 5px 5px 6px #00000029;
+  cursor: pointer;
 
   :hover {
     transform: scale(1.1);
@@ -104,6 +105,7 @@ const DeleteButton = styled.button`
   margin: 20px;
   border: none;
   box-shadow: 5px 5px 6px #00000029;
+  cursor: pointer;
 
   :hover {
     transform: scale(1.1);
@@ -155,7 +157,7 @@ const ProductDetail = () => {
         <ImageContainer src={product.imgURL} alt={product.product} />
         <ProductInfo>
           <ProductName>{product.product}</ProductName>
-          <ProductPrice>{`${product.price}`}</ProductPrice>
+          <ProductPrice>${product.price}</ProductPrice>
           <ProductDescription>{product.description}</ProductDescription>
         </ProductInfo>
       </ProductDetailContainer>
