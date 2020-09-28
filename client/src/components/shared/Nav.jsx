@@ -1,56 +1,73 @@
 import React from 'react';
 import DTPantryLogo from '../assets/DTPantryLogo.png'
-
+import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 
+const NavBar = styled.nav`
+  display: flex;
+  height: 90px;
+  background: #40A48B;
+  border: 1px solid #707070;
+  color: white;
+  font-size: 22px;
+`
 
-const Nav = () => {
-  const nav = {
-    display: 'flex',
-    justifyContent: 'space-around',
-    alignItems: 'center',
-    height: '87px',
-    background: '#40A48B',
-    border: '1px solid #707070',
-    color: 'white',
-  }
+const LogoContainer = styled.div`
+  background: #2EAF56;
+  width: 320px;
+  border: 1px solid #707070;
+`
 
-  const div = {
-    background: '#2EAF56',
-    width: "320px",
-    height: "90px",
-  }
+const Img = styled.img`
+  width: 130px;
+  height: 60px;
+  padding: 15px;
+`
 
-  const ul = {
-    display: 'flex',
-    listStyle: 'none',
-    fontSize: '20px',
-  }
+const NavOptionContainers = styled.div`
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+`
 
-  const img = {  
-    width: "130px",
-    height: "60px",
-    padding: "15px",
-  }
+const NavItemsContainer = styled.div`
+  display: flex;
+`
 
-  const li = {
-    fontSize: '20px',
-    margin: '0px 10px',
-    textDecoration: 'none',
-    color: 'white'
-  }
-  
+const NavOptions = styled.p`
+  font-size: 24px;
+  margin: 0px 50px;
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+`
+
+const MottoContainer = styled.div`
+  text-align: right;
+  flex-grow: 1;
+  margin: auto 50px;
+`
+
+const MottoText = styled.h4`
+  font-weight: 300;
+`
+
+const Nav = () => {  
   return (
-    <nav style={nav}>
-      <div style={div}>
-        <Link to='/'><img style={img} src={DTPantryLogo} alt="DT Pantry Logo"/></Link>
-      </div>     
-      <ul style={ul}>
-        <Link style={li} to='/products'><li>PRODUCTS</li></Link>
-        <Link style={li} to='/add'><li>ADMIN</li></Link>        
-      </ul>
-      <h4>"Gobble up groceries to your heart's content!"</h4>
-    </nav>
+    <NavBar>
+      <LogoContainer>
+        <Link to='/'><Img src={DTPantryLogo} alt="D.T.'S Pantry Logo"/></Link>
+      </LogoContainer>     
+      <NavOptionContainers>
+        <NavItemsContainer>
+          <Link to='/products'><NavOptions>PRODUCTS</NavOptions></Link>
+          <Link to='/add'><NavOptions>ADMIN</NavOptions></Link>          
+        </NavItemsContainer> 
+        <MottoContainer>
+          <MottoText>"Gobble up groceries to your heart's content!"</MottoText>
+        </MottoContainer>        
+      </NavOptionContainers>
+   </NavBar>
   );
 };
 

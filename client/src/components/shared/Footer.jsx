@@ -6,31 +6,32 @@ const Logo = styled.img`
   height: 136px;
   width: 286px;
 `
-const ul = {
-    display: 'flex',
-    flexDirection: 'row',
-    height: '190px',
-    justifyContent: 'space-around',
-    alignItems: 'center',
-    background: '#564946',
-    border: '1px solid ##707070',
-    color: 'white',
-}
-
-const li = {
-    listStyle: 'none',
-    fontSize: '20px',
-}
-
+const Ul = styled.ul`
+    display: grid;
+    grid-template-columns: 20% 20% 30% 15% 15%;
+    height: 190px;
+    justify-content: space-between;
+    align-items: center;
+    background: #564946;
+    border: 1px solid ##707070;
+    color: white;
+    padding: 0px 100px;
+`
+const Li = styled.li`
+    list-style: none;
+    font-size: 20px;
+    text-align: left;
+    padding: 20px;
+`
 const Footer = () => 
     <footer>
-        <ul style={ul}>
-            <li style={li}>D.T.'S Pantry 4545 Gravy Dr. Boston, MA 02101</li>
-            <li style={li}>Customer Support (617) 898-2525</li>
-            <li style={li}><Logo src={DTPantryLogo} alt="DT Pantry Logo" /></li>
-            <li style={li}>Hours M-F 8AM-9PM S&S:10AM-6PM</li>
-            <li style={li}>Copyright 2020</li>
-        </ul>
+        <Ul>
+            <Li>D.T.'S Pantry <br/> 4545 Gravy Dr. <br/> Boston, MA 02101</Li>
+            <Li>Customer Support <br/> (617) 898-2525</Li>
+            <Li><Logo src={DTPantryLogo} alt="DT Pantry Logo" /></Li>
+            <Li>Hours <br/> M-F: 8AM-9PM <br/> <br/> S&S: 10AM-6PM</Li>
+            <Li>Copyright <br/>2020</Li>
+        </Ul>
     </footer>
 
 export default Footer;

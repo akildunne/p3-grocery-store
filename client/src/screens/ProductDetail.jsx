@@ -34,14 +34,32 @@ const ProductDetailContainer = styled.div`
   box-shadow: 0px 3px 6px #00000029;
 `;
 
-const ImageContainer = styled.img`
+const ImageContainer = styled.div`
+  display: flex;
+  flex-flow: column;
+  margin-left: 100px;
+`;
+
+const CoverPhoto = styled.img`
   display: flex;
   height: 251px;
   width: 251px;
-  margin-top: 77px;
-  margin-left: 123px;
+  margin: 77px auto;
   border-radius: 15%;
   border: 1px solid #707070;
+`;
+
+const ThumbnailContainer = styled.div`
+  align-items: top;
+  justify-content: center;
+`
+
+const Thumbnails = styled.img`
+  height: 92px;
+  width: 105px;
+  border-radius: 15%;
+  border: 1px solid #707070;
+  margin: 0px 15px;
 `;
 
 const ProductInfo = styled.div`
@@ -87,6 +105,7 @@ const EditButton = styled.button`
   margin: 20px;
   border: none;
   box-shadow: 5px 5px 6px #00000029;
+  cursor: pointer;
 
   :hover {
     transform: scale(1.1);
@@ -104,16 +123,21 @@ const DeleteButton = styled.button`
   margin: 20px;
   border: none;
   box-shadow: 5px 5px 6px #00000029;
+  cursor: pointer;
 
   :hover {
     transform: scale(1.1);
 `;
 
-const ProductDetail = (props) => {
+const ProductDetail = () => {
   const [isDeleted, setIsDeleted] = useState(false);
+  const [activeImage, setActiveImage] = useState("");
   const [product, setProduct] = useState({
     product: "",
     imgURL: "",
+    imgURL2: "",
+    imgURL3: "",
+    imgURL4: "",
     description: "",
     price: "",
   });
@@ -124,6 +148,7 @@ const ProductDetail = (props) => {
     const fetchProduct = async () => {
       const product = await getProduct(id);
       setProduct(product);
+      setActiveImage(product.imgURL);
     };
     fetchProduct();
   }, [id]);
@@ -146,10 +171,20 @@ const ProductDetail = (props) => {
         </BackButton>
       </BackDiv>
       <ProductDetailContainer>
-        <ImageContainer src={product.imgURL} alt={product.product} />
+        <ImageContainer>
+          <div>
+            <CoverPhoto src={activeImage} alt={product.product} />
+          </div>
+          <ThumbnailContainer>
+            <Thumbnails src={product.imgURL} alt={product.product} onClick={(e) => setActiveImage(e.target.src)} />
+            <Thumbnails src={product.imgURL2} alt={product.product} onClick={(e) => setActiveImage(e.target.src)}/>
+            <Thumbnails src={product.imgURL3} alt={product.product} onClick={(e) => setActiveImage(e.target.src)}/>
+            <Thumbnails src={product.imgURL4} alt={product.product} onClick={(e) => setActiveImage(e.target.src)}/>
+          </ThumbnailContainer>
+        </ImageContainer>
         <ProductInfo>
           <ProductName>{product.product}</ProductName>
-          <ProductPrice>{`${product.price}`}</ProductPrice>
+          <ProductPrice>${product.price}</ProductPrice>
           <ProductDescription>{product.description}</ProductDescription>
         </ProductInfo>
       </ProductDetailContainer>
