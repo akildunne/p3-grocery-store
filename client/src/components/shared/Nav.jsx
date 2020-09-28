@@ -55,8 +55,7 @@ const MottoText = styled.h4`
 `
 
 
-const Nav = () => {
-  
+const Nav = () => {  
   return (
     <NavBar>
       <LogoContainer>
@@ -71,10 +70,7 @@ const Nav = () => {
           <MottoText>"Gobble up groceries to your heart's content!"</MottoText>
         </MottoContainer>        
       </NavOptionContainers>
-     
-        
-      
-    </NavBar>
+   </NavBar>
   );
 };
 
