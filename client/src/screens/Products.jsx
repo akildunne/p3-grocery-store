@@ -116,7 +116,7 @@ const Products = (props) => {
         <Search onSubmit={handleSubmit} onChange={handleSearch} />
         <Sort onSubmit={handleSubmit} onChange={handleSort} /> 
       </SearchDiv>
-      <CardContainer>{loading ? productJSX : <Spinner>Please wait, stocking shelves...<ReactBootStrap.Spinner animation="border" variant="success"/></Spinner>}
+      <CardContainer>{loading ? productJSX : <Spinner>Please wait, stocking shelves...  <ReactBootStrap.Spinner animation="border" variant="success"/></Spinner>}
       </CardContainer>
     </Layout>
   );
