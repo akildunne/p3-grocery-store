@@ -144,6 +144,11 @@ const ProductDetail = () => {
     description: "",
     price: "",
   });
+  const [review, setReview] = useState({
+    author: '',
+    rating: '',
+    description: ''
+})
 
   const { id } = useParams();
 
@@ -212,7 +217,8 @@ const ProductDetail = () => {
         <ProductInfo>
           <ProductName>{product.product}</ProductName>
           <ProductPrice>${product.price}</ProductPrice>
-          <ProductDescription>{product.description}</ProductDescription>
+          <ProductDescription>{product.description}
+          </ProductDescription>
         </ProductInfo>
       </ProductDetailContainer>
       <ButtonContainer>

@@ -13,6 +13,11 @@ const main = async () => {
       imgURL4: "https://images.carriercms.com/image/upload/w_700,h_400,c_fill,g_center,q_auto,f_auto/v1543516192/carrier/carrier-global/food/bananas.jpg",
       description: " Best bananas",
       price: "0.75/lb",
+      reviews: [{
+        author: "",
+        rating: "",
+        description: ""
+      }]
     },
     {
       product: "Pink Lady Apple",
@@ -22,6 +27,11 @@ const main = async () => {
       imgURL4: "https://assets.bonappetit.com/photos/5d8b8a6888c1eb00087ac41a/1:1/w_1024%2Cc_limit/Basically-Apples.jpg",
       description: " An apple a day keeps the doctor away ",
       price: "1.00/lb",
+      reviews: [{
+        author: "",
+        rating: "",
+        description: ""
+      }]
     },
     {
       product: "Avocado",
@@ -31,6 +41,11 @@ const main = async () => {
       imgURL4: "https://www.jessicagavin.com/wp-content/uploads/2019/04/avocados-3.jpg",
       description: " Yummy ",
       price: "1.00/lb",
+      reviews: [{
+        author: "",
+        rating: "",
+        description: ""
+      }]
     },
     {
       product: "Cream Cheese",
@@ -40,6 +55,11 @@ const main = async () => {
       imgURL4: "https://d2lnr5mha7bycj.cloudfront.net/product-image/file/large_cf0c6ad9-9b84-4430-a8b5-0f649c684533.jpg",
       description: " Best cheese out there ",
       price: "2.00",
+      reviews: [{
+        author: "",
+        rating: "",
+        description: ""
+      }]
     },
     {
       product: "White Chocolate ",
@@ -49,6 +69,11 @@ const main = async () => {
       imgURL4: "https://www.ghirardelli.com/wcsstore/GhirardelliCatalogAssetStore/Attachment/Secondary/61829_ingredients.png",
       description: "Sweet delight",
       price: "3.50/lb",
+      reviews: [{
+        author: "",
+        rating: "",
+        description: ""
+      }]
     },
     {
       product: "Graham Crackers ",
@@ -58,6 +83,11 @@ const main = async () => {
       imgURL4: "https://d2lnr5mha7bycj.cloudfront.net/product-image/file/large_59698f91-f9d9-449a-a60d-cae20e7be052.jpg",
       description: "Yummy Crackers",
       price: "4.00",
+      reviews: [{
+        author: "",
+        rating: "",
+        description: ""
+      }]
     },
 
     {
@@ -69,6 +99,11 @@ const main = async () => {
       description:
         "It's official! Hot dogs are sandwiches. And they are a staple for your summer BBQ festivities.",
       price: "5.00",
+      reviews: [{
+        author: "",
+        rating: "",
+        description: ""
+      }]
     },
     {
       product: "Ketchup",
@@ -78,6 +113,11 @@ const main = async () => {
       imgURL4: "https://d2lnr5mha7bycj.cloudfront.net/product-image/file/large_60b7ff32-814c-41a0-a962-4d2c87fa9cba.jpg",
       description: "Who doesn't love ketchup? ",
       price: "5.00",
+      reviews: [{
+        author: "",
+        rating: "",
+        description: ""
+      }]
     },
     {
       product: "Rasberries ",
@@ -87,6 +127,11 @@ const main = async () => {
       imgURL4: "https://d2d8wwwkmhfcva.cloudfront.net/310x/filters:fill(FFF,true):format(jpg)/d2lnr5mha7bycj.cloudfront.net/product-image/file/large_e1a8c469-3d6a-47c0-9b8e-6fe3f88cc852.jpg",
       description: "Yummy in my tummy",
       price: "5.50",
+      reviews: [{
+        author: "",
+        rating: "",
+        description: ""
+      }]
     },
     {
       product: "Whole Milk ",
@@ -96,6 +141,11 @@ const main = async () => {
       imgURL4: "https://d2lnr5mha7bycj.cloudfront.net/product-image/file/large_3946aa41-3c56-46ab-870c-1e318fa1e1cf.jpg",
       description: "Calcium",
       price: "6.50",
+      reviews: [{
+        author: "",
+        rating: "",
+        description: ""
+      }]
     },
   ];
 
