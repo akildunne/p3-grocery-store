@@ -52,7 +52,7 @@ const CoverPhoto = styled.img`
 const ThumbnailContainer = styled.div`
   align-items: top;
   justify-content: center;
-`
+`;
 
 const Thumbnails = styled.img`
   height: 92px;
@@ -156,8 +156,16 @@ const ProductDetail = () => {
     fetchProduct();
   }, [id]);
 
+  const deleteConfirmation = () => {
+    let r = window.confirm("Are you sure you want to delete this product?");
+    if (r === true) {
+      productDeleted();
+      alert("Product deleted!!!");
+    } else {
+    }
+  };
+
   const productDeleted = async (event) => {
-    event.preventDefault();
     const deleted = await deleteProduct(product._id);
     setIsDeleted(deleted);
   };
@@ -179,10 +187,26 @@ const ProductDetail = () => {
             <CoverPhoto src={activeImage} alt={product.product} />
           </div>
           <ThumbnailContainer>
-            <Thumbnails src={product.imgURL} alt={product.product} onClick={(e) => setActiveImage(e.target.src)} />
-            <Thumbnails src={product.imgURL2} alt={product.product} onClick={(e) => setActiveImage(e.target.src)}/>
-            <Thumbnails src={product.imgURL3} alt={product.product} onClick={(e) => setActiveImage(e.target.src)}/>
-            <Thumbnails src={product.imgURL4} alt={product.product} onClick={(e) => setActiveImage(e.target.src)}/>
+            <Thumbnails
+              src={product.imgURL}
+              alt={product.product}
+              onClick={(e) => setActiveImage(e.target.src)}
+            />
+            <Thumbnails
+              src={product.imgURL2}
+              alt={product.product}
+              onClick={(e) => setActiveImage(e.target.src)}
+            />
+            <Thumbnails
+              src={product.imgURL3}
+              alt={product.product}
+              onClick={(e) => setActiveImage(e.target.src)}
+            />
+            <Thumbnails
+              src={product.imgURL4}
+              alt={product.product}
+              onClick={(e) => setActiveImage(e.target.src)}
+            />
           </ThumbnailContainer>
         </ImageContainer>
         <ProductInfo>
@@ -195,7 +219,7 @@ const ProductDetail = () => {
         <Link to={`/products/edit/${product._id}`}>
           <EditButton>Edit</EditButton>
         </Link>
-        <DeleteButton onClick={productDeleted}>Delete</DeleteButton>
+        <DeleteButton onClick={deleteConfirmation}>Delete</DeleteButton>
       </ButtonContainer>
     </Layout>
   );
