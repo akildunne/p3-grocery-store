@@ -89,7 +89,6 @@ const Products = (props) => {
     const newQueriedProducts = allProducts.filter((product) =>
       product.product.toLowerCase().includes(event.target.value.toLowerCase())
     );
-    // if ()
      setQueriedProducts(newQueriedProducts, () => handleSort(sortType));
   };
 
@@ -117,12 +116,7 @@ const Products = (props) => {
         <Search onSubmit={handleSubmit} onChange={handleSearch} />
         <Sort onSubmit={handleSubmit} onChange={handleSort} /> 
       </SearchDiv>
-<<<<<<< HEAD
       <CardContainer>{isLoaded ? (productJSX.length === 0 ? <p>Out of Stock</p> : productJSX) : <LoadingMessage>Please wait, stocking shelves...  </LoadingMessage>}</CardContainer>     
-=======
-      <CardContainer>{loading ? productJSX : <LoadingMessage>Please wait, stocking shelves...  </LoadingMessage>}
-      </CardContainer>
->>>>>>> 8075cc2a1266b614b8039b5440f0c2825bb8bb19
     </Layout>
   );
 };
