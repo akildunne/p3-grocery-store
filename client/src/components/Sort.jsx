@@ -22,10 +22,10 @@ const Label = styled.label`
   padding: 8px;
 `;
 const Select = styled.select`
- cursor: pointer;
-padding: 8px;
-:hover 
-text-align; left
+  cursor: pointer;
+  padding: 8px;
+  :hover 
+    text-align; left
 `;
 
 const Sort = (props) => {
