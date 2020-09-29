@@ -49,7 +49,7 @@ const SearchDiv = styled.div`
   padding: 15px 30px;
 `;
 
-const Products = (props) => {
+const Products = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [allProducts, setAllProducts] = useState([]);
   const [queriedProducts, setQueriedProducts] = useState([]);
