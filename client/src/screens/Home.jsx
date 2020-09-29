@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import Layout from "../components/shared/Layout";
+import ProductCard from "../components/ProductCard";
 
 const HomeMainContainer = styled.div`
   display: flex;
@@ -54,6 +55,11 @@ const ShopNowButton = styled.button`
   }
 `;
 
+const Carousel = styled.div`
+  display: flex;
+  justify-content: center;
+`
+
 
 const StoryContainer = styled.div`
   width: 95%;
@@ -103,6 +109,14 @@ const Home = () => {
               <ShopNowButton>SHOP NOW</ShopNowButton>
             </Link>
           </CoverPhoto>
+        </div>
+        <div>
+          <h3>Featured Products</h3>
+          <Carousel>
+            <button>Left</button>
+            <div>Images</div>
+            <button>Right</button>
+          </Carousel>
         </div>
         <StoryContainer>
           <OurStoryTitle>Our Story</OurStoryTitle>
