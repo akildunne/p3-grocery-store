@@ -119,6 +119,7 @@ const Products = (props) => {
         <Sort onSubmit={handleSubmit} onChange={handleSort} /> 
       </SearchDiv>
       <CardContainer>{loading ? productJSX : <LoadingMessage>Please wait, stocking shelves...  </LoadingMessage>}
+
       </CardContainer>
     </Layout>
   );
