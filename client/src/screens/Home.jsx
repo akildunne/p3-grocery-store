@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import Layout from "../components/shared/Layout";
 import ProductCard from "../components/ProductCard";
+import { getProducts } from "../services/products";
 
 const HomeMainContainer = styled.div`
   display: flex;
@@ -58,14 +59,38 @@ const ShopNowButton = styled.button`
 const Carousel = styled.div`
   display: flex;
   justify-content: center;
+`;
+
+const LeftButton = styled.button`
+  display: flex;
+  text-decoration: none;
+  color: #939191;
+  font-size: 45px;
+  margin: 0;
+
+  :hover {
+    transform: scale(1.1);
 `
 
+const RightButton = styled.button`
+  display: flex;
+  text-decoration: none;
+  color: #939191;
+  font-size: 45px;
+  margin: 0;
+
+  :hover {
+    transform: scale(1.1);
+`
+
+const FeaturedCards = styled.div`
+  display: flex;
+`
 
 const StoryContainer = styled.div`
   width: 95%;
   margin: 0 auto;
 `;
-
 
 const OurStoryTitle = styled.h4`
   font-size: 24px;
@@ -79,12 +104,11 @@ const OurStoryTitle = styled.h4`
   }
 `;
 
-
 const OurStoryText = styled.p`
   font-size: 18px;
   margin-left: 75px;
   margin-right: 75px;
-  
+
   @media (min-width: 1260px) {
     font-size: 24px;
     margin-left: 100px;
@@ -92,8 +116,35 @@ const OurStoryText = styled.p`
   }
 `;
 
-
 const Home = () => {
+  const [allProducts, setAllProducts] = useState([]);
+  const [filteredProducts, setFilteredProducts] = useState([]);
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      const products = await getProducts();
+      setAllProducts(products);
+    };
+    fetchProducts();
+  }, []);
+
+  useEffect(() => {
+    const featuredProducts = allProducts.filter((element) =>
+      element.featured === true)
+    setFilteredProducts(featuredProducts);
+  }, [allProducts]);
+
+  const featuredJSX = filteredProducts.map((product, index) => (
+    <ProductCard
+      key={index}
+      product={product.product}
+      description={product.description}
+      price={product.price}
+      imgURL={product.imgURL}
+      id={product._id}
+    />
+  ));
+
   return (
     <Layout>
       <HomeMainContainer>
@@ -102,7 +153,9 @@ const Home = () => {
             <Banner>
               <HeadingContainer>
                 <HeaderWelcome>WELCOME TO D.T.'S PANTRY!</HeaderWelcome>
-                <HeaderWelcome>We've got all of your grocery needs covered</HeaderWelcome>
+                <HeaderWelcome>
+                  We've got all of your grocery needs covered
+                </HeaderWelcome>
               </HeadingContainer>
             </Banner>
             <Link to="/products">
@@ -113,9 +166,9 @@ const Home = () => {
         <div>
           <h3>Featured Products</h3>
           <Carousel>
-            <button>Left</button>
-            <div>Images</div>
-            <button>Right</button>
+            <LeftButton><i class="fas fa-caret-left"></i></LeftButton>
+            <FeaturedCards>{featuredJSX}</FeaturedCards>
+            <RightButton><i class="fas fa-caret-right"></i></RightButton>
           </Carousel>
         </div>
         <StoryContainer>
