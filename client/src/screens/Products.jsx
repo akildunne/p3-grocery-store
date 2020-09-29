@@ -7,13 +7,12 @@ import { getProducts } from "../services/products";
 import { AZ, ZA, lowestFirst, highestFirst } from "../utils/sort"
 import Layout from "../components/shared/Layout";
 import styled from "styled-components";
-// import Spinner from 'react-bootstrap/Spinner';
 
 
 const LoadingMessage = styled.div`
   color: #40A48B;
   margin: 50px;
-  font-size: 35px;
+  font-size: 55px;
   font: medium Futura;
 `
 
@@ -50,8 +49,8 @@ const SearchDiv = styled.div`
   padding: 15px 30px;
 `;
 
-const Products = (props) => {
-  const [loading, setLoading] = useState(false);
+const Products = () => {
+  const [isLoaded, setIsLoaded] = useState(false);
   const [allProducts, setAllProducts] = useState([]);
   const [queriedProducts, setQueriedProducts] = useState([]);
   const [sortType, setSortType] = useState([]);
@@ -61,7 +60,7 @@ const Products = (props) => {
       const products = await getProducts();
       setAllProducts(products);
       setQueriedProducts(products);
-      setLoading(true);
+      setIsLoaded(true);
     };
     fetchProducts();
   }, []);
@@ -95,7 +94,6 @@ const Products = (props) => {
   const handleSubmit = (event) => event.preventDefault();
 
   const productJSX = queriedProducts.map((product, index) => (
-
     <ProductCard
       key={index}
       product={product.product}
@@ -117,9 +115,9 @@ const Products = (props) => {
         <Search onSubmit={handleSubmit} onChange={handleSearch} />
         <Sort onSubmit={handleSubmit} onChange={handleSort} /> 
       </SearchDiv>
-      <CardContainer>{loading ? productJSX : <LoadingMessage>Please wait, stocking shelves...  </LoadingMessage>}
 
-      </CardContainer>
+      <CardContainer>{isLoaded ? (productJSX.length === 0 ? <p>Out of Stock</p> : productJSX) : <LoadingMessage>Please wait, stocking shelves...  </LoadingMessage>}</CardContainer>     
+
     </Layout>
   );
 };
