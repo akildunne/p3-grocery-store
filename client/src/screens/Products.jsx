@@ -51,7 +51,7 @@ const SearchDiv = styled.div`
 `;
 
 const Products = (props) => {
-  const [loading, setLoading] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
   const [allProducts, setAllProducts] = useState([]);
   const [queriedProducts, setQueriedProducts] = useState([]);
   const [sortType, setSortType] = useState([]);
@@ -62,7 +62,7 @@ const Products = (props) => {
       const products = await getProducts();
       setAllProducts(products);
       setQueriedProducts(products);
-      setLoading(true);
+      setIsLoaded(true);
     };
     fetchProducts();
   }, []);
@@ -90,13 +90,13 @@ const Products = (props) => {
     const newQueriedProducts = allProducts.filter((product) =>
       product.product.toLowerCase().includes(event.target.value.toLowerCase())
     );
+    // if ()
      setQueriedProducts(newQueriedProducts, () => handleSort(sortType));
   };
 
   const handleSubmit = (event) => event.preventDefault();
 
   const productJSX = queriedProducts.map((product, index) => (
-
     <ProductCard
       key={index}
       product={product.product}
@@ -118,9 +118,7 @@ const Products = (props) => {
         <Search onSubmit={handleSubmit} onChange={handleSearch} />
         <Sort onSubmit={handleSubmit} onChange={handleSort} /> 
       </SearchDiv>
-      <CardContainer>{loading ? productJSX : <LoadingMessage>Please wait, stocking shelves...  </LoadingMessage>}
-
-      </CardContainer>
+      <CardContainer>{isLoaded ? (productJSX.length === 0 ? <p>Out of Stock</p> : productJSX) : <LoadingMessage>Please wait, stocking shelves...  </LoadingMessage>}</CardContainer>     
     </Layout>
   );
 };
