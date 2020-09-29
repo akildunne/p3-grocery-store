@@ -7,12 +7,14 @@ import { getProducts } from "../services/products";
 import { AZ, ZA, lowestFirst, highestFirst } from "../utils/sort"
 import Layout from "../components/shared/Layout";
 import styled from "styled-components";
-import * as ReactBootStrap from 'react-bootstrap';
+// import Spinner from 'react-bootstrap/Spinner';
 
 
-const Spinner = styled.div`
+const LoadingMessage = styled.div`
   color: #40A48B;
   margin: 50px;
+  font-size: 35px;
+  font: medium Futura;
 `
 
 const BackDiv = styled.div`
@@ -116,7 +118,7 @@ const Products = (props) => {
         <Search onSubmit={handleSubmit} onChange={handleSearch} />
         <Sort onSubmit={handleSubmit} onChange={handleSort} /> 
       </SearchDiv>
-      <CardContainer>{loading ? productJSX : <Spinner>Please wait, stocking shelves...<ReactBootStrap.Spinner animation="border" variant="success"/></Spinner>}
+      <CardContainer>{loading ? productJSX : <LoadingMessage>Please wait, stocking shelves...  </LoadingMessage>}
       </CardContainer>
     </Layout>
   );
