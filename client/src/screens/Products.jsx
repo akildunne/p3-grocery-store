@@ -7,6 +7,13 @@ import { getProducts } from "../services/products";
 import { AZ, ZA, lowestFirst, highestFirst } from "../utils/sort"
 import Layout from "../components/shared/Layout";
 import styled from "styled-components";
+import * as ReactBootStrap from 'react-bootstrap';
+
+
+const Spinner = styled.div`
+  color: #40A48B;
+  margin: 50px;
+`
 
 const BackDiv = styled.div`
   display: flex;
@@ -28,18 +35,21 @@ const BackButton = styled(Link)`
 const CardContainer = styled.div`
   display: flex;
   flex-flow: row wrap;
-  margin: 50px 200px;
-  justify-content: end;
+  justify-content: center;
+  margin: 50px 50px;
+  // justify-content: end;
 `;
 
-const FlexDiv = styled.div`
+const SearchDiv = styled.div`
   display: flex;
   align-items: center;
-  margin: 100px;
-  padding: 30px;
+  justify-content: center;
+  margin: 0px 30px;
+  padding: 15px 30px;
 `;
 
 const Products = (props) => {
+  const [loading, setLoading] = useState(false);
   const [allProducts, setAllProducts] = useState([]);
   const [queriedProducts, setQueriedProducts] = useState([]);
   const [sortType, setSortType] = useState([]);
@@ -50,6 +60,7 @@ const Products = (props) => {
       const products = await getProducts();
       setAllProducts(products);
       setQueriedProducts(products);
+      setLoading(true);
     };
     fetchProducts();
   }, []);
@@ -101,11 +112,12 @@ const Products = (props) => {
           <i className="fas fa-caret-left"></i>
         </BackButton>
       </BackDiv>
-      <FlexDiv>
+      <SearchDiv>
         <Search onSubmit={handleSubmit} onChange={handleSearch} />
         <Sort onSubmit={handleSubmit} onChange={handleSort} /> 
-      </FlexDiv>
-      <CardContainer>{productJSX}</CardContainer>
+      </SearchDiv>
+      <CardContainer>{loading ? productJSX : <Spinner>Please wait, stocking shelves...<ReactBootStrap.Spinner animation="border" variant="success"/></Spinner>}
+      </CardContainer>
     </Layout>
   );
 };
