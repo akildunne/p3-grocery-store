@@ -82,7 +82,7 @@ const Button = styled.button`
   cursor: pointer;
 
   :hover {
-    background-color: #299a4b;
+    transform: scale(1.1);
   }
 `;
 

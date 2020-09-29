@@ -7,6 +7,13 @@ import { getProducts } from "../services/products";
 import { AZ, ZA, lowestFirst, highestFirst } from "../utils/sort"
 import Layout from "../components/shared/Layout";
 import styled from "styled-components";
+import * as ReactBootStrap from 'react-bootstrap';
+
+
+const Spinner = styled.div`
+  color: #40A48B;
+  margin: 50px;
+`
 
 const BackDiv = styled.div`
   display: flex;
@@ -42,6 +49,7 @@ const SearchDiv = styled.div`
 `;
 
 const Products = (props) => {
+  const [loading, setLoading] = useState(false);
   const [allProducts, setAllProducts] = useState([]);
   const [queriedProducts, setQueriedProducts] = useState([]);
   const [sortType, setSortType] = useState([]);
@@ -52,6 +60,7 @@ const Products = (props) => {
       const products = await getProducts();
       setAllProducts(products);
       setQueriedProducts(products);
+      setLoading(true);
     };
     fetchProducts();
   }, []);
@@ -107,7 +116,8 @@ const Products = (props) => {
         <Search onSubmit={handleSubmit} onChange={handleSearch} />
         <Sort onSubmit={handleSubmit} onChange={handleSort} /> 
       </SearchDiv>
-      <CardContainer>{productJSX}</CardContainer>
+      <CardContainer>{loading ? productJSX : <Spinner>Please wait, stocking shelves...<ReactBootStrap.Spinner animation="border" variant="success"/></Spinner>}
+      </CardContainer>
     </Layout>
   );
 };

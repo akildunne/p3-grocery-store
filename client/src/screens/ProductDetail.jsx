@@ -60,6 +60,9 @@ const Thumbnails = styled.img`
   border-radius: 15%;
   border: 1px solid #707070;
   margin: 0px 15px;
+
+  :hover {
+    transform: scale(1.1);
 `;
 
 const ProductInfo = styled.div`
