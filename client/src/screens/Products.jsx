@@ -55,7 +55,6 @@ const Products = () => {
   const [queriedProducts, setQueriedProducts] = useState([]);
   const [sortType, setSortType] = useState([]);
 
-
   useEffect(() => {
     const fetchProducts = async () => {
       const products = await getProducts();
