@@ -17,11 +17,12 @@ const SearchBar = styled.input`
   font-size: 25px;
 `;
 
-const SearchIcon = styled.div`
-  display: flex;
+const SearchIcon = styled.i`
+  text-align: right;
   font-size: 35px;
   color: #9d9d9d;
-  margin-left: 5px;
+  margin-left: 725px;
+  position: absolute;
 `;
 
 const Search = (props) => {
@@ -36,9 +37,7 @@ const Search = (props) => {
           placeholder="Search"
           autoFocus
         />
-        <SearchIcon>
-          <i className="fas fa-search"></i>
-        </SearchIcon>
+         <SearchIcon className="fas fa-search"></SearchIcon>
       </SearchContainer>
     </form>
   );
