@@ -48,7 +48,9 @@ const InputContainer = styled.input`
   border: 1px solid #707070;
   border-radius: 22px;
   padding: 15px;
+  font: Helvetica;
   font-size: 28px;
+  color: #707070;
 `;
 
 const LabelTextArea = styled.label`
@@ -64,7 +66,9 @@ const TextArea = styled.textarea`
   justify-self: flex-end;
   margin: 24px;
   padding: 15px;
+  font: Helvetica;
   font-size: 28px;
+  color: #707070;
 `;
 
 const Button = styled.button`

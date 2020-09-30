@@ -3,10 +3,10 @@ import styled from "styled-components";
 
 const Form = styled.form`
   display: flex;
+  align-items: center;
   align-content: flex-end;
   width: 20%;
   height: 35px;
-  //  border: 2px solid #707070;
   border-radius: 10px;
   padding: 40px;
   color: #707070;
@@ -16,10 +16,13 @@ const Option = styled.option`
 color: #707070;
 padding: 50px;
 text-align; left;
+// font-size: 25px;
+// font: Helvetica;
 `;
 
 const Label = styled.label`
   padding: 8px;
+  font-size: 25px;
 `;
 const Select = styled.select`
   cursor: pointer;
