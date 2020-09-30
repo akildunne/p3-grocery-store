@@ -156,6 +156,7 @@ const Home = () => {
     />
   ));
 
+
   // const showProducts = (n) => {
   //   let i;
   //   let slideshow = [];
