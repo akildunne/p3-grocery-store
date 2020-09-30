@@ -12,8 +12,8 @@ import styled from "styled-components";
 const LoadingMessage = styled.div`
   color: #40A48B;
   margin: 50px;
-  font-size: 105px;
   font: medium Futura;
+  font-size: 45px;
 `
 
 const BackDiv = styled.div`
