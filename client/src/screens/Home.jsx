@@ -56,27 +56,35 @@ const ShopNowButton = styled.button`
   }
 `;
 
+const CarouselTitle = styled.div`
+  font-size: 30px;
+  font: futura, bold;
+  color: #40A48B;
+  margin-top: 35px;
+  margin-bottom: 15px;
+`
+
 const Carousel = styled.div`
   display: flex;
   justify-content: center;
 `;
 
-const LeftButton = styled.button`
+const LeftButton = styled.div`
   display: flex;
-  text-decoration: none;
-  color: #939191;
-  font-size: 45px;
+  align-items: center;
+  color: #40A48B;
+  font-size: 135px;
   margin: 0;
 
   :hover {
     transform: scale(1.1);
 `
 
-const RightButton = styled.button`
+const RightButton = styled.div`
   display: flex;
-  text-decoration: none;
-  color: #939191;
-  font-size: 45px;
+  align-items: center;
+  color: #40A48B;
+  font-size: 135px;
   margin: 0;
 
   :hover {
@@ -96,6 +104,8 @@ const OurStoryTitle = styled.h4`
   font-size: 24px;
   margin-top: 20px;
   margin-bottom: 10px;
+  font: futura, bold;
+  color: #707070;
 
   @media (min-width: 1260px) {
     font-size: 36px;
@@ -108,6 +118,7 @@ const OurStoryText = styled.p`
   font-size: 18px;
   margin-left: 75px;
   margin-right: 75px;
+  color: #707070;
 
   @media (min-width: 1260px) {
     font-size: 24px;
@@ -164,11 +175,11 @@ const Home = () => {
           </CoverPhoto>
         </div>
         <div>
-          <h3>Featured Products</h3>
+          <CarouselTitle>FEATURED PRODUCTS</CarouselTitle>
           <Carousel>
-            <LeftButton><i class="fas fa-caret-left"></i></LeftButton>
+            <LeftButton><i className="fas fa-caret-left"></i></LeftButton>
             <FeaturedCards>{featuredJSX}</FeaturedCards>
-            <RightButton><i class="fas fa-caret-right"></i></RightButton>
+            <RightButton><i className="fas fa-caret-right"></i></RightButton>
           </Carousel>
         </div>
         <StoryContainer>
@@ -182,7 +193,7 @@ const Home = () => {
             procuring fine groceries at low costs. Today, we are proud to serve
             your community with a wide variety of top quality foods including
             all of the brands you know and love. Come on down and shop with us,
-            and don’t feed the cassowaries!
+            and <strong>don’t feed the cassowaries!</strong>
           </OurStoryText>
         </StoryContainer>
       </HomeMainContainer>

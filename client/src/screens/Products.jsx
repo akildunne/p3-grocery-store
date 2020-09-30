@@ -12,7 +12,7 @@ import styled from "styled-components";
 const LoadingMessage = styled.div`
   color: #40A48B;
   margin: 50px;
-  font-size: 55px;
+  font-size: 105px;
   font: medium Futura;
 `
 
@@ -117,7 +117,7 @@ const Products = () => {
         <Sort onSubmit={handleSubmit} onChange={handleSort} /> 
       </SearchDiv>
 
-      <CardContainer>{isLoaded ? (productJSX.length === 0 ? <p>Out of Stock</p> : productJSX) : <LoadingMessage>Please wait, stocking shelves...  </LoadingMessage>}</CardContainer>     
+      <CardContainer>{isLoaded ? (productJSX.length === 0 ? <p>Out of Stock</p> : productJSX) : <LoadingMessage><i className="fas fa-shopping-cart"></i> Please wait, stocking shelves...</LoadingMessage>}</CardContainer>     
 
     </Layout>
   );
