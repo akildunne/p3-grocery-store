@@ -133,6 +133,20 @@ const DeleteButton = styled.button`
     transform: scale(1.1);
 `;
 
+const ReviewContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+  justify-content: flex-start;
+  align-items: left;
+`
+
+const ReviewHeading = styled.h3`
+  font-size: 20px;
+  text-align: left;
+  margin-left: 50px;
+`
+
 const ProductDetail = () => {
   const [isDeleted, setIsDeleted] = useState(false);
   const [activeImage, setActiveImage] = useState("");
@@ -223,7 +237,10 @@ const ProductDetail = () => {
         </Link>
         <DeleteButton onClick={deleteConfirmation}>Delete</DeleteButton>
       </ButtonContainer>
-      <Reviews reviews={product.reviews} />
+      <ReviewContainer>
+        <ReviewHeading>Customer reviews:</ReviewHeading>
+        <Reviews reviews={product.reviews} />        
+      </ReviewContainer>
     </Layout>
   );
 };

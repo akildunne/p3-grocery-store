@@ -119,7 +119,7 @@ const Products = () => {
           ? (productJSX.length === 0 ? <p>Out of Stock</p> : productJSX)
           : <LoadingMessage><i className="fas fa-shopping-cart"></i> Please wait, stocking shelves...</LoadingMessage>
         }
-      </CardContainer>     
+      </CardContainer> 
     </Layout>
   );
 };
