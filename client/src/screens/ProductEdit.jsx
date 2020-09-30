@@ -66,7 +66,7 @@ const TextArea = styled.textarea`
   justify-self: flex-end;
   margin: 24px;
   padding: 15px;
-  font: Helvetica;
+  font-family: Helvetica;
   font-size: 28px;
   color: #707070;
 `;

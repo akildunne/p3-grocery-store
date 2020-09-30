@@ -74,7 +74,7 @@ const LeftButton = styled.div`
   align-items: center;
   color: #40A48B;
   font-size: 135px;
-  margin: 0;
+  margin: 0 10px 0 10px;
 
   :hover {
     transform: scale(1.1);
@@ -85,7 +85,7 @@ const RightButton = styled.div`
   align-items: center;
   color: #40A48B;
   font-size: 135px;
-  margin: 0;
+  margin: 0 10px 0 10px;
 
   :hover {
     transform: scale(1.1);
