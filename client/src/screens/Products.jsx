@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
+import { Redirect } from "react-router-dom";
 import ProductCard from "../components/ProductCard";
 import Search from "../components/Search";
 import Sort from "../components/Sort";
-import { Link } from "react-router-dom";
+import BackButton from '../components/BackButton';
 import { getProducts } from "../services/products";
 import { AZ, ZA, lowestFirst, highestFirst } from "../utils/sort"
 import Layout from "../components/shared/Layout";
@@ -22,17 +23,6 @@ const BackDiv = styled.div`
   padding-left: 36px;
 `;
 
-const BackButton = styled(Link)`
-  display: flex;
-  text-decoration: none;
-  color: #939191;
-  font-size: 45px;
-  margin: 0;
-
-  :hover {
-    transform: scale(1.1);
-`;
-
 const CardContainer = styled.div`
   display: flex;
   flex-flow: row wrap;
@@ -50,6 +40,7 @@ const SearchDiv = styled.div`
 `;
 
 const Products = () => {
+  const [redirect, setRedirect] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
   const [allProducts, setAllProducts] = useState([]);
   const [queriedProducts, setQueriedProducts] = useState([]);
@@ -105,20 +96,24 @@ const Products = () => {
     />
   ));
 
+  const goBack = (e) => {
+    setRedirect(true);
+  };
+
+  if (redirect === true) {
+    return <Redirect to="/" />;
+  }
+
   return (
     <Layout>
       <BackDiv>
-        <BackButton to="/">
-          <i className="fas fa-caret-left"></i>
-        </BackButton>
+        <BackButton onClick={(e) => goBack()}></BackButton>
       </BackDiv>
       <SearchDiv>
         <Search onSubmit={handleSubmit} onChange={handleSearch} />
         <Sort onSubmit={handleSubmit} onChange={handleSort} /> 
       </SearchDiv>
-
       <CardContainer>{isLoaded ? (productJSX.length === 0 ? <p>Out of Stock</p> : productJSX) : <LoadingMessage><i className="fas fa-shopping-cart"></i> Please wait, stocking shelves...</LoadingMessage>}</CardContainer>     
-
     </Layout>
   );
 };
