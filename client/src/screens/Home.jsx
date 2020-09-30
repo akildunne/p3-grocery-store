@@ -68,29 +68,17 @@ const CarouselTitle = styled.div`
 const CarouselContainer = styled.div`
   display: flex;
   justify-content: center;
+  margin: 0 25px;
+
+    .rec.rec-arrow {
+      border-radius: 25px;
+      margin: 0 15px;
+      color: #FFFFFF;
+      background-color: #40A48B;
+      :hover {
+        transform: scale(1.1);
+  }
 `;
-
-const LeftButton = styled.div`
-  display: flex;
-  align-items: center;
-  color: #40A48B;
-  font-size: 135px;
-  margin: 0 10px 0 10px;
-
-  :hover {
-    transform: scale(1.1);
-`
-
-const RightButton = styled.div`
-  display: flex;
-  align-items: center;
-  color: #40A48B;
-  font-size: 135px;
-  margin: 0 10px 0 10px;
-
-  :hover {
-    transform: scale(1.1);
-`
 
 const FeaturedCards = styled.div`
   display: flex;
@@ -157,27 +145,6 @@ const Home = () => {
     />
   ));
 
- 
-
-  // const showProducts = (n) => {
-  //   let i;
-  //   let x = [...filteredProducts]
-  //   if (n > x.length) { productIndex = 1 }
-  //   if (n < 1) { productIndex = x.length };
-  //   for (i = 0; i < x.length; i++) {
-  //     x[i] = { display: 'none' };
-  //   }
-  //   x[productIndex - 1] = { display: 'block' };
-  //   // return slideshow;
-  // }
-
-  // let productIndex = 1;
-  // showProducts(productIndex);
-
-  // function plusSlide(n) {
-  //   showProducts(productIndex += n);
-  // }
-
   return (
     <Layout>
       <HomeMainContainer>
@@ -199,7 +166,7 @@ const Home = () => {
         <div>
           <CarouselTitle>FEATURED PRODUCTS</CarouselTitle>
           <CarouselContainer>
-            <Carousel itemsToShow={4}>
+            <Carousel itemsToShow={4} pagination={false}> 
         {featuredJSX}
       </Carousel>
           </CarouselContainer>

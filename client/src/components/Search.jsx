@@ -15,6 +15,7 @@ const SearchBar = styled.input`
   padding: 16px;
   font: Helvetica, regular;
   font-size: 25px;
+  outline: none;
 `;
 
 const SearchIcon = styled.i`
