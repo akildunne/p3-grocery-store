@@ -156,6 +156,26 @@ const Home = () => {
     />
   ));
 
+
+  // const showProducts = (n) => {
+  //   let i;
+  //   let slideshow = [];
+  //   if (n > featuredJSX.length) { productIndex = 1 }
+  //   if (n < 1) { productIndex = featuredJSX.length };
+  //   for (i = 0; i < featuredJSX.length; i++) {
+  //     featuredJSX[i] = { display: 'none' };
+  //   }
+  //   featuredJSX[productIndex - 1] = { display: 'block' };
+  //   // return slideshow;
+  // }
+
+  // let productIndex = 1;
+  // showProducts(productIndex);
+
+  // function plusSlide(n) {
+  //   showProducts(productIndex += n);
+  // }
+
   return (
     <Layout>
       <HomeMainContainer>
@@ -177,9 +197,9 @@ const Home = () => {
         <div>
           <CarouselTitle>FEATURED PRODUCTS</CarouselTitle>
           <Carousel>
-            <LeftButton><i className="fas fa-caret-left"></i></LeftButton>
+            {/* <LeftButton onClick={plusSlide(-1)}><i className="fas fa-caret-left"></i></LeftButton> */}
             <FeaturedCards>{featuredJSX}</FeaturedCards>
-            <RightButton><i className="fas fa-caret-right"></i></RightButton>
+            {/* <RightButton onClick={plusSlide(1)}><i className="fas fa-caret-right"></i></RightButton> */}
           </Carousel>
         </div>
         <StoryContainer>
