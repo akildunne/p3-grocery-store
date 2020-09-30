@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Layout from "../components/shared/Layout";
 import { useParams, Link, Redirect } from "react-router-dom";
 import { getProduct, deleteProduct } from "../services/products";
+import Reviews from "../screens/Reviews";
 import styled from "styled-components";
 
 const BackDiv = styled.div`
@@ -143,6 +144,12 @@ const ProductDetail = () => {
     imgURL4: "",
     description: "",
     price: "",
+    reviews: []
+  });
+  const [review, setReview] = useState({
+    author: "",
+    rating: "",
+    description: "",
   });
 
   const { id } = useParams();
@@ -155,6 +162,8 @@ const ProductDetail = () => {
     };
     fetchProduct();
   }, [id]);
+  
+  
 
   const deleteConfirmation = () => {
     let r = window.confirm("Are you sure you want to delete this product?");
@@ -212,7 +221,10 @@ const ProductDetail = () => {
         <ProductInfo>
           <ProductName>{product.product}</ProductName>
           <ProductPrice>${product.price}</ProductPrice>
-          <ProductDescription>{product.description}</ProductDescription>
+          <ProductDescription>
+            {product.description}
+            <Reviews reviews={product.reviews} />
+          </ProductDescription>
         </ProductInfo>
       </ProductDetailContainer>
       <ButtonContainer>

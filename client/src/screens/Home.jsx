@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import Layout from "../components/shared/Layout";
+import ProductCard from "../components/ProductCard";
+import { getProducts } from "../services/products";
 
 const HomeMainContainer = styled.div`
   display: flex;
@@ -54,17 +56,56 @@ const ShopNowButton = styled.button`
   }
 `;
 
+const CarouselTitle = styled.div`
+  font-size: 30px;
+  font: futura, bold;
+  color: #40A48B;
+  margin-top: 35px;
+  margin-bottom: 15px;
+`
+
+const Carousel = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
+const LeftButton = styled.div`
+  display: flex;
+  align-items: center;
+  color: #40A48B;
+  font-size: 135px;
+  margin: 0 10px 0 10px;
+
+  :hover {
+    transform: scale(1.1);
+`
+
+const RightButton = styled.div`
+  display: flex;
+  align-items: center;
+  color: #40A48B;
+  font-size: 135px;
+  margin: 0 10px 0 10px;
+
+  :hover {
+    transform: scale(1.1);
+`
+
+const FeaturedCards = styled.div`
+  display: flex;
+`
 
 const StoryContainer = styled.div`
   width: 95%;
   margin: 0 auto;
 `;
 
-
 const OurStoryTitle = styled.h4`
   font-size: 24px;
   margin-top: 20px;
   margin-bottom: 10px;
+  font: futura, bold;
+  color: #707070;
 
   @media (min-width: 1260px) {
     font-size: 36px;
@@ -73,12 +114,12 @@ const OurStoryTitle = styled.h4`
   }
 `;
 
-
 const OurStoryText = styled.p`
   font-size: 18px;
   margin-left: 75px;
   margin-right: 75px;
-  
+  color: #707070;
+
   @media (min-width: 1260px) {
     font-size: 24px;
     margin-left: 100px;
@@ -86,8 +127,35 @@ const OurStoryText = styled.p`
   }
 `;
 
-
 const Home = () => {
+  const [allProducts, setAllProducts] = useState([]);
+  const [filteredProducts, setFilteredProducts] = useState([]);
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      const products = await getProducts();
+      setAllProducts(products);
+    };
+    fetchProducts();
+  }, []);
+
+  useEffect(() => {
+    const featuredProducts = allProducts.filter((element) =>
+      element.featured === true)
+    setFilteredProducts(featuredProducts);
+  }, [allProducts]);
+
+  const featuredJSX = filteredProducts.map((product, index) => (
+    <ProductCard
+      key={index}
+      product={product.product}
+      description={product.description}
+      price={product.price}
+      imgURL={product.imgURL}
+      id={product._id}
+    />
+  ));
+
   return (
     <Layout>
       <HomeMainContainer>
@@ -96,13 +164,23 @@ const Home = () => {
             <Banner>
               <HeadingContainer>
                 <HeaderWelcome>WELCOME TO D.T.'S PANTRY!</HeaderWelcome>
-                <HeaderWelcome>We've got all of your grocery needs covered</HeaderWelcome>
+                <HeaderWelcome>
+                  We've got all of your grocery needs covered
+                </HeaderWelcome>
               </HeadingContainer>
             </Banner>
             <Link to="/products">
               <ShopNowButton>SHOP NOW</ShopNowButton>
             </Link>
           </CoverPhoto>
+        </div>
+        <div>
+          <CarouselTitle>FEATURED PRODUCTS</CarouselTitle>
+          <Carousel>
+            <LeftButton><i className="fas fa-caret-left"></i></LeftButton>
+            <FeaturedCards>{featuredJSX}</FeaturedCards>
+            <RightButton><i className="fas fa-caret-right"></i></RightButton>
+          </Carousel>
         </div>
         <StoryContainer>
           <OurStoryTitle>Our Story</OurStoryTitle>
@@ -115,7 +193,7 @@ const Home = () => {
             procuring fine groceries at low costs. Today, we are proud to serve
             your community with a wide variety of top quality foods including
             all of the brands you know and love. Come on down and shop with us,
-            and don’t feed the cassowaries!
+            and <strong>don’t feed the cassowaries!</strong>
           </OurStoryText>
         </StoryContainer>
       </HomeMainContainer>
