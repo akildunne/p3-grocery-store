@@ -6,7 +6,6 @@ const SearchContainer = styled.div`
 `;
 
 const SearchBar = styled.input`
-  display: block;
   width: 50vw;
   height: 50px;
   border: 2px solid #707070;

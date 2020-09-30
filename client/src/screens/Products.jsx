@@ -38,7 +38,6 @@ const CardContainer = styled.div`
   flex-flow: row wrap;
   justify-content: center;
   margin: 50px 50px;
-  // justify-content: end;
 `;
 
 const SearchDiv = styled.div`
