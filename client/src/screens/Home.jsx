@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import Layout from "../components/shared/Layout";
 import ProductCard from "../components/ProductCard";
 import { getProducts } from "../services/products";
+import Carousel from 'react-elastic-carousel';
 
 const HomeMainContainer = styled.div`
   display: flex;
@@ -64,7 +65,7 @@ const CarouselTitle = styled.div`
   margin-bottom: 15px;
 `
 
-const Carousel = styled.div`
+const CarouselContainer = styled.div`
   display: flex;
   justify-content: center;
 `;
@@ -156,16 +157,17 @@ const Home = () => {
     />
   ));
 
+ 
 
   // const showProducts = (n) => {
   //   let i;
-  //   let slideshow = [];
-  //   if (n > featuredJSX.length) { productIndex = 1 }
-  //   if (n < 1) { productIndex = featuredJSX.length };
-  //   for (i = 0; i < featuredJSX.length; i++) {
-  //     featuredJSX[i] = { display: 'none' };
+  //   let x = [...filteredProducts]
+  //   if (n > x.length) { productIndex = 1 }
+  //   if (n < 1) { productIndex = x.length };
+  //   for (i = 0; i < x.length; i++) {
+  //     x[i] = { display: 'none' };
   //   }
-  //   featuredJSX[productIndex - 1] = { display: 'block' };
+  //   x[productIndex - 1] = { display: 'block' };
   //   // return slideshow;
   // }
 
@@ -196,11 +198,11 @@ const Home = () => {
         </div>
         <div>
           <CarouselTitle>FEATURED PRODUCTS</CarouselTitle>
-          <Carousel>
-            {/* <LeftButton onClick={plusSlide(-1)}><i className="fas fa-caret-left"></i></LeftButton> */}
-            <FeaturedCards>{featuredJSX}</FeaturedCards>
-            {/* <RightButton onClick={plusSlide(1)}><i className="fas fa-caret-right"></i></RightButton> */}
-          </Carousel>
+          <CarouselContainer>
+            <Carousel itemsToShow={4}>
+        {featuredJSX}
+      </Carousel>
+          </CarouselContainer>
         </div>
         <StoryContainer>
           <OurStoryTitle>Our Story</OurStoryTitle>
