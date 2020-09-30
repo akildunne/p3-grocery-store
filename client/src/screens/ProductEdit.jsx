@@ -97,6 +97,7 @@ const ProductEdit = (props) => {
     description: "",
     price: "",
   });
+  
 
   const [isUpdated, setUpdated] = useState(false);
   let { id } = useParams();
@@ -146,6 +147,7 @@ const ProductEdit = (props) => {
             autoFocus
             onChange={handleChange}
           />
+
           <LabelContainer>Price:</LabelContainer>
           <InputContainer
             type="text"
@@ -196,6 +198,7 @@ const ProductEdit = (props) => {
             onChange={handleChange}
           />
           <Button>Save</Button>
+         
         </Form>
       </DetailContainer>
     </Layout>

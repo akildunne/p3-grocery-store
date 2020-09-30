@@ -15,9 +15,9 @@ const main = async () => {
       description: " Best bananas",
       price: "0.75/lb",
       reviews: [{
-        author: "",
-        rating: "",
-        description: ""
+        author: "Ashik",
+        rating: "5",
+        description: "Monkeys love them!!!"
       }]
     },
     {
@@ -30,9 +30,9 @@ const main = async () => {
       description: " An apple a day keeps the doctor away ",
       price: "1.00/lb",
       reviews: [{
-        author: "",
-        rating: "",
-        description: ""
+        author: "Ashley",
+        rating: "5",
+        description: "My son loves them!!!"
       }]
     },
     {
@@ -45,9 +45,9 @@ const main = async () => {
       description: " Yummy ",
       price: "1.00/lb",
       reviews: [{
-        author: "",
-        rating: "",
-        description: ""
+        author: "Brianna",
+        rating: "3",
+        description: "Ehh, IHOP has the best ones."
       }]
     },
     {
@@ -60,9 +60,9 @@ const main = async () => {
       description: " Best cheese out there ",
       price: "2.00",
       reviews: [{
-        author: "",
-        rating: "",
-        description: ""
+        author: "Chris",
+        rating: "5",
+        description: "Love it!!"
       }]
     },
     {
@@ -75,9 +75,9 @@ const main = async () => {
       description: "Sweet delight",
       price: "3.50/lb",
       reviews: [{
-        author: "",
-        rating: "",
-        description: ""
+        author: "Chris",
+        rating: "5",
+        description: "It's been so long!!!"
       }]
     },
     {
@@ -90,9 +90,9 @@ const main = async () => {
       description: "Yummy Crackers",
       price: "4.00",
       reviews: [{
-        author: "",
-        rating: "",
-        description: ""
+        author: "Ashik",
+        rating: "5",
+        description: "Hits the spot with tea!!"
       }]
     },
 
@@ -107,9 +107,9 @@ const main = async () => {
         "It's official! Hot dogs are sandwiches. And they are a staple for your summer BBQ festivities.",
       price: "5.00",
       reviews: [{
-        author: "",
-        rating: "",
-        description: ""
+        author: "Ashley",
+        rating: "2",
+        description: "These pictures are annoying!!!"
       }]
     },
     {
@@ -122,9 +122,9 @@ const main = async () => {
       description: "Who doesn't love ketchup? ",
       price: "5.00",
       reviews: [{
-        author: "",
-        rating: "",
-        description: ""
+        author: "Ashik",
+        rating: "5",
+        description: "I'll buy it from here since dunkin doughnuts is too stingy with their free ketchup!!!"
       }]
     },
     {
@@ -137,9 +137,9 @@ const main = async () => {
       description: "Yummy in my tummy",
       price: "5.50",
       reviews: [{
-        author: "",
-        rating: "",
-        description: ""
+        author: "Brianna",
+        rating: "3",
+        description: "Blue is better"
       }]
     },
     {
@@ -152,9 +152,9 @@ const main = async () => {
       description: "Calcium",
       price: "6.50",
       reviews: [{
-        author: "",
-        rating: "",
-        description: ""
+        author: "Ashik",
+        rating: "5",
+        description: "I milked a cow once and it kicked me. Thats why I buy from the store now"
       }]
     },
   ];
