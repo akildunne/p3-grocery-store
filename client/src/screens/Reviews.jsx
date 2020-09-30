@@ -2,11 +2,12 @@ import React from "react";
 import styled from "styled-components";
 
 const Review = styled.div`
-display: flex;
-flex-direction: column;
-font-size: 20px;
-justify-content: flex-start;
-align-items: left;
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+  justify-content: flex-start;
+  align-items: left;
+  background: red;
 `
 
 

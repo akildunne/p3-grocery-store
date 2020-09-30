@@ -114,9 +114,12 @@ const Products = () => {
         <Search onSubmit={handleSubmit} onChange={handleSearch} />
         <Sort onSubmit={handleSubmit} onChange={handleSort} /> 
       </SearchDiv>
-
-      <CardContainer>{isLoaded ? (productJSX.length === 0 ? <p>Out of Stock</p> : productJSX) : <LoadingMessage><i className="fas fa-shopping-cart"></i> Please wait, stocking shelves...</LoadingMessage>}</CardContainer>     
-
+      <CardContainer>
+        {isLoaded
+          ? (productJSX.length === 0 ? <p>Out of Stock</p> : productJSX)
+          : <LoadingMessage><i className="fas fa-shopping-cart"></i> Please wait, stocking shelves...</LoadingMessage>
+        }
+      </CardContainer>     
     </Layout>
   );
 };
