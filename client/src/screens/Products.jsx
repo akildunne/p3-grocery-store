@@ -38,7 +38,6 @@ const CardContainer = styled.div`
   flex-flow: row wrap;
   justify-content: center;
   margin: 50px 50px;
-  // justify-content: end;
 `;
 
 const SearchDiv = styled.div`
@@ -115,9 +114,12 @@ const Products = () => {
         <Search onSubmit={handleSubmit} onChange={handleSearch} />
         <Sort onSubmit={handleSubmit} onChange={handleSort} /> 
       </SearchDiv>
-
-      <CardContainer>{isLoaded ? (productJSX.length === 0 ? <p>Out of Stock</p> : productJSX) : <LoadingMessage><i className="fas fa-shopping-cart"></i> Please wait, stocking shelves...</LoadingMessage>}</CardContainer>     
-
+      <CardContainer>
+        {isLoaded
+          ? (productJSX.length === 0 ? <p>Out of Stock</p> : productJSX)
+          : <LoadingMessage><i className="fas fa-shopping-cart"></i> Please wait, stocking shelves...</LoadingMessage>
+        }
+      </CardContainer> 
     </Layout>
   );
 };

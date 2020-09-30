@@ -16,6 +16,7 @@ const Product = new Schema(
       location: { type: String, required: false },
       rating: { type: Number, required: false },
       description: { type: String, required: false },
+      title: { type: String, required: false },
     }]
 
   },

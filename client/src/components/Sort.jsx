@@ -13,11 +13,9 @@ const Form = styled.form`
 `;
 
 const Option = styled.option`
-color: #707070;
-padding: 50px;
-text-align; left;
-// font-size: 25px;
-// font: Helvetica;
+  color: #707070;
+  padding: 50px;
+  text-align; left;
 `;
 
 const Label = styled.label`
@@ -27,6 +25,7 @@ const Label = styled.label`
 const Select = styled.select`
   cursor: pointer;
   padding: 8px;
+
   :hover 
     text-align; left
 `;
