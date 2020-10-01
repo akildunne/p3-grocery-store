@@ -173,7 +173,6 @@ const ProductDetail = () => {
     let r = window.confirm("Are you sure you want to delete this product?");
     if (r === true) {
       productDeleted();
-      alert("Product deleted!");
     } else {
     }
   };
