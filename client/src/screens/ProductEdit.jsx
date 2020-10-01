@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { useParams, Redirect, Link } from "react-router-dom";
+import { useParams, Redirect } from "react-router-dom";
 import Layout from "../components/shared/Layout";
+import BackButton from "../components/BackButton";
 import { getProduct, updateProduct } from "../services/products";
 import styled from "styled-components";
 
@@ -12,15 +13,6 @@ const BackDiv = styled.div`
   display: flex;
   padding-left: 36px;
   margin-top: 20px;
-`;
-
-const BackButton = styled(Link)`
-  text-decoration: none;
-  color: #939191;
-  font-size: 45px;
-
-  :hover {
-    transform: scale(1.1);
 `;
 
 const DetailContainer = styled.div`
@@ -48,6 +40,11 @@ const InputContainer = styled.input`
   border-radius: 22px;
   padding: 10px;
   font-size: 18px;
+    :focus {
+    outline: none;
+    border: 3px solid #2EAF56;
+    border-radius: 22px;
+  }
 `;
 
 const LabelTextArea = styled.label`
@@ -64,6 +61,11 @@ const TextArea = styled.textarea`
   margin: 10px;
   padding: 10px;
   font-size: 18px;
+  :focus {
+    outline: none;
+    border: 3px solid #2EAF56;
+    border-radius: 22px;
+  }
 `;
 
 const Button = styled.button`
@@ -86,13 +88,13 @@ const Button = styled.button`
 `;
 
 const ProductEdit = (props) => {
+  const [redirect, setRedirect] = useState(false);
   const [product, setProduct] = useState({
     product: "",
     imgURL: "",
     description: "",
     price: "",
   });
-  
 
   const [isUpdated, setUpdated] = useState(false);
   let { id } = useParams();
@@ -120,6 +122,14 @@ const ProductEdit = (props) => {
     setUpdated(updated);
   };
 
+  const goBack = (e) => {
+    setRedirect(true);
+  };
+
+  if (redirect === true) {
+    return <Redirect to={`/products/${product._id}`} />;
+  }
+
   if (isUpdated) {
     return <Redirect to={`/products/${product._id}`} />;
   }
@@ -128,9 +138,7 @@ const ProductEdit = (props) => {
     <Layout>
       <MainContainer>
         <BackDiv>
-          <BackButton to={`/products/${product._id}`}>
-            <i className="fas fa-caret-left"></i>
-          </BackButton>
+          <BackButton onClick={(e) => goBack()}></BackButton>
         </BackDiv>
         <DetailContainer>
           <Form onSubmit={handleSubmit}>
@@ -196,6 +204,7 @@ const ProductEdit = (props) => {
           </Form>
         </DetailContainer>
       </MainContainer>
+
     </Layout>
   );
 };

@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import Layout from "../components/shared/Layout";
 import ProductCard from "../components/ProductCard";
 import { getProducts } from "../services/products";
+import Carousel from 'react-elastic-carousel';
 
 const HomeMainContainer = styled.div`
   display: flex;
@@ -64,35 +65,19 @@ const CarouselTitle = styled.div`
   margin-bottom: 15px;
 `
 
-const Carousel = styled.div`
+const CarouselContainer = styled.div`
   display: flex;
   justify-content: center;
-`;
+  margin: 0 25px;
 
-const LeftButton = styled.div`
-  display: flex;
-  align-items: center;
-  color: #40A48B;
-  font-size: 135px;
-  margin: 0 10px 0 10px;
-
-  :hover {
-    transform: scale(1.1);
-`
-
-const RightButton = styled.div`
-  display: flex;
-  align-items: center;
-  color: #40A48B;
-  font-size: 135px;
-  margin: 0 10px 0 10px;
-
-  :hover {
-    transform: scale(1.1);
-`;
-
-const FeaturedCards = styled.div`
-  display: flex;
+    .rec.rec-arrow {
+      border-radius: 25px;
+      margin: 0 15px;
+      color: #FFFFFF;
+      background-color: #40A48B;
+      :hover {
+        transform: scale(1.1);
+  }
 `;
 
 const StoryContainer = styled.div`
@@ -176,9 +161,11 @@ const Home = () => {
         </div>
         <div>
           <CarouselTitle>FEATURED PRODUCTS</CarouselTitle>
-          <Carousel>
-            <FeaturedCards>{featuredJSX}</FeaturedCards>
-          </Carousel>
+          <CarouselContainer>
+            <Carousel itemsToShow={4} pagination={false}> 
+        {featuredJSX}
+      </Carousel>
+          </CarouselContainer>
         </div>
         <StoryContainer>
           <OurStoryTitle>Our Story</OurStoryTitle>

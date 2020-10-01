@@ -13,6 +13,11 @@ const SearchBar = styled.input`
   padding: 16px;
   font: Helvetica, regular;
   font-size: 25px;
+  :focus {
+    outline: none;
+    border: 3px solid #2EAF56;
+    border-radius: 22px;
+  }
 `;
 
 const SearchIcon = styled.span`

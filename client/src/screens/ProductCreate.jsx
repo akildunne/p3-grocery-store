@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Layout from "../components/shared/Layout";
-import { Redirect, Link } from "react-router-dom";
+import BackButton from "../components/BackButton";
+import { Redirect } from "react-router-dom";
 import { createProduct } from "../services/products";
 import styled from "styled-components";
 
@@ -21,6 +22,7 @@ const BackButton = styled(Link)`
 
   :hover {
     transform: scale(1.1);
+  }
 `;
 
 const DetailContainer = styled.div`
@@ -48,6 +50,13 @@ const InputContainer = styled.input`
   border-radius: 22px;
   padding: 10px;
   font-size: 18px;
+
+  :focus {
+    outline: none;
+    border: 3px solid #2EAF56;
+    border-radius: 22px;
+  }
+
 `;
 
 const LabelTextArea = styled.label`
@@ -64,6 +73,13 @@ const TextArea = styled.textarea`
   margin: 10px;
   padding: 10px;
   font-size: 18px;
+
+  :focus {
+    outline: none;
+    border: 3px solid #2EAF56;
+    border-radius: 22px;
+  }
+
 `;
 
 const Button = styled.button`
@@ -86,6 +102,8 @@ const Button = styled.button`
 `;
 
 const ProductCreate = () => {
+  const [redirect, setRedirect] = useState(false);
+  const [isCreated, setCreated] = useState(false);
   const [product, setProduct] = useState({
     product: "",
     imgURL: "",
@@ -95,8 +113,6 @@ const ProductCreate = () => {
     description: "",
     price: "",
   });
-
-  const [isCreated, setCreated] = useState(false);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -113,6 +129,14 @@ const ProductCreate = () => {
     setCreated({ created });
   };
 
+  const goBack = (e) => {
+    setRedirect(true);
+  };
+
+  if (redirect === true) {
+    return <Redirect to="/" />;
+  }
+
   if (isCreated) {
     return <Redirect to={`/products`} />;
   }
@@ -121,9 +145,7 @@ const ProductCreate = () => {
     <Layout>
       <MainContainer>
         <BackDiv>
-          <BackButton to="/">
-            <i className="fas fa-caret-left"></i>
-          </BackButton>
+          <BackButton onClick={(e) => goBack()}></BackButton>
         </BackDiv>
         <DetailContainer>
           <Form onSubmit={handleSubmit}>
