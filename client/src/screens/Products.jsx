@@ -14,7 +14,7 @@ const LoadingMessage = styled.div`
   margin: 50px;
   font: medium Futura;
   font-size: 45px;
-`
+`;
 
 const BackDiv = styled.div`
   display: flex;

@@ -89,11 +89,11 @@ const RightButton = styled.div`
 
   :hover {
     transform: scale(1.1);
-`
+`;
 
 const FeaturedCards = styled.div`
   display: flex;
-`
+`;
 
 const StoryContainer = styled.div`
   width: 95%;
@@ -156,26 +156,6 @@ const Home = () => {
     />
   ));
 
-
-  // const showProducts = (n) => {
-  //   let i;
-  //   let slideshow = [];
-  //   if (n > featuredJSX.length) { productIndex = 1 }
-  //   if (n < 1) { productIndex = featuredJSX.length };
-  //   for (i = 0; i < featuredJSX.length; i++) {
-  //     featuredJSX[i] = { display: 'none' };
-  //   }
-  //   featuredJSX[productIndex - 1] = { display: 'block' };
-  //   // return slideshow;
-  // }
-
-  // let productIndex = 1;
-  // showProducts(productIndex);
-
-  // function plusSlide(n) {
-  //   showProducts(productIndex += n);
-  // }
-
   return (
     <Layout>
       <HomeMainContainer>
@@ -197,9 +177,7 @@ const Home = () => {
         <div>
           <CarouselTitle>FEATURED PRODUCTS</CarouselTitle>
           <Carousel>
-            {/* <LeftButton onClick={plusSlide(-1)}><i className="fas fa-caret-left"></i></LeftButton> */}
             <FeaturedCards>{featuredJSX}</FeaturedCards>
-            {/* <RightButton onClick={plusSlide(1)}><i className="fas fa-caret-right"></i></RightButton> */}
           </Carousel>
         </div>
         <StoryContainer>
