@@ -4,6 +4,7 @@ import BackButton from '../components/BackButton';
 import { useParams, Link, Redirect } from "react-router-dom";
 import { getProduct, deleteProduct } from "../services/products";
 import Reviews from "../screens/Reviews";
+import StarRatings from 'react-star-ratings'
 import styled from "styled-components";
 
 const BackDiv = styled.div`
@@ -224,6 +225,13 @@ const ProductDetail = () => {
         <ProductInfoContainer>
           <ProductName>{product.product}</ProductName>
           <ProductDetails>${product.price}</ProductDetails>
+          <ProductDetails>
+            <StarRatings
+              rating={product.reviews.rating}
+              starRatedColor="white"
+              starDimension="25px"
+              starSpacing="0px" />
+          </ProductDetails>
           <ProductReview>{product.review}</ProductReview>
           <ProductDetails>{product.description}</ProductDetails>
         </ProductInfoContainer>
