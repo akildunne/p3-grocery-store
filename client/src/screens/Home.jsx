@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import Layout from "../components/shared/Layout";
 import ProductCard from "../components/ProductCard";
 import { getProducts } from "../services/products";
-import Carousel from 'react-elastic-carousel';
+import Carousel from "react-elastic-carousel";
 
 const HomeMainContainer = styled.div`
   display: flex;
@@ -82,10 +82,10 @@ const ShopNowButton = styled.button`
 const CarouselTitle = styled.div`
   font-size: 30px;
   font: futura, bold;
-  color: #40A48B;
+  color: #40a48b;
   margin-top: 35px;
   margin-bottom: 15px;
-`
+`;
 
 const CarouselContainer = styled.div`
   display: flex;
@@ -147,8 +147,9 @@ const Home = () => {
   }, []);
 
   useEffect(() => {
-    const featuredProducts = allProducts.filter((element) =>
-      element.featured === true)
+    const featuredProducts = allProducts.filter(
+      (element) => element.featured === true
+    );
     setFilteredProducts(featuredProducts);
   }, [allProducts]);
 
@@ -162,6 +163,12 @@ const Home = () => {
       id={product._id}
     />
   ));
+
+  const breakPoints = [
+    { width: 1200, itemsToShow: 4 },
+    { width: 768, itemsToShow: 3 },
+    // { width: 550, itemsToShow: 2 },
+  ];
 
   return (
     <Layout>
@@ -184,9 +191,12 @@ const Home = () => {
         <div>
           <CarouselTitle>FEATURED PRODUCTS</CarouselTitle>
           <CarouselContainer>
-            <Carousel itemsToShow={4} pagination={false}> 
-        {featuredJSX}
-      </Carousel>
+            <Carousel pagination={false} breakPoints={breakPoints}
+              // onResize={(currentBreakPoint) =>
+            //   {breakPoints}}
+            >
+              {featuredJSX}
+            </Carousel>
           </CarouselContainer>
         </div>
         <StoryContainer>
