@@ -222,15 +222,24 @@ const Home = () => {
         <div>
           {featuredJSX.length === 0 
           ? null         
-            :
-            <>
-              <CarouselTitle>FEATURED PRODUCTS</CarouselTitle>
-              <CarouselContainer>
-                <Carousel pagination={false} breakPoints={breakPoints}>
-                  {featuredJSX}
-                </Carousel>
-              </CarouselContainer>
-            </>
+            : (featuredJSX.length >= 1 && featuredJSX.length <= 4
+              ? <>
+                  <CarouselTitle>FEATURED PRODUCTS</CarouselTitle>
+                  <CarouselContainer>
+                  <Carousel pagination={false} showArrows={false} breakPoints={breakPoints}>
+                      {featuredJSX}
+                    </Carousel>
+                  </CarouselContainer>
+              </> 
+              : <>
+                  <CarouselTitle>FEATURED PRODUCTS</CarouselTitle>
+                  <CarouselContainer>
+                    <Carousel pagination={false} breakPoints={breakPoints}>
+                      {featuredJSX}
+                    </Carousel>
+                  </CarouselContainer>
+              </>
+            )
           }
         </div>
         <StoryContainer>
