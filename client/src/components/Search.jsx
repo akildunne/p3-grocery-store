@@ -11,9 +11,10 @@ const SearchBar = styled.input`
   border: 2px solid #707070;
   border-radius: 20px;
   padding: 16px;
-  font: Helvetica, regular;
+  font-family: Helvetica, regular;
   font-size: 25px;
-  :focus {d
+  color: #707070
+  :focus {
     outline: none;
     border: 3px solid #2EAF56;
     border-radius: 22px;

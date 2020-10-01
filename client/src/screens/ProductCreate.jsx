@@ -39,7 +39,9 @@ const InputContainer = styled.input`
   border: 1px solid #707070;
   border-radius: 22px;
   padding: 10px;
-  font-size: 18px;
+  font-family: regular, Helvetica;
+  font-size: 25px;
+  color: #707070;
 
   :focus {
     outline: none;
@@ -62,7 +64,9 @@ const TextArea = styled.textarea`
   justify-self: flex-end;
   margin: 10px;
   padding: 10px;
-  font-size: 18px;
+  font-family: regular, Helvetica;
+  font-size: 25px;
+  color: #707070;
 
   :focus {
     outline: none;
