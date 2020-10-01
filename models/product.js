@@ -14,19 +14,14 @@ const Product = new Schema(
     review: { type: String, required: false },
     reviews: [{
       author: { type: String, required: false },
-      location: { type: String, required: false },
       rating: { type: Number, required: false },
       description: { type: String, required: false },
       title: { type: String, required: false },
     }]
 
   },
-  { timestamps: true ,
-  toJSON: { virtuals: true } 
-  },
+  { timestamps: true }
 )
-Product.virtual('rating').get(function () {
-  return this.reviews.reduce((total, review) => total + review.rating, 0) / this.reviews.length
-})
+
 
 module.exports = mongoose.model('products', Product)
