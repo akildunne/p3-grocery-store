@@ -6,7 +6,7 @@ const SearchContainer = styled.div`
 `;
 
 const SearchBar = styled.input`
-  width: 50vw;
+  width: 60vw;
   height: 50px;
   border: 2px solid #707070;
   border-radius: 20px;

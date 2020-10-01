@@ -28,6 +28,10 @@ const CardContainer = styled.div`
   flex-flow: row wrap;
   justify-content: center;
   margin: 50px 50px;
+
+  @media (max-width: 800px) {
+    margin: 20px auto;
+  }
 `;
 
 const SearchDiv = styled.div`
@@ -36,6 +40,10 @@ const SearchDiv = styled.div`
   justify-content: center;
   margin: 0px 30px;
   padding: 15px 30px;
+
+  @media (max-width: 800px) {
+    flex-direction: column;
+  }
 `;
 
 const Products = () => {

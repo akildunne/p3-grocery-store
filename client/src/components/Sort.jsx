@@ -10,6 +10,16 @@ const Form = styled.form`
   border-radius: 10px;
   padding: 40px;
   color: #707070;
+
+  @media (max-width: 800px) {
+    align-content: flex-start;
+    width: 50vw;
+  }
+
+  @media (max-width: 400px) {
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
 const Option = styled.option`
