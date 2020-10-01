@@ -80,10 +80,6 @@ const CarouselContainer = styled.div`
   }
 `;
 
-const FeaturedCards = styled.div`
-  display: flex;
-`
-
 const StoryContainer = styled.div`
   width: 95%;
   margin: 0 auto;
