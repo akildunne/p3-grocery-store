@@ -123,7 +123,7 @@ const main = async () => {
         title: "Would buy again!!!!",
         author: "Jeff P.,",
         location: "Atlanta, Georgia",
-        rating: "4",
+        rating: "5",
         description: "I bought a pack of these for my BBQ last weekend and I have never had a sandwich this tadty"
       }]
     },

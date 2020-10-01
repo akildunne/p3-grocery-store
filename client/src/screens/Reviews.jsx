@@ -1,5 +1,5 @@
 import React from "react";
-import StarRating from 'star-rating-react';
+import StarRatings from 'react-star-ratings'
 import styled from "styled-components";
 
 const ReviewCard = styled.div`
@@ -12,7 +12,9 @@ const ReviewCard = styled.div`
 const Reviews = (props) => {
   const reviewsJSX = props.reviews.map((review, index) => (
     <ReviewCard key={index}>
-      <p> {review.title} <StarRating size={review.rating} value={review.rating} starRatedColor='black'  /></p>
+     
+      <StarRatings rating={review.rating} starRatedColor="black"
+        starDimension="25px" starSpacing="0px"/>  <p> {review.title}</p>
       <p>{review.author}   {review.location}</p>      
       <p>{review.description}</p>
     </ReviewCard>
