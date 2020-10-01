@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Layout from "../components/shared/Layout";
+import BackButton from "../components/BackButton";
 import { Redirect, Link } from "react-router-dom";
 import { createProduct } from "../services/products";
 import styled from "styled-components";
@@ -8,17 +9,6 @@ const BackDiv = styled.div`
   display: flex;
   margin: 15px auto;
   padding-left: 36px;
-`;
-
-const BackButton = styled(Link)`
-  display: flex;
-  text-decoration: none;
-  color: #939191;
-  font-size: 45px;
-  margin: 0;
-
-  :hover {
-    transform: scale(1.1);
 `;
 
 const DetailContainer = styled.div`
@@ -87,6 +77,8 @@ const Button = styled.button`
 `;
 
 const ProductCreate = () => {
+  const [redirect, setRedirect] = useState(false);
+  const [isCreated, setCreated] = useState(false);
   const [product, setProduct] = useState({
     product: "",
     imgURL: "",
@@ -96,8 +88,6 @@ const ProductCreate = () => {
     description: "",
     price: "",
   });
-
-  const [isCreated, setCreated] = useState(false);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -114,6 +104,14 @@ const ProductCreate = () => {
     setCreated({ created });
   };
 
+  const goBack = (e) => {
+    setRedirect(true);
+  };
+
+  if (redirect === true) {
+    return <Redirect to="/" />;
+  }
+
   if (isCreated) {
     return <Redirect to={`/products`} />;
   }
@@ -121,9 +119,7 @@ const ProductCreate = () => {
   return (
     <Layout>
       <BackDiv>
-        <BackButton to="/">
-          <i className="fas fa-caret-left"></i>
-        </BackButton>
+        <BackButton onClick={(e) => goBack()}></BackButton>
       </BackDiv>
       <DetailContainer>
         <Form onSubmit={handleSubmit}>
