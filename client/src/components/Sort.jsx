@@ -21,7 +21,9 @@ const Option = styled.option`
 const Label = styled.label`
   padding: 8px;
   font-size: 25px;
+  white-space: nowrap;
 `;
+
 const Select = styled.select`
   cursor: pointer;
   padding: 8px;

@@ -15,6 +15,16 @@ const BackDiv = styled.div`
   margin-top: 20px;
 `;
 
+const BackButton = styled(Link)`
+  text-decoration: none;
+  color: #939191;
+  font-size: 45px;
+
+  :hover {
+    transform: scale(1.1);
+  }
+`;
+
 const DetailContainer = styled.div`
   display: flex;
   margin: 50px auto;
@@ -40,11 +50,13 @@ const InputContainer = styled.input`
   border-radius: 22px;
   padding: 10px;
   font-size: 18px;
+
   :focus {
     outline: none;
     border: 3px solid #2EAF56;
     border-radius: 22px;
   }
+
 `;
 
 const LabelTextArea = styled.label`
@@ -61,11 +73,13 @@ const TextArea = styled.textarea`
   margin: 10px;
   padding: 10px;
   font-size: 18px;
+
   :focus {
     outline: none;
     border: 3px solid #2EAF56;
     border-radius: 22px;
   }
+
 `;
 
 const Button = styled.button`
@@ -196,7 +210,7 @@ const ProductCreate = () => {
             <Button>Add Product</Button>
           </Form>
         </DetailContainer>
-      </MainContainer>
+      </MainContainer>  
     </Layout>
   );
 };

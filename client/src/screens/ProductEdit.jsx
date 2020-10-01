@@ -45,7 +45,6 @@ const InputContainer = styled.input`
     border: 3px solid #2EAF56;
     border-radius: 22px;
   }
- 
 `;
 
 const LabelTextArea = styled.label`
@@ -152,7 +151,6 @@ const ProductEdit = (props) => {
               autoFocus
               onChange={handleChange}
             />
-
             <LabelContainer>Price:</LabelContainer>
             <InputContainer
               type="text"
@@ -202,10 +200,11 @@ const ProductEdit = (props) => {
               required
               onChange={handleChange}
             />
-            <Button>Save</Button>
+            <Button>Save</Button>         
           </Form>
         </DetailContainer>
-      </MainContainer>  
+      </MainContainer>
+
     </Layout>
   );
 };
