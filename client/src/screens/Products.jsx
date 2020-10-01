@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
+import { Redirect } from "react-router-dom";
 import ProductCard from "../components/ProductCard";
 import Search from "../components/Search";
 import Sort from "../components/Sort";
-import { Link } from "react-router-dom";
+import BackButton from '../components/BackButton';
 import { getProducts } from "../services/products";
 import { AZ, ZA, lowestFirst, highestFirst } from "../utils/sort"
 import Layout from "../components/shared/Layout";
@@ -12,9 +13,9 @@ import styled from "styled-components";
 const LoadingMessage = styled.div`
   color: #40A48B;
   margin: 50px;
-  font-size: 55px;
   font: medium Futura;
-`
+  font-size: 45px;
+`;
 
 const BackDiv = styled.div`
   display: flex;
@@ -22,23 +23,15 @@ const BackDiv = styled.div`
   padding-left: 36px;
 `;
 
-const BackButton = styled(Link)`
-  display: flex;
-  text-decoration: none;
-  color: #939191;
-  font-size: 45px;
-  margin: 0;
-
-  :hover {
-    transform: scale(1.1);
-`;
-
 const CardContainer = styled.div`
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
   margin: 50px 50px;
-  // justify-content: end;
+
+  @media (max-width: 800px) {
+    margin: 20px auto;
+  }
 `;
 
 const SearchDiv = styled.div`
@@ -47,21 +40,25 @@ const SearchDiv = styled.div`
   justify-content: center;
   margin: 0px 30px;
   padding: 15px 30px;
+
+  @media (max-width: 800px) {
+    flex-direction: column;
+  }
 `;
 
-const Products = (props) => {
-  const [loading, setLoading] = useState(false);
+const Products = () => {
+  const [redirect, setRedirect] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
   const [allProducts, setAllProducts] = useState([]);
   const [queriedProducts, setQueriedProducts] = useState([]);
   const [sortType, setSortType] = useState([]);
-
 
   useEffect(() => {
     const fetchProducts = async () => {
       const products = await getProducts();
       setAllProducts(products);
       setQueriedProducts(products);
-      setLoading(true);
+      setIsLoaded(true);
     };
     fetchProducts();
   }, []);
@@ -95,7 +92,6 @@ const Products = (props) => {
   const handleSubmit = (event) => event.preventDefault();
 
   const productJSX = queriedProducts.map((product, index) => (
-
     <ProductCard
       key={index}
       product={product.product}
@@ -106,19 +102,29 @@ const Products = (props) => {
     />
   ));
 
+  const goBack = (e) => {
+    setRedirect(true);
+  };
+
+  if (redirect === true) {
+    return <Redirect to="/" />;
+  }
+
   return (
     <Layout>
       <BackDiv>
-        <BackButton to="/">
-          <i className="fas fa-caret-left"></i>
-        </BackButton>
+        <BackButton onClick={(e) => goBack()}></BackButton>
       </BackDiv>
       <SearchDiv>
         <Search onSubmit={handleSubmit} onChange={handleSearch} />
         <Sort onSubmit={handleSubmit} onChange={handleSort} /> 
       </SearchDiv>
-      <CardContainer>{loading ? productJSX : <LoadingMessage>Please wait, stocking shelves...  </LoadingMessage>}
-      </CardContainer>
+      <CardContainer>
+        {isLoaded
+          ? (productJSX.length === 0 ? <p>Out of Stock</p> : productJSX)
+          : <LoadingMessage><i className="fas fa-shopping-cart"></i> Please wait, stocking shelves...</LoadingMessage>
+        }
+      </CardContainer> 
     </Layout>
   );
 };

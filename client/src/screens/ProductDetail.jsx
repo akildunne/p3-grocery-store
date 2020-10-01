@@ -1,24 +1,16 @@
 import React, { useState, useEffect } from "react";
 import Layout from "../components/shared/Layout";
+import BackButton from '../components/BackButton';
 import { useParams, Link, Redirect } from "react-router-dom";
 import { getProduct, deleteProduct } from "../services/products";
+import Reviews from "../screens/Reviews";
+import StarRatings from 'react-star-ratings'
 import styled from "styled-components";
 
 const BackDiv = styled.div`
   display: flex;
   margin: 15px auto;
   padding-left: 36px;
-`;
-
-const BackButton = styled(Link)`
-  display: flex;
-  text-decoration: none;
-  color: #939191;
-  font-size: 45px;
-  margin: 0;
-
-  :hover {
-    transform: scale(1.1);
 `;
 
 const ProductDetailContainer = styled.div`
@@ -52,7 +44,7 @@ const CoverPhoto = styled.img`
 const ThumbnailContainer = styled.div`
   align-items: top;
   justify-content: center;
-`
+`;
 
 const Thumbnails = styled.img`
   height: 92px;
@@ -65,26 +57,29 @@ const Thumbnails = styled.img`
     transform: scale(1.1);
 `;
 
-const ProductInfo = styled.div`
+const ProductInfoContainer = styled.div`
   margin-top: 95px;
   margin-left: 45px;
 `;
 
-const ProductName = styled.div`
-  display: flex;
+const ProductName = styled.h4`
   font-size: 35px;
   margin: 10px auto;
 `;
-const ProductPrice = styled.div`
-  display: flex;
+
+const ProductDetails = styled.p`
   font-size: 25px;
-  margin: 10px auto;
+  text-align: left;
 `;
 
-const ProductDescription = styled.div`
-  display: flex;
-  font-size: 20px;
-  margin: 20px auto;
+const ProductReviewContainer = styled.div`
+  text-align: left;
+`;
+
+
+const ProductReview = styled.p`
+  font-size: 25px;
+  text-align: left;
 `;
 
 const ButtonContainer = styled.div`
@@ -132,10 +127,26 @@ const DeleteButton = styled.button`
     transform: scale(1.1);
 `;
 
+const ReviewContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+  justify-content: flex-start;
+  align-items: left;
+`
+
+const ReviewHeading = styled.h3`
+  font-size: 20px;
+  text-align: left;
+  margin-left: 50px;
+`
+
 const ProductDetail = () => {
+  const [redirect, setRedirect] = useState(false);
   const [isDeleted, setIsDeleted] = useState(false);
   const [activeImage, setActiveImage] = useState("");
   const [product, setProduct] = useState({
+    review: undefined,
     product: "",
     imgURL: "",
     imgURL2: "",
@@ -143,6 +154,7 @@ const ProductDetail = () => {
     imgURL4: "",
     description: "",
     price: "",
+    reviews: []
   });
 
   const { id } = useParams();
@@ -154,13 +166,30 @@ const ProductDetail = () => {
       setActiveImage(product.imgURL);
     };
     fetchProduct();
+    console.log(product)
   }, [id]);
 
-  const productDeleted = async (event) => {
-    event.preventDefault();
+  const deleteConfirmation = () => {
+    let r = window.confirm("Are you sure you want to delete this product?");
+    if (r === true) {
+      productDeleted();
+      alert("Product deleted!");
+    } else {
+    }
+  };
+
+  const productDeleted = async () => {
     const deleted = await deleteProduct(product._id);
     setIsDeleted(deleted);
   };
+
+  const goBack = () => {
+    setRedirect(true);
+  };
+
+  if (redirect === true) {
+    return <Redirect to="/products" />;
+  }
 
   if (isDeleted) {
     return <Redirect to="/products" />;
@@ -169,9 +198,7 @@ const ProductDetail = () => {
   return (
     <Layout>
       <BackDiv>
-        <BackButton to="/products">
-          <i className="fas fa-caret-left"></i>
-        </BackButton>
+        <BackButton onClick={(e) => goBack()}></BackButton>
       </BackDiv>
       <ProductDetailContainer>
         <ImageContainer>
@@ -179,24 +206,55 @@ const ProductDetail = () => {
             <CoverPhoto src={activeImage} alt={product.product} />
           </div>
           <ThumbnailContainer>
-            <Thumbnails src={product.imgURL} alt={product.product} onClick={(e) => setActiveImage(e.target.src)} />
-            <Thumbnails src={product.imgURL2} alt={product.product} onClick={(e) => setActiveImage(e.target.src)}/>
-            <Thumbnails src={product.imgURL3} alt={product.product} onClick={(e) => setActiveImage(e.target.src)}/>
-            <Thumbnails src={product.imgURL4} alt={product.product} onClick={(e) => setActiveImage(e.target.src)}/>
+            <Thumbnails
+              src={product.imgURL}
+              alt={product.product}
+              onClick={(e) => setActiveImage(e.target.src)}
+            />
+            <Thumbnails
+              src={product.imgURL2}
+              alt={product.product}
+              onClick={(e) => setActiveImage(e.target.src)}
+            />
+            <Thumbnails
+              src={product.imgURL3}
+              alt={product.product}
+              onClick={(e) => setActiveImage(e.target.src)}
+            />
+            <Thumbnails
+              src={product.imgURL4}
+              alt={product.product}
+              onClick={(e) => setActiveImage(e.target.src)}
+            />
           </ThumbnailContainer>
         </ImageContainer>
-        <ProductInfo>
+        <ProductInfoContainer>
           <ProductName>{product.product}</ProductName>
-          <ProductPrice>${product.price}</ProductPrice>
-          <ProductDescription>{product.description}</ProductDescription>
-        </ProductInfo>
+          <ProductDetails>${product.price}</ProductDetails>
+          <ProductReviewContainer>
+            <StarRatings
+              rating={product.review}
+              starRatedColor="white"
+              starDimension="25px"
+              starSpacing="0px"
+            />
+          </ProductReviewContainer>
+          <ProductDetails>{product.description}</ProductDetails>
+        </ProductInfoContainer>
       </ProductDetailContainer>
       <ButtonContainer>
         <Link to={`/products/edit/${product._id}`}>
           <EditButton>Edit</EditButton>
         </Link>
-        <DeleteButton onClick={productDeleted}>Delete</DeleteButton>
+        <DeleteButton onClick={deleteConfirmation}>Delete</DeleteButton>
       </ButtonContainer>
+      {product.reviews.length === 0 
+        ? null
+        : <ReviewContainer>
+            <ReviewHeading>Customer reviews:</ReviewHeading>
+            <Reviews reviews={product.reviews} />        
+          </ReviewContainer>
+      }
     </Layout>
   );
 };

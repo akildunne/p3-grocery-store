@@ -3,27 +3,50 @@ import styled from "styled-components";
 
 const Form = styled.form`
   display: flex;
+  align-items: center;
   align-content: flex-end;
   width: 20%;
   height: 35px;
-  //  border: 2px solid #707070;
   border-radius: 10px;
   padding: 40px;
   color: #707070;
+  margin-right: 55px;
+
+  @media (max-width: 800px) {
+    align-content: flex-start;
+    width: 50vw;
+  }
+
+  @media (max-width: 400px) {
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
 const Option = styled.option`
-color: #707070;
-padding: 50px;
-text-align; left;
+  color: #707070;
+  padding: 50px;
+  text-align; left;
 `;
 
 const Label = styled.label`
   padding: 8px;
+  font-size: 25px;
+  white-space: nowrap;
 `;
+
 const Select = styled.select`
   cursor: pointer;
   padding: 8px;
+  font: Helvetica, regular;
+  font-size: 25px;
+  color: #707070;
+
+  :focus {
+    outline: none;
+    border: 3px solid #2EAF56;
+  }
+
   :hover 
     text-align; left
 `;
