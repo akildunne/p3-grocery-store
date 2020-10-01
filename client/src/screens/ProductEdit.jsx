@@ -82,8 +82,12 @@ const ProductEdit = (props) => {
   const [product, setProduct] = useState({
     product: "",
     imgURL: "",
+    imgURL2: "",
+    imgURL3: "",
+    imgURL4: "",
     description: "",
     price: "",
+    featured: false,
   });
 
   const [isUpdated, setUpdated] = useState(false);
@@ -98,7 +102,9 @@ const ProductEdit = (props) => {
   }, [id]);
 
   const handleChange = (event) => {
-    const { name, value } = event.target;
+    const target = event.target;
+    const { name } = target;
+    const value = target.type === "checkbox" ? target.checked : target.value;
     setProduct({
       ...product,
       [name]: value,
@@ -189,6 +195,13 @@ const ProductEdit = (props) => {
               value={product.imgURL4}
               name="imgURL4"
               required
+              onChange={handleChange}
+            />
+            <LabelContainer>Feature in Carousel:</LabelContainer>
+            <InputContainer
+              type="checkbox"
+              checked={product.featured}
+              name="featured"
               onChange={handleChange}
             />
             <Button>Save</Button>

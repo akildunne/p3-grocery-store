@@ -193,7 +193,6 @@ const ProductCreate = () => {
               type="checkbox"
               checked={product.featured}
               name="featured"
-              required
               onChange={handleChange}
             />
             <Button>Add Product</Button>
