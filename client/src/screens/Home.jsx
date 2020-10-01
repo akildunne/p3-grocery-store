@@ -220,12 +220,18 @@ const Home = () => {
           </CoverPhoto>
         </div>
         <div>
-          <CarouselTitle>FEATURED PRODUCTS</CarouselTitle>
-          <CarouselContainer>
-            <Carousel pagination={false} breakPoints={breakPoints}>
-              {featuredJSX}
-            </Carousel>
-          </CarouselContainer>
+          {featuredJSX.length === 0 
+          ? null         
+            :
+            <>
+              <CarouselTitle>FEATURED PRODUCTS</CarouselTitle>
+              <CarouselContainer>
+                <Carousel pagination={false} breakPoints={breakPoints}>
+                  {featuredJSX}
+                </Carousel>
+              </CarouselContainer>
+            </>
+          }
         </div>
         <StoryContainer>
           <OurStoryTitle>Our Story</OurStoryTitle>
