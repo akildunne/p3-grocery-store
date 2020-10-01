@@ -119,72 +119,74 @@ const ProductCreate = () => {
 
   return (
     <Layout>
-      <BackDiv>
-        <BackButton onClick={(e) => goBack()}></BackButton>
-      </BackDiv>
-      <DetailContainer>
-        <Form onSubmit={handleSubmit}>
-          <LabelContainer>Product Name:</LabelContainer>
-          <InputContainer
-            type="text"
-            value={product.product}
-            name="product"
-            required
-            autoFocus
-            onChange={handleChange}
-          />
-          <LabelContainer>Price:</LabelContainer>
-          <InputContainer
-            type="text"
-            value={product.price}
-            name="price"
-            required
-            onChange={handleChange}
-          />
-          <LabelTextArea>Description:</LabelTextArea>
-          <TextArea
-            rows={4}
-            columns={20}
-            value={product.description}
-            name="description"
-            required
-            onChange={handleChange}
-          />
-          <LabelContainer>Image Link:</LabelContainer>
-          <InputContainer
-            type="text"
-            value={product.imgURL}
-            name="imgURL"
-            required
-            onChange={handleChange}
-          />
-          <LabelContainer>Image Link 2:</LabelContainer>
-          <InputContainer
-            type="text"
-            value={product.imgURL2}
-            name="imgURL2"
-            required
-            onChange={handleChange}
-          />
-          <LabelContainer>Image Link 3:</LabelContainer>
-          <InputContainer
-            type="text"
-            value={product.imgURL3}
-            name="imgURL3"
-            required
-            onChange={handleChange}
-          />
-          <LabelContainer>Image Link 4:</LabelContainer>
-          <InputContainer
-            type="text"
-            value={product.imgURL4}
-            name="imgURL4"
-            required
-            onChange={handleChange}
-          />
-          <Button>Add Product</Button>
-        </Form>
-      </DetailContainer>
+      <MainContainer>
+        <BackDiv>
+          <BackButton onClick={(e) => goBack()}></BackButton>
+        </BackDiv>
+        <DetailContainer>
+          <Form onSubmit={handleSubmit}>
+            <LabelContainer>Product Name:</LabelContainer>
+            <InputContainer
+              type="text"
+              value={product.product}
+              name="product"
+              required
+              autoFocus
+              onChange={handleChange}
+            />
+            <LabelContainer>Price:</LabelContainer>
+            <InputContainer
+              type="text"
+              value={product.price}
+              name="price"
+              required
+              onChange={handleChange}
+            />
+            <LabelTextArea>Description:</LabelTextArea>
+            <TextArea
+              rows={4}
+              columns={20}
+              value={product.description}
+              name="description"
+              required
+              onChange={handleChange}
+            />
+            <LabelContainer>Image Link:</LabelContainer>
+            <InputContainer
+              type="text"
+              value={product.imgURL}
+              name="imgURL"
+              required
+              onChange={handleChange}
+            />
+            <LabelContainer>Image Link 2:</LabelContainer>
+            <InputContainer
+              type="text"
+              value={product.imgURL2}
+              name="imgURL2"
+              required
+              onChange={handleChange}
+            />
+            <LabelContainer>Image Link 3:</LabelContainer>
+            <InputContainer
+              type="text"
+              value={product.imgURL3}
+              name="imgURL3"
+              required
+              onChange={handleChange}
+            />
+            <LabelContainer>Image Link 4:</LabelContainer>
+            <InputContainer
+              type="text"
+              value={product.imgURL4}
+              name="imgURL4"
+              required
+              onChange={handleChange}
+            />
+            <Button>Add Product</Button>
+          </Form>
+        </DetailContainer>
+      </MainContainer>
     </Layout>
   );
 };
