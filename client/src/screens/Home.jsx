@@ -99,6 +99,8 @@ const CarouselContainer = styled.div`
       background-color: #40A48B;
       :hover {
         transform: scale(1.1);
+
+        
   }
 `;
 
@@ -165,9 +167,9 @@ const Home = () => {
   ));
 
   const breakPoints = [
+    { width: 400, itemsToShow: 1 },
+    { width: 800, itemsToShow: 3 },
     { width: 1200, itemsToShow: 4 },
-    { width: 768, itemsToShow: 3 },
-    // { width: 550, itemsToShow: 2 },
   ];
 
   return (
