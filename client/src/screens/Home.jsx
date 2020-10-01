@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import Layout from "../components/shared/Layout";
 import ProductCard from "../components/ProductCard";
 import { getProducts } from "../services/products";
-import Carousel from "react-elastic-carousel";
+import Carousel, { consts } from "react-elastic-carousel";
 
 const HomeMainContainer = styled.div`
   display: flex;
@@ -220,12 +220,27 @@ const Home = () => {
           </CoverPhoto>
         </div>
         <div>
-          <CarouselTitle>FEATURED PRODUCTS</CarouselTitle>
-          <CarouselContainer>
-            <Carousel pagination={false} breakPoints={breakPoints}>
-              {featuredJSX}
-            </Carousel>
-          </CarouselContainer>
+          {featuredJSX.length === 0 
+          ? null         
+            : (featuredJSX.length >= 1 && featuredJSX.length <= 4
+              ? <>
+                  <CarouselTitle>FEATURED PRODUCTS</CarouselTitle>
+                  <CarouselContainer>
+                  <Carousel pagination={false} itemPosition={consts.CENTER} showArrows={false} breakPoints={breakPoints}>
+                      {featuredJSX}
+                    </Carousel>
+                  </CarouselContainer>
+              </> 
+              : <>
+                  <CarouselTitle>FEATURED PRODUCTS</CarouselTitle>
+                  <CarouselContainer>
+                    <Carousel pagination={false} breakPoints={breakPoints}>
+                      {featuredJSX}
+                    </Carousel>
+                  </CarouselContainer>
+              </>
+            )
+          }
         </div>
         <StoryContainer>
           <OurStoryTitle>Our Story</OurStoryTitle>
