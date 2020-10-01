@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { useParams, Redirect, Link } from "react-router-dom";
+import { useParams, Redirect } from "react-router-dom";
 import Layout from "../components/shared/Layout";
+import BackButton from "../components/BackButton";
 import { getProduct, updateProduct } from "../services/products";
 import styled from "styled-components";
 
@@ -12,15 +13,6 @@ const BackDiv = styled.div`
   display: flex;
   padding-left: 36px;
   margin-top: 20px;
-`;
-
-const BackButton = styled(Link)`
-  text-decoration: none;
-  color: #939191;
-  font-size: 45px;
-
-  :hover {
-    transform: scale(1.1);
 `;
 
 const DetailContainer = styled.div`
@@ -86,13 +78,13 @@ const Button = styled.button`
 `;
 
 const ProductEdit = (props) => {
+  const [redirect, setRedirect] = useState(false);
   const [product, setProduct] = useState({
     product: "",
     imgURL: "",
     description: "",
     price: "",
   });
-  
 
   const [isUpdated, setUpdated] = useState(false);
   let { id } = useParams();
@@ -120,82 +112,87 @@ const ProductEdit = (props) => {
     setUpdated(updated);
   };
 
+  const goBack = (e) => {
+    setRedirect(true);
+  };
+
+  if (redirect === true) {
+    return <Redirect to={`/products/${product._id}`} />;
+  }
+
   if (isUpdated) {
     return <Redirect to={`/products/${product._id}`} />;
   }
 
   return (
     <Layout>
-      <MainContainer>
-        <BackDiv>
-          <BackButton to={`/products/${product._id}`}>
-            <i className="fas fa-caret-left"></i>
-          </BackButton>
-        </BackDiv>
-        <DetailContainer>
-          <Form onSubmit={handleSubmit}>
-            <LabelContainer>Product Name:</LabelContainer>
-            <InputContainer
-              type="text"
-              value={product.product}
-              name="product"
-              required
-              autoFocus
-              onChange={handleChange}
-            />
-            <LabelContainer>Price:</LabelContainer>
-            <InputContainer
-              type="text"
-              value={product.price}
-              name="price"
-              required
-              onChange={handleChange}
-            />
-            <LabelTextArea>Description:</LabelTextArea>
-            <TextArea
-              rows={10}
-              columns={20}
-              value={product.description}
-              name="description"
-              required
-              onChange={handleChange}
-            />
-            <LabelContainer>Image Link:</LabelContainer>
-            <InputContainer
-              type="text"
-              value={product.imgURL}
-              name="imgURL"
-              required
-              onChange={handleChange}
-            />
-            <LabelContainer>Image Link 2:</LabelContainer>
-            <InputContainer
-              type="text"
-              value={product.imgURL2}
-              name="imgURL2"
-              required
-              onChange={handleChange}
-            />
-            <LabelContainer>Image Link 3:</LabelContainer>
-            <InputContainer
-              type="text"
-              value={product.imgURL3}
-              name="imgURL3"
-              required
-              onChange={handleChange}
-            />
-            <LabelContainer>Image Link 4:</LabelContainer>
-            <InputContainer
-              type="text"
-              value={product.imgURL4}
-              name="imgURL4"
-              required
-              onChange={handleChange}
-            />
-            <Button>Save</Button>         
-          </Form>
-        </DetailContainer>
-      </MainContainer>
+      <BackDiv>
+        <BackButton onClick={(e) => goBack()}></BackButton>
+      </BackDiv>
+      <DetailContainer>
+        <Form onSubmit={handleSubmit}>
+          <LabelContainer>Product Name:</LabelContainer>
+          <InputContainer
+            type="text"
+            value={product.product}
+            name="product"
+            required
+            autoFocus
+            onChange={handleChange}
+          />
+
+          <LabelContainer>Price:</LabelContainer>
+          <InputContainer
+            type="text"
+            value={product.price}
+            name="price"
+            required
+            onChange={handleChange}
+          />
+          <LabelTextArea>Description:</LabelTextArea>
+          <TextArea
+            rows={10}
+            columns={20}
+            value={product.description}
+            name="description"
+            required
+            onChange={handleChange}
+          />
+          <LabelContainer>Image Link:</LabelContainer>
+          <InputContainer
+            type="text"
+            value={product.imgURL}
+            name="imgURL"
+            required
+            onChange={handleChange}
+          />
+          <LabelContainer>Image Link 2:</LabelContainer>
+          <InputContainer
+            type="text"
+            value={product.imgURL2}
+            name="imgURL2"
+            required
+            onChange={handleChange}
+          />
+          <LabelContainer>Image Link 3:</LabelContainer>
+          <InputContainer
+            type="text"
+            value={product.imgURL3}
+            name="imgURL3"
+            required
+            onChange={handleChange}
+          />
+          <LabelContainer>Image Link 4:</LabelContainer>
+          <InputContainer
+            type="text"
+            value={product.imgURL4}
+            name="imgURL4"
+            required
+            onChange={handleChange}
+          />
+          <Button>Save</Button>
+        </Form>
+      </DetailContainer>
     </Layout>
   );
 };

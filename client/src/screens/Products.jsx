@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
+import { Redirect } from "react-router-dom";
 import ProductCard from "../components/ProductCard";
 import Search from "../components/Search";
 import Sort from "../components/Sort";
-import { Link } from "react-router-dom";
+import BackButton from '../components/BackButton';
 import { getProducts } from "../services/products";
 import { AZ, ZA, lowestFirst, highestFirst } from "../utils/sort"
 import Layout from "../components/shared/Layout";
@@ -12,25 +13,14 @@ import styled from "styled-components";
 const LoadingMessage = styled.div`
   color: #40A48B;
   margin: 50px;
-  font-size: 105px;
   font: medium Futura;
+  font-size: 45px;
 `
 
 const BackDiv = styled.div`
   display: flex;
   margin: 15px auto;
   padding-left: 36px;
-`;
-
-const BackButton = styled(Link)`
-  display: flex;
-  text-decoration: none;
-  color: #939191;
-  font-size: 45px;
-  margin: 0;
-
-  :hover {
-    transform: scale(1.1);
 `;
 
 const CardContainer = styled.div`
@@ -49,6 +39,7 @@ const SearchDiv = styled.div`
 `;
 
 const Products = () => {
+  const [redirect, setRedirect] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
   const [allProducts, setAllProducts] = useState([]);
   const [queriedProducts, setQueriedProducts] = useState([]);
@@ -103,12 +94,18 @@ const Products = () => {
     />
   ));
 
+  const goBack = (e) => {
+    setRedirect(true);
+  };
+
+  if (redirect === true) {
+    return <Redirect to="/" />;
+  }
+
   return (
     <Layout>
       <BackDiv>
-        <BackButton to="/">
-          <i className="fas fa-caret-left"></i>
-        </BackButton>
+        <BackButton onClick={(e) => goBack()}></BackButton>
       </BackDiv>
       <SearchDiv>
         <Search onSubmit={handleSubmit} onChange={handleSearch} />
