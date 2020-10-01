@@ -40,6 +40,7 @@ const InputContainer = styled.input`
   border-radius: 22px;
   padding: 10px;
   font-size: 18px;
+  outline: none;
 `;
 
 const LabelTextArea = styled.label`
@@ -56,6 +57,7 @@ const TextArea = styled.textarea`
   margin: 10px;
   padding: 10px;
   font-size: 18px;
+  outline: none;
 `;
 
 const Button = styled.button`
