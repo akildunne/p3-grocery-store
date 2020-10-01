@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Layout from "../components/shared/Layout";
+import BackButton from '../components/BackButton';
 import { useParams, Link, Redirect } from "react-router-dom";
 import { getProduct, deleteProduct } from "../services/products";
 import Reviews from "../screens/Reviews";
@@ -9,17 +10,6 @@ const BackDiv = styled.div`
   display: flex;
   margin: 15px auto;
   padding-left: 36px;
-`;
-
-const BackButton = styled(Link)`
-  display: flex;
-  text-decoration: none;
-  color: #939191;
-  font-size: 45px;
-  margin: 0;
-
-  :hover {
-    transform: scale(1.1);
 `;
 
 const ProductDetailContainer = styled.div`
@@ -138,7 +128,22 @@ const DeleteButton = styled.button`
     transform: scale(1.1);
 `;
 
+const ReviewContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+  justify-content: flex-start;
+  align-items: left;
+`
+
+const ReviewHeading = styled.h3`
+  font-size: 20px;
+  text-align: left;
+  margin-left: 50px;
+`
+
 const ProductDetail = () => {
+  const [redirect, setRedirect] = useState(false);
   const [isDeleted, setIsDeleted] = useState(false);
   const [activeImage, setActiveImage] = useState("");
   const [product, setProduct] = useState({
@@ -169,8 +174,6 @@ const ProductDetail = () => {
     };
     fetchProduct();
   }, [id]);
-  
-  
 
   const deleteConfirmation = () => {
     let r = window.confirm("Are you sure you want to delete this product?");
@@ -186,6 +189,14 @@ const ProductDetail = () => {
     setIsDeleted(deleted);
   };
 
+  const goBack = (e) => {
+    setRedirect(true);
+  };
+
+  if (redirect === true) {
+    return <Redirect to="/products" />;
+  }
+
   if (isDeleted) {
     return <Redirect to="/products" />;
   }
@@ -193,9 +204,7 @@ const ProductDetail = () => {
   return (
     <Layout>
       <BackDiv>
-        <BackButton to="/products">
-          <i className="fas fa-caret-left"></i>
-        </BackButton>
+        <BackButton onClick={(e) => goBack()}></BackButton>
       </BackDiv>
       <ProductDetailContainer>
         <ImageContainer>
@@ -233,6 +242,7 @@ const ProductDetail = () => {
             {product.description}
             <Reviews reviews={product.reviews} />
           </ProductDescription>
+          <ProductDescription>{product.description}</ProductDescription>
         </ProductInfo>
       </ProductDetailContainer>
       <ButtonContainer>
@@ -241,6 +251,10 @@ const ProductDetail = () => {
         </Link>
         <DeleteButton onClick={deleteConfirmation}>Delete</DeleteButton>
       </ButtonContainer>
+      <ReviewContainer>
+        <ReviewHeading>Customer reviews:</ReviewHeading>
+        <Reviews reviews={product.reviews} />        
+      </ReviewContainer>
     </Layout>
   );
 };

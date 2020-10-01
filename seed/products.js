@@ -17,6 +17,7 @@ const main = async () => {
       price: "0.75/lb",
       reviews: [{
         author: "Ashik",
+        location: "NYC",
         rating: "5",
         description: "Monkeys love them!!!"
       }]
@@ -32,6 +33,7 @@ const main = async () => {
       price: "1.00/lb",
       reviews: [{
         author: "Ashley",
+        location: "NYC",
         rating: "5",
         description: "My son loves them!!!"
       }]
@@ -47,6 +49,7 @@ const main = async () => {
       price: "1.00/lb",
       reviews: [{
         author: "Brianna",
+        location: "NYC",
         rating: "3",
         description: "Ehh, IHOP has the best ones."
       }]
@@ -62,6 +65,7 @@ const main = async () => {
       price: "2.00",
       reviews: [{
         author: "Chris",
+        location: "NYC",
         rating: "5",
         description: "Love it!!"
       }]
@@ -77,6 +81,7 @@ const main = async () => {
       price: "3.50/lb",
       reviews: [{
         author: "Chris",
+        location: "NYC",
         rating: "5",
         description: "It's been so long!!!"
       }]
@@ -92,6 +97,7 @@ const main = async () => {
       price: "4.00",
       reviews: [{
         author: "Ashik",
+        location: "NYC",
         rating: "5",
         description: "Hits the spot with tea!!"
       }]
@@ -108,9 +114,10 @@ const main = async () => {
         "It's official! Hot dogs are sandwiches. And they are a staple for your summer BBQ festivities.",
       price: "5.00",
       reviews: [{
-        author: "Ashley",
-        rating: "2",
-        description: "These pictures are annoying!!!"
+        author: "Jeff P.,",
+        location: "Atlanta, Georgia",
+        rating: "5",
+        description: "I bought a pack of these for my BBQ last weekend and I have never had a sandwich this tadty"
       }]
     },
     {
@@ -124,6 +131,7 @@ const main = async () => {
       price: "5.00",
       reviews: [{
         author: "Ashik",
+        location: "NYC",
         rating: "5",
         description: "I'll buy it from here since dunkin doughnuts is too stingy with their free ketchup!!!"
       }]
@@ -139,6 +147,7 @@ const main = async () => {
       price: "5.50",
       reviews: [{
         author: "Brianna",
+        location: "NYC",
         rating: "3",
         description: "Blue is better"
       }]
@@ -154,12 +163,13 @@ const main = async () => {
       price: "6.50",
       reviews: [{
         author: "Ashik",
+        location: "NYC",
         rating: "5",
         description: "I milked a cow once and it kicked me. Thats why I buy from the store now"
       }]
     },
   ];
-
+  await Product.deleteMany()
   await Product.insertMany(products);
   console.log("Created products!");
 };
