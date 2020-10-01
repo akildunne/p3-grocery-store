@@ -66,6 +66,7 @@ const ProductName = styled.div`
   font-size: 35px;
   margin: 10px auto;
 `;
+
 const ProductPrice = styled.div`
   display: flex;
   font-size: 25px;
