@@ -72,6 +72,11 @@ const ProductDetails = styled.p`
   text-align: left;
 `;
 
+const ProductReviewContainer = styled.div`
+  text-align: left;
+`;
+
+
 const ProductReview = styled.p`
   font-size: 25px;
   text-align: left;
@@ -225,13 +230,13 @@ const ProductDetail = () => {
         <ProductInfoContainer>
           <ProductName>{product.product}</ProductName>
           <ProductDetails>${product.price}</ProductDetails>
-          <ProductDetails>
+          <ProductReviewContainer>
             <StarRatings
               rating={product.reviews.rating}
               starRatedColor="white"
               starDimension="25px"
               starSpacing="0px" />
-          </ProductDetails>
+          </ProductReviewContainer>
           <ProductReview>{product.review}</ProductReview>
           <ProductDetails>{product.description}</ProductDetails>
         </ProductInfoContainer>
