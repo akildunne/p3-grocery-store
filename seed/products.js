@@ -68,7 +68,7 @@ const main = async () => {
       imgURL4: "https://d2lnr5mha7bycj.cloudfront.net/product-image/file/large_cf0c6ad9-9b84-4430-a8b5-0f649c684533.jpg",
       description: " Best cheese out there ",
       price: "2.00",
-      review: "5",
+      review: "4",
       reviews: [{
         title: "Would buy again!!!!",
         author: "Nina J.,",
@@ -85,6 +85,7 @@ const main = async () => {
       imgURL3: "https://www.ghirardelli.com/wcsstore/GhirardelliCatalogAssetStore/Attachment/Secondary/61829_nutrition.png",
       imgURL4: "https://www.ghirardelli.com/wcsstore/GhirardelliCatalogAssetStore/Attachment/Secondary/61829_ingredients.png",
       description: "Sweet delight",
+      review: "5",
       price: "3.50/lb",
       reviews: [{
         title: "Would buy again!!!!",

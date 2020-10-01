@@ -146,7 +146,7 @@ const ProductDetail = () => {
   const [isDeleted, setIsDeleted] = useState(false);
   const [activeImage, setActiveImage] = useState("");
   const [product, setProduct] = useState({
-    review: "",
+    review: undefined,
     product: "",
     imgURL: "",
     imgURL2: "",
@@ -166,6 +166,7 @@ const ProductDetail = () => {
       setActiveImage(product.imgURL);
     };
     fetchProduct();
+    console.log(product)
   }, [id]);
 
   const deleteConfirmation = () => {
@@ -232,12 +233,12 @@ const ProductDetail = () => {
           <ProductDetails>${product.price}</ProductDetails>
           <ProductReviewContainer>
             <StarRatings
-              rating={product.reviews.rating}
+              rating={product.review}
               starRatedColor="white"
               starDimension="25px"
-              starSpacing="0px" />
+              starSpacing="0px"
+            />
           </ProductReviewContainer>
-          <ProductReview>{product.review}</ProductReview>
           <ProductDetails>{product.description}</ProductDetails>
         </ProductInfoContainer>
       </ProductDetailContainer>
