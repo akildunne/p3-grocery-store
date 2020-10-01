@@ -234,10 +234,13 @@ const ProductDetail = () => {
         </Link>
         <DeleteButton onClick={deleteConfirmation}>Delete</DeleteButton>
       </ButtonContainer>
-      <ReviewContainer>
-        <ReviewHeading>Customer reviews:</ReviewHeading>
-        <Reviews reviews={product.reviews} />        
-      </ReviewContainer>
+      {product.reviews.length === 0 
+        ? null
+        : <ReviewContainer>
+            <ReviewHeading>Customer reviews:</ReviewHeading>
+            <Reviews reviews={product.reviews} />        
+          </ReviewContainer>
+      }
     </Layout>
   );
 };
