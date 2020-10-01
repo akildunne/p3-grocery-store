@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Layout from "../components/shared/Layout";
-import { Redirect, Link } from "react-router-dom";
+import BackButton from "../components/BackButton";
+import { Redirect } from "react-router-dom";
 import { createProduct } from "../services/products";
 import styled from "styled-components";
 
@@ -12,15 +13,6 @@ const BackDiv = styled.div`
   display: flex;
   padding-left: 36px;
   margin-top: 20px;
-`;
-
-const BackButton = styled(Link)`
-  text-decoration: none;
-  color: #939191;
-  font-size: 45px;
-
-  :hover {
-    transform: scale(1.1);
 `;
 
 const DetailContainer = styled.div`
@@ -48,6 +40,13 @@ const InputContainer = styled.input`
   border-radius: 22px;
   padding: 10px;
   font-size: 18px;
+
+  :focus {
+    outline: none;
+    border: 3px solid #2EAF56;
+    border-radius: 22px;
+  }
+
 `;
 
 const LabelTextArea = styled.label`
@@ -64,6 +63,25 @@ const TextArea = styled.textarea`
   margin: 10px;
   padding: 10px;
   font-size: 18px;
+
+  :focus {
+    outline: none;
+    border: 3px solid #2EAF56;
+    border-radius: 22px;
+  }
+
+`;
+
+const CheckboxContainer = styled.input`
+  width: 30px;
+  height: 30px;
+  margin: 10px;
+  margin-left: 70px;
+  border: 1px solid #707070;
+  border-radius: 22px;
+  padding: 10px;
+  font-size: 18px;
+  justify-self: flex-start;
 `;
 
 const Button = styled.button`
@@ -86,6 +104,8 @@ const Button = styled.button`
 `;
 
 const ProductCreate = () => {
+  const [redirect, setRedirect] = useState(false);
+  const [isCreated, setCreated] = useState(false);
   const [product, setProduct] = useState({
     product: "",
     imgURL: "",
@@ -94,12 +114,13 @@ const ProductCreate = () => {
     imgURL4: "",
     description: "",
     price: "",
+    featured: false,
   });
 
-  const [isCreated, setCreated] = useState(false);
-
   const handleChange = (event) => {
-    const { name, value } = event.target;
+    const target = event.target;
+    const { name } = target;
+    const value = target.type === "checkbox" ? target.checked : target.value;
     setProduct({
       ...product,
       [name]: value,
@@ -113,6 +134,14 @@ const ProductCreate = () => {
     setCreated({ created });
   };
 
+  const goBack = (e) => {
+    setRedirect(true);
+  };
+
+  if (redirect === true) {
+    return <Redirect to="/" />;
+  }
+
   if (isCreated) {
     return <Redirect to={`/products`} />;
   }
@@ -121,9 +150,7 @@ const ProductCreate = () => {
     <Layout>
       <MainContainer>
         <BackDiv>
-          <BackButton to="/">
-            <i className="fas fa-caret-left"></i>
-          </BackButton>
+          <BackButton onClick={(e) => goBack()}></BackButton>
         </BackDiv>
         <DetailContainer>
           <Form onSubmit={handleSubmit}>
@@ -183,6 +210,13 @@ const ProductCreate = () => {
               value={product.imgURL4}
               name="imgURL4"
               required
+              onChange={handleChange}
+            />
+            <LabelContainer>Feature in Carousel:</LabelContainer>
+            <CheckboxContainer
+              type="checkbox"
+              checked={product.featured}
+              name="featured"
               onChange={handleChange}
             />
             <Button>Add Product</Button>
