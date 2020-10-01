@@ -120,11 +120,11 @@ const main = async () => {
         "It's official! Hot dogs are sandwiches. And they are a staple for your summer BBQ festivities.",
       price: "5.00",
       reviews: [{
-        title: "Would buy again!!!!",
+        title: "The best Weiners money can buy!",
         author: "Jeff P.,",
         location: "Atlanta, Georgia",
         rating: "5",
-        description: "I bought a pack of these for my BBQ last weekend and I have never had a sandwich this tadty"
+        description: "I bought a pack of these for my BBQ last weekend and I have never had a sandwich this tasty! Highly superior to Hebrew National, definitely pick up a few packs for your next big event. "
       }]
     },
     {
