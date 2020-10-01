@@ -24,6 +24,10 @@ const CoverPhoto = styled.div`
   @media (max-width: 800px) {
     height: 500px;
   }
+
+  @media (max-width: 400px) {
+    height: 400px;
+  }
 `;
 
 const Banner = styled.div`
@@ -45,6 +49,10 @@ const HeaderWelcome = styled.h2`
 
   @media (max-width: 800px) {
     font-size: 40px;
+  }
+
+  @media (max-width: 400px) {
+    font-size: 24px;
   }
 `;
 
