@@ -20,6 +20,10 @@ const CoverPhoto = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
   height: 750px;
+
+  @media (max-width: 800px) {
+    height: 500px;
+  }
 `;
 
 const Banner = styled.div`
@@ -38,6 +42,10 @@ const HeaderWelcome = styled.h2`
   color: white;
   text-align: center;
   font-weight: 400;
+
+  @media (max-width: 800px) {
+    font-size: 40px;
+  }
 `;
 
 const ShopNowButton = styled.button`
@@ -54,6 +62,12 @@ const ShopNowButton = styled.button`
 
   :hover {
     background-color: #299a4b;
+  }
+
+  @media (max-width: 800px) {
+    font-size: 24px;
+    padding: 20px 25px;
+    margin-top: 20px;
   }
 `;
 
