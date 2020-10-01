@@ -15,16 +15,6 @@ const BackDiv = styled.div`
   margin-top: 20px;
 `;
 
-const BackButton = styled(Link)`
-  text-decoration: none;
-  color: #939191;
-  font-size: 45px;
-
-  :hover {
-    transform: scale(1.1);
-  }
-`;
-
 const DetailContainer = styled.div`
   display: flex;
   margin: 50px auto;
