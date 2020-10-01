@@ -13,7 +13,7 @@ const main = async () => {
       imgURL3: "https://www.healthxchange.sg/sites/hexassets/Assets/food-nutrition/good-reasons-to-eat-a-banana-today.jpg",
       imgURL4: "https://images.carriercms.com/image/upload/w_700,h_400,c_fill,g_center,q_auto,f_auto/v1543516192/carrier/carrier-global/food/bananas.jpg",
       description: " Best bananas",
-      review: "5 stars",
+      review: "5",
       price: "0.75/lb",
       reviews: [{
         title: "Would buy again!!!!",
@@ -31,6 +31,7 @@ const main = async () => {
       imgURL3: "https://cdn.vox-cdn.com/thumbor/2F21Htx80ynqDhudrXOa1o6a4po=/0x0:1920x1280/1220x813/filters:focal(807x487:1113x793):format(webp)/cdn.vox-cdn.com/uploads/chorus_image/image/57340051/apples_2811968_1920.0.jpg",
       imgURL4: "https://assets.bonappetit.com/photos/5d8b8a6888c1eb00087ac41a/1:1/w_1024%2Cc_limit/Basically-Apples.jpg",
       description: " An apple a day keeps the doctor away ",
+      review: "5",
       price: "1.00/lb",
       reviews: [{
         title: "Would buy again!!!!",
@@ -48,6 +49,7 @@ const main = async () => {
       imgURL3: "https://media.self.com/photos/5b43712e4d0c3c282a8878d1/4:3/w_1024%2Cc_limit/avocado.jpg",
       imgURL4: "https://www.jessicagavin.com/wp-content/uploads/2019/04/avocados-3.jpg",
       description: " Yummy ",
+      review: "5",
       price: "1.00/lb",
       reviews: [{
         title: "Would buy again!!!!",
@@ -66,6 +68,7 @@ const main = async () => {
       imgURL4: "https://d2lnr5mha7bycj.cloudfront.net/product-image/file/large_cf0c6ad9-9b84-4430-a8b5-0f649c684533.jpg",
       description: " Best cheese out there ",
       price: "2.00",
+      review: "5",
       reviews: [{
         title: "Would buy again!!!!",
         author: "Nina J.,",
@@ -99,6 +102,7 @@ const main = async () => {
       imgURL3: "https://d2lnr5mha7bycj.cloudfront.net/product-image/file/large_59698f91-f9d9-449a-a60d-cae20e7be052.jpg",
       imgURL4: "https://d2lnr5mha7bycj.cloudfront.net/product-image/file/large_59698f91-f9d9-449a-a60d-cae20e7be052.jpg",
       description: "Yummy Crackers",
+      review: "5",
       price: "4.00",
       reviews: [{
         title: "Would buy again!!!!",
@@ -119,6 +123,7 @@ const main = async () => {
       description:
         "It's official! Hot dogs are sandwiches. And they are a staple for your summer BBQ festivities.",
       price: "5.00",
+      review: "5",
       reviews: [{
         title: "Would buy again!!!!",
         author: "Jeff P.,",
@@ -135,6 +140,7 @@ const main = async () => {
       imgURL3: "https://d2lnr5mha7bycj.cloudfront.net/product-image/file/large_d57f68d6-2845-46f8-be86-6083d3b659c4.jpg",
       imgURL4: "https://d2lnr5mha7bycj.cloudfront.net/product-image/file/large_60b7ff32-814c-41a0-a962-4d2c87fa9cba.jpg",
       description: "Who doesn't love ketchup? ",
+      review: "5",
       price: "5.00",
       reviews: [{
         title: "Would buy again!!!!",
@@ -152,6 +158,7 @@ const main = async () => {
       imgURL3: "https://d2d8wwwkmhfcva.cloudfront.net/310x/filters:fill(FFF,true):format(jpg)/d2lnr5mha7bycj.cloudfront.net/product-image/file/large_cefc2350-6da5-41d4-bb64-c26dd801f944.jpg",
       imgURL4: "https://d2d8wwwkmhfcva.cloudfront.net/310x/filters:fill(FFF,true):format(jpg)/d2lnr5mha7bycj.cloudfront.net/product-image/file/large_e1a8c469-3d6a-47c0-9b8e-6fe3f88cc852.jpg",
       description: "Yummy in my tummy",
+      review: "4",
       price: "5.50",
       reviews: [{
         title: "Would buy again!!!!",
@@ -169,6 +176,7 @@ const main = async () => {
       imgURL3: "https://d2lnr5mha7bycj.cloudfront.net/product-image/file/large_211517da-ae80-4f21-85e4-e4590d36a377.jpg",
       imgURL4: "https://d2lnr5mha7bycj.cloudfront.net/product-image/file/large_3946aa41-3c56-46ab-870c-1e318fa1e1cf.jpg",
       description: "Calcium",
+      review: "4",
       price: "6.50",
       reviews: [{
         title: "Would buy again!!!!",
