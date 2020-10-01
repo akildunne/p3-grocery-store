@@ -88,10 +88,15 @@ const ProductCreate = () => {
     imgURL4: "",
     description: "",
     price: "",
+    featured: false,
   });
 
+  console.log(product.featured)
+
   const handleChange = (event) => {
-    const { name, value } = event.target;
+    const target = event.target;
+    const { name } = target;
+    const value = target.type === "checkbox" ? target.checked : target.value;
     setProduct({
       ...product,
       [name]: value,
@@ -180,6 +185,14 @@ const ProductCreate = () => {
               type="text"
               value={product.imgURL4}
               name="imgURL4"
+              required
+              onChange={handleChange}
+            />
+            <LabelContainer>Feature in Carousel:</LabelContainer>
+            <InputContainer
+              type="checkbox"
+              checked={product.featured}
+              name="featured"
               required
               onChange={handleChange}
             />
