@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import Layout from "../components/shared/Layout";
 import ProductCard from "../components/ProductCard";
 import { getProducts } from "../services/products";
-import Carousel from "react-elastic-carousel";
+import Carousel, { consts } from "react-elastic-carousel";
 
 const HomeMainContainer = styled.div`
   display: flex;
@@ -226,7 +226,7 @@ const Home = () => {
               ? <>
                   <CarouselTitle>FEATURED PRODUCTS</CarouselTitle>
                   <CarouselContainer>
-                  <Carousel pagination={false} showArrows={false} breakPoints={breakPoints}>
+                  <Carousel pagination={false} itemPosition={consts.CENTER} showArrows={false} breakPoints={breakPoints}>
                       {featuredJSX}
                     </Carousel>
                   </CarouselContainer>
