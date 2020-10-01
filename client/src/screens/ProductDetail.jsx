@@ -232,12 +232,12 @@ const ProductDetail = () => {
           <ProductDetails>${product.price}</ProductDetails>
           <ProductReviewContainer>
             <StarRatings
-              rating={product.reviews.rating}
-              starRatedColor="white"
+              rating={product.review}
+              starRatedColor="red"
               starDimension="25px"
               starSpacing="0px" />
           </ProductReviewContainer>
-          <ProductReview>{product.review}</ProductReview>
+          {/* <ProductReview>{product.review}</ProductReview> */}
           <ProductDetails>{product.description}</ProductDetails>
         </ProductInfoContainer>
       </ProductDetailContainer>
