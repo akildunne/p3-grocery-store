@@ -13,6 +13,7 @@ const main = async () => {
       imgURL3: "https://www.healthxchange.sg/sites/hexassets/Assets/food-nutrition/good-reasons-to-eat-a-banana-today.jpg",
       imgURL4: "https://images.carriercms.com/image/upload/w_700,h_400,c_fill,g_center,q_auto,f_auto/v1543516192/carrier/carrier-global/food/bananas.jpg",
       description: " Best bananas",
+      review: "5 stars",
       price: "0.75/lb",
       reviews: [{
         author: "Ashik",
