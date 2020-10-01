@@ -136,7 +136,7 @@ const main = async () => {
       }]
     },
     {
-      product: "Rasberries ",
+      product: "Raspberries ",
       featured: true,
       imgURL: "https://d2d8wwwkmhfcva.cloudfront.net/310x/filters:fill(FFF,true):format(jpg)/d2lnr5mha7bycj.cloudfront.net/product-image/file/large_43eefff6-d00d-46f5-aa52-8f98f4f035ef_v2.jpg",
       imgURL2: "https://d2d8wwwkmhfcva.cloudfront.net/310x/filters:fill(FFF,true):format(jpg)/d2lnr5mha7bycj.cloudfront.net/product-image/file/large_6a80f735-1c07-403f-8fb7-4ac683f7662a.jpg",
