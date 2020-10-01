@@ -16,10 +16,11 @@ const main = async () => {
       review: "5 stars",
       price: "0.75/lb",
       reviews: [{
-        author: "Ashik",
+        title: "Would buy again!!!!",
+        author: "Ashik U.",
         location: "NYC",
         rating: "5",
-        description: "Monkeys love them!!!"
+        description: "Always ripe!!!"
       }]
     },
     {
@@ -32,10 +33,11 @@ const main = async () => {
       description: " An apple a day keeps the doctor away ",
       price: "1.00/lb",
       reviews: [{
-        author: "Ashley",
+        title: "Would buy again!!!!",
+        author: "Ashley K.,",
         location: "NYC",
         rating: "5",
-        description: "My son loves them!!!"
+        description: "My adorable son loves these apples!!!"
       }]
     },
     {
@@ -48,10 +50,11 @@ const main = async () => {
       description: " Yummy ",
       price: "1.00/lb",
       reviews: [{
-        author: "Brianna",
+        title: "Would buy again!!!!",
+        author: "Brianna L.,",
         location: "NYC",
-        rating: "3",
-        description: "Ehh, IHOP has the best ones."
+        rating: "5",
+        description: "Always fresh and so tasty!!."
       }]
     },
     {
@@ -64,10 +67,11 @@ const main = async () => {
       description: " Best cheese out there ",
       price: "2.00",
       reviews: [{
-        author: "Chris",
+        title: "Would buy again!!!!",
+        author: "Nina J.,",
         location: "NYC",
         rating: "5",
-        description: "Love it!!"
+        description: "My go to with bagels in the morning!!"
       }]
     },
     {
@@ -80,10 +84,11 @@ const main = async () => {
       description: "Sweet delight",
       price: "3.50/lb",
       reviews: [{
-        author: "Chris",
+        title: "Would buy again!!!!",
+        author: "Chris A.,",
         location: "NYC",
         rating: "5",
-        description: "It's been so long!!!"
+        description: "I don't usually eat chocolate but when I do, I always buy these from here!!"
       }]
     },
     {
@@ -96,7 +101,8 @@ const main = async () => {
       description: "Yummy Crackers",
       price: "4.00",
       reviews: [{
-        author: "Ashik",
+        title: "Would buy again!!!!",
+        author: "Dana C.,",
         location: "NYC",
         rating: "5",
         description: "Hits the spot with tea!!"
@@ -114,9 +120,10 @@ const main = async () => {
         "It's official! Hot dogs are sandwiches. And they are a staple for your summer BBQ festivities.",
       price: "5.00",
       reviews: [{
+        title: "Would buy again!!!!",
         author: "Jeff P.,",
         location: "Atlanta, Georgia",
-        rating: "5",
+        rating: "4",
         description: "I bought a pack of these for my BBQ last weekend and I have never had a sandwich this tadty"
       }]
     },
@@ -130,26 +137,28 @@ const main = async () => {
       description: "Who doesn't love ketchup? ",
       price: "5.00",
       reviews: [{
-        author: "Ashik",
+        title: "Would buy again!!!!",
+        author: "Billy C.",
         location: "NYC",
         rating: "5",
-        description: "I'll buy it from here since dunkin doughnuts is too stingy with their free ketchup!!!"
+        description: "Best prices in town!!"
       }]
     },
     {
       product: "Raspberries ",
       featured: true,
-      imgURL: "https://d2d8wwwkmhfcva.cloudfront.net/310x/filters:fill(FFF,true):format(jpg)/d2lnr5mha7bycj.cloudfront.net/product-image/file/large_43eefff6-d00d-46f5-aa52-8f98f4f035ef_v2.jpg",
+      imgURL: "https://target.scene7.com/is/image/Target/GUEST_db971b03-6a51-4ee0-a411-10c7ea8300ce?wid=488&hei=488&fmt=pjpeg",
       imgURL2: "https://d2d8wwwkmhfcva.cloudfront.net/310x/filters:fill(FFF,true):format(jpg)/d2lnr5mha7bycj.cloudfront.net/product-image/file/large_6a80f735-1c07-403f-8fb7-4ac683f7662a.jpg",
       imgURL3: "https://d2d8wwwkmhfcva.cloudfront.net/310x/filters:fill(FFF,true):format(jpg)/d2lnr5mha7bycj.cloudfront.net/product-image/file/large_cefc2350-6da5-41d4-bb64-c26dd801f944.jpg",
       imgURL4: "https://d2d8wwwkmhfcva.cloudfront.net/310x/filters:fill(FFF,true):format(jpg)/d2lnr5mha7bycj.cloudfront.net/product-image/file/large_e1a8c469-3d6a-47c0-9b8e-6fe3f88cc852.jpg",
       description: "Yummy in my tummy",
       price: "5.50",
       reviews: [{
+        title: "Would buy again!!!!",
         author: "Brianna",
         location: "NYC",
-        rating: "3",
-        description: "Blue is better"
+        rating: "5",
+        description: "Simply delicious!!!!"
       }]
     },
     {
@@ -162,10 +171,11 @@ const main = async () => {
       description: "Calcium",
       price: "6.50",
       reviews: [{
+        title: "Would buy again!!!!",
         author: "Ashik",
         location: "NYC",
         rating: "5",
-        description: "I milked a cow once and it kicked me. Thats why I buy from the store now"
+        description: "Always fully restocked daily and delicious!!"
       }]
     },
   ];

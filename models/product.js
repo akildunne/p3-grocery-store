@@ -14,6 +14,7 @@ const Product = new Schema(
     review: { type: String, required: false },
     reviews: [{
       author: { type: String, required: false },
+      location: { type: String, required: false },
       rating: { type: Number, required: false },
       description: { type: String, required: false },
       title: { type: String, required: false },

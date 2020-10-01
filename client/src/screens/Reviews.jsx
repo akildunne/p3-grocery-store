@@ -12,9 +12,8 @@ const ReviewCard = styled.div`
 const Reviews = (props) => {
   const reviewsJSX = props.reviews.map((review, index) => (
     <ReviewCard key={index}>
-      <p>{review.rating} {review.title}</p>
-      <StarRating size={review.rating} value={review.rating}  />
-      <p>{review.author}, {review.location}</p>      
+      <p> {review.title} <StarRating size={review.rating} value={review.rating} starRatedColor='black'  /></p>
+      <p>{review.author}   {review.location}</p>      
       <p>{review.description}</p>
     </ReviewCard>
   ));
