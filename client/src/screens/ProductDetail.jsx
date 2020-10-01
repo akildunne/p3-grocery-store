@@ -123,6 +123,20 @@ const DeleteButton = styled.button`
     transform: scale(1.1);
 `;
 
+const ReviewContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+  justify-content: flex-start;
+  align-items: left;
+`
+
+const ReviewHeading = styled.h3`
+  font-size: 20px;
+  text-align: left;
+  margin-left: 50px;
+`
+
 const ProductDetail = () => {
   const [redirect, setRedirect] = useState(false);
   const [isDeleted, setIsDeleted] = useState(false);
@@ -135,12 +149,7 @@ const ProductDetail = () => {
     imgURL4: "",
     description: "",
     price: "",
-    reviews: []
-  });
-  const [review, setReview] = useState({
-    author: "",
-    rating: "",
-    description: "",
+    reviews: [],
   });
 
   const { id } = useParams();
@@ -153,8 +162,6 @@ const ProductDetail = () => {
     };
     fetchProduct();
   }, [id]);
-  
-  
 
   const deleteConfirmation = () => {
     let r = window.confirm("Are you sure you want to delete this product?");
@@ -218,10 +225,7 @@ const ProductDetail = () => {
         <ProductInfo>
           <ProductName>{product.product}</ProductName>
           <ProductPrice>${product.price}</ProductPrice>
-          <ProductDescription>
-            {product.description}
-            <Reviews reviews={product.reviews} />
-          </ProductDescription>
+          <ProductDescription>{product.description}</ProductDescription>
         </ProductInfo>
       </ProductDetailContainer>
       <ButtonContainer>
@@ -230,6 +234,10 @@ const ProductDetail = () => {
         </Link>
         <DeleteButton onClick={deleteConfirmation}>Delete</DeleteButton>
       </ButtonContainer>
+      <ReviewContainer>
+        <ReviewHeading>Customer reviews:</ReviewHeading>
+        <Reviews reviews={product.reviews} />        
+      </ReviewContainer>
     </Layout>
   );
 };

@@ -5,47 +5,46 @@ import BackButton from "../components/BackButton";
 import { getProduct, updateProduct } from "../services/products";
 import styled from "styled-components";
 
+const MainContainer = styled.div`
+  display: flex;
+`;
+
 const BackDiv = styled.div`
   display: flex;
-  margin: 15px auto;
   padding-left: 36px;
+  margin-top: 20px;
 `;
 
 const DetailContainer = styled.div`
   display: flex;
-  justify-content: center;
   margin: 50px auto;
 `;
 
 const Form = styled.form`
   display: grid;
   grid-template-columns: 250px 500px;
-  margin: 0 auto;
-  align-items: center;
+  align-items: center;  
   justify-items: flex-end;
 `;
 
 const LabelContainer = styled.label`
   color: #707070;
-  font-size: 36px;
+  font-size: 28px;
 `;
 
 const InputContainer = styled.input`
-  justify-self: flex-end;
   width: 400px;
-  height: 40px;
-  margin: 24px;
+  height: 30px;
+  margin: 10px;
   border: 1px solid #707070;
   border-radius: 22px;
-  padding: 15px;
-  font: Helvetica;
-  font-size: 28px;
-  color: #707070;
+  padding: 10px;
+  font-size: 18px;
 `;
 
 const LabelTextArea = styled.label`
   color: #707070;
-  font-size: 36px;
+  font-size: 28px;
   align-self: flex-start;
   margin-top: 25px;
 `;
@@ -54,11 +53,9 @@ const TextArea = styled.textarea`
   border-radius: 22px;
   width: 400px;
   justify-self: flex-end;
-  margin: 24px;
-  padding: 15px;
-  font-family: Helvetica;
-  font-size: 28px;
-  color: #707070;
+  margin: 10px;
+  padding: 10px;
+  font-size: 18px;
 `;
 
 const Button = styled.button`
@@ -70,7 +67,7 @@ const Button = styled.button`
   grid-column: 1/-1;
   width: 300px;
   margin: 20px auto;
-  margin-top: 50px;
+  margin-top: 30px;
   margin-left: 45%;
   padding: 15px;
   cursor: pointer;

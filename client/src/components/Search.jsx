@@ -2,14 +2,12 @@ import React from "react";
 import styled from "styled-components";
 
 const SearchContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+  position: relative;
 `;
 
 const SearchBar = styled.input`
   width: 50vw;
-  height: 25px;
+  height: 50px;
   border: 2px solid #707070;
   border-radius: 20px;
   padding: 16px;
@@ -18,12 +16,13 @@ const SearchBar = styled.input`
   outline: none;
 `;
 
-const SearchIcon = styled.i`
-  text-align: right;
-  font-size: 35px;
+const SearchIcon = styled.span`
+  font-size: 25px;
   color: #9d9d9d;
-  margin-left: 725px;
   position: absolute;
+  top: 0;
+  right: 0;
+  padding: 12px;
 `;
 
 const Search = (props) => {
@@ -31,12 +30,11 @@ const Search = (props) => {
     <form onSubmit={(e) => props.onSubmit(e)}>
       <SearchContainer>
         <SearchBar
-          type="text"
+          type="search"
           value={props.value}
           onChange={(e) => props.onChange(e)}
           name="Search"
           placeholder="Search"
-          autoFocus
         />
          <SearchIcon className="fas fa-search"></SearchIcon>
       </SearchContainer>
