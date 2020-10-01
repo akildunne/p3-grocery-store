@@ -56,32 +56,24 @@ const Thumbnails = styled.img`
     transform: scale(1.1);
 `;
 
-const ProductInfo = styled.div`
+const ProductInfoContainer = styled.div`
   margin-top: 95px;
   margin-left: 45px;
 `;
 
-const ProductName = styled.div`
-  display: flex;
+const ProductName = styled.h4`
   font-size: 35px;
   margin: 10px auto;
 `;
 
-const ProductPrice = styled.div`
-  display: flex;
+const ProductDetails = styled.p`
   font-size: 25px;
-  margin: 10px auto;
+  text-align: left;
 `;
 
-const ProductDescription = styled.div`
-  display: flex;
-  font-size: 20px;
-  margin: 20px auto;
-`;
-
-const ProductReview = styled.div`
-  font-size: 20px;
-  margin: 20px auto;
+const ProductReview = styled.p`
+  font-size: 25px;
+  text-align: left;
 `;
 
 const ButtonContainer = styled.div`
@@ -159,12 +151,6 @@ const ProductDetail = () => {
     reviews: []
   });
 
-  const [review, setReview] = useState({
-    author: "",
-    rating: "",
-    description: "",
-  });
-
   const { id } = useParams();
 
   useEffect(() => {
@@ -180,17 +166,17 @@ const ProductDetail = () => {
     let r = window.confirm("Are you sure you want to delete this product?");
     if (r === true) {
       productDeleted();
-      alert("Product deleted!!!");
+      alert("Product deleted!");
     } else {
     }
   };
 
-  const productDeleted = async (event) => {
+  const productDeleted = async () => {
     const deleted = await deleteProduct(product._id);
     setIsDeleted(deleted);
   };
 
-  const goBack = (e) => {
+  const goBack = () => {
     setRedirect(true);
   };
 
@@ -235,16 +221,12 @@ const ProductDetail = () => {
             />
           </ThumbnailContainer>
         </ImageContainer>
-        <ProductInfo>
+        <ProductInfoContainer>
           <ProductName>{product.product}</ProductName>
-          <ProductPrice>${product.price}</ProductPrice>
+          <ProductDetails>${product.price}</ProductDetails>
           <ProductReview>{product.review}</ProductReview>
-          <ProductDescription>
-            {product.description}
-            <Reviews reviews={product.reviews} />
-          </ProductDescription>
-          <ProductDescription>{product.description}</ProductDescription>
-        </ProductInfo>
+          <ProductDetails>{product.description}</ProductDetails>
+        </ProductInfoContainer>
       </ProductDetailContainer>
       <ButtonContainer>
         <Link to={`/products/edit/${product._id}`}>
