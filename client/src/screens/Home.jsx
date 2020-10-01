@@ -85,6 +85,18 @@ const CarouselTitle = styled.div`
   color: #40a48b;
   margin-top: 35px;
   margin-bottom: 15px;
+
+  @media (max-width: 800px) {
+    font-size: 24px;
+    margin-top: 35px;
+    margin-bottom: 15px;
+  }
+  
+  @media (max-width: 400px) {
+    font-size: 24px;
+    margin-top: 15px;
+    martin-bottom: 0;
+  }
 `;
 
 const CarouselContainer = styled.div`
@@ -99,9 +111,25 @@ const CarouselContainer = styled.div`
       background-color: #40A48B;
       :hover {
         transform: scale(1.1);
+      }
 
-        
+        @media (max-width: 800px) {
+          margin: 5px;
+        }
+      
+        @media (max-width: 400px) {
+          margin: 0;
+        }
+
   }
+        
+      @media (max-width: 800px) {
+        margin: 0 10px;
+      }
+
+      @media (max-width: 400px) {
+        margin: 0 5px;
+      }
 `;
 
 const StoryContainer = styled.div`
@@ -168,6 +196,7 @@ const Home = () => {
 
   const breakPoints = [
     { width: 400, itemsToShow: 1 },
+    { width: 600, itemsToShow: 2 },
     { width: 800, itemsToShow: 3 },
     { width: 1200, itemsToShow: 4 },
   ];
@@ -193,10 +222,7 @@ const Home = () => {
         <div>
           <CarouselTitle>FEATURED PRODUCTS</CarouselTitle>
           <CarouselContainer>
-            <Carousel pagination={false} breakPoints={breakPoints}
-              // onResize={(currentBreakPoint) =>
-            //   {breakPoints}}
-            >
+            <Carousel pagination={false} breakPoints={breakPoints}>
               {featuredJSX}
             </Carousel>
           </CarouselContainer>
