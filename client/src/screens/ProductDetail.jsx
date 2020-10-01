@@ -78,6 +78,11 @@ const ProductDescription = styled.div`
   margin: 20px auto;
 `;
 
+const ProductReview = styled.div`
+  font-size: 20px;
+  margin: 20px auto;
+`;
+
 const ButtonContainer = styled.div`
   background-color: white;
   height: 100px;
@@ -142,6 +147,7 @@ const ProductDetail = () => {
   const [isDeleted, setIsDeleted] = useState(false);
   const [activeImage, setActiveImage] = useState("");
   const [product, setProduct] = useState({
+    review: "",
     product: "",
     imgURL: "",
     imgURL2: "",
@@ -149,7 +155,13 @@ const ProductDetail = () => {
     imgURL4: "",
     description: "",
     price: "",
-    reviews: [],
+    reviews: []
+  });
+
+  const [review, setReview] = useState({
+    author: "",
+    rating: "",
+    description: "",
   });
 
   const { id } = useParams();
@@ -225,6 +237,11 @@ const ProductDetail = () => {
         <ProductInfo>
           <ProductName>{product.product}</ProductName>
           <ProductPrice>${product.price}</ProductPrice>
+          <ProductReview>{product.review}</ProductReview>
+          <ProductDescription>
+            {product.description}
+            <Reviews reviews={product.reviews} />
+          </ProductDescription>
           <ProductDescription>{product.description}</ProductDescription>
         </ProductInfo>
       </ProductDetailContainer>
