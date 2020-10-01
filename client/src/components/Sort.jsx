@@ -10,6 +10,7 @@ const Form = styled.form`
   border-radius: 10px;
   padding: 40px;
   color: #707070;
+  margin-right: 55px;
 
   @media (max-width: 800px) {
     align-content: flex-start;
@@ -37,6 +38,14 @@ const Label = styled.label`
 const Select = styled.select`
   cursor: pointer;
   padding: 8px;
+  font: Helvetica, regular;
+  font-size: 25px;
+  color: #707070;
+
+  :focus {
+    outline: none;
+    border: 3px solid #2EAF56;
+  }
 
   :hover 
     text-align; left
