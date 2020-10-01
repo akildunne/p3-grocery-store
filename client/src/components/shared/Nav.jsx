@@ -40,12 +40,20 @@ const NavOptions = styled.p`
   text-decoration: none;
   color: white;
   font-weight: 600;
+
+  @media (max-width: 1260px) {
+    margin: 0px 20px;
+  }
 `
 
 const MottoContainer = styled.div`
   text-align: right;
   flex-grow: 1;
   margin: auto 50px;
+
+  @media (max-width: 1260px) {
+    margin: 10px 50px;
+  }
 `
 
 const MottoText = styled.h4`

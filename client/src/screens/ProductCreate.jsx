@@ -40,6 +40,13 @@ const InputContainer = styled.input`
   border-radius: 22px;
   padding: 10px;
   font-size: 18px;
+
+  :focus {
+    outline: none;
+    border: 3px solid #2EAF56;
+    border-radius: 22px;
+  }
+
 `;
 
 const LabelTextArea = styled.label`
@@ -56,6 +63,13 @@ const TextArea = styled.textarea`
   margin: 10px;
   padding: 10px;
   font-size: 18px;
+
+  :focus {
+    outline: none;
+    border: 3px solid #2EAF56;
+    border-radius: 22px;
+  }
+
 `;
 
 const CheckboxContainer = styled.input`
@@ -208,7 +222,7 @@ const ProductCreate = () => {
             <Button>Add Product</Button>
           </Form>
         </DetailContainer>
-      </MainContainer>
+      </MainContainer>  
     </Layout>
   );
 };
