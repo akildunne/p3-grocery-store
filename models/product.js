@@ -15,6 +15,7 @@ const Product = new Schema(
       author: { type: String, required: false },
       rating: { type: Number, required: false },
       description: { type: String, required: false },
+      title: { type: String, required: false },
     }]
 
   },
