@@ -8,7 +8,7 @@ const Logo = styled.img`
   width: 286px;
 
   @media (min-width: 1024px) {
-    height: 50px;
+    height: 100px;
     width: 200px;
   }
 
@@ -35,6 +35,7 @@ const Ul = styled.ul`
     display: flex;
     flex-direction: column;
     padding: 0px 10px;
+    align-items: flex-start;
   }
 `
 const Li = styled.li`
@@ -70,5 +71,6 @@ const Footer = () =>
       <Li>Copyright <br/>2020</Li>
     </Ul>
   </PageFooter>
+
 
 export default Footer;
