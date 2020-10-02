@@ -10,28 +10,52 @@ const NavBar = styled.nav`
   border: 1px solid #707070;
   color: white;
   font-size: 22px;
+
+  @media (max-width: 480px) {
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+  }
 `
 
 const LogoContainer = styled.div`
   background: #2EAF56;
   width: 320px;
   border: 1px solid #707070;
+
+  @media (max-width: 480px) {
+    width: 100vw;
+  }
 `
 
 const Img = styled.img`
   width: 130px;
   height: 60px;
   padding: 15px;
+
+  @media (max-width: 480px) {
+    text-align: center;
+  }
 `
 
 const NavOptionContainers = styled.div`
   display: flex;
   align-items: center;
   flex-grow: 1;
+
+  @media (max-width: 480px) {
+    display: flex;
+    flex-direction: column;
+  }
 `
 
 const NavItemsContainer = styled.div`
   display: flex;
+
+  @media (max-width: 480px) {
+    display: flex;
+    flex-direction: column;
+  }
 `
 
 const NavOptions = styled.p`
@@ -44,6 +68,10 @@ const NavOptions = styled.p`
   @media (max-width: 1260px) {
     margin: 0px 20px;
   }
+
+  @media (max-width: 480px) {
+    margin: 10px;
+  }
 `
 
 const MottoContainer = styled.div`
@@ -54,10 +82,18 @@ const MottoContainer = styled.div`
   @media (max-width: 1260px) {
     margin: 10px 50px;
   }
+
+  @media (max-width: 480px) {
+    display: none;
+  }
 `
 
 const MottoText = styled.h4`
   font-weight: 300;
+
+  @media (max-width: 480px) {
+    text-align: center;
+  }
 `
 
 const Nav = () => {  
