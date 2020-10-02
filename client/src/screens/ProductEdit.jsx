@@ -36,6 +36,10 @@ const Form = styled.form`
 const LabelContainer = styled.label`
   color: #707070;
   font-size: 28px;
+
+  @media (max-width: 400px) {
+    align-self: flex-start;
+  }
 `;
 
 const InputContainer = styled.input`
