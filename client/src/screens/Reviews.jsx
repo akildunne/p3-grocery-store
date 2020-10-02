@@ -6,7 +6,7 @@ const ReviewCard = styled.div`
   display: flex;
   flex-direction: column;
   text-align: left;
-  margin-left: 50px;
+  // margin-left: 50px;
   text-size: 22px;
 `
 const UserReview = styled.div`
