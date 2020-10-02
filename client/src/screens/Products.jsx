@@ -62,6 +62,7 @@ const SearchDiv = styled.div`
 
   @media (max-width: 400px) {
     flex-direction: column;
+    align-items: baseline;
   }
 `;
 

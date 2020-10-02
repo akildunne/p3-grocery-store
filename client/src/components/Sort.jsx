@@ -27,6 +27,7 @@ const Option = styled.option`
   color: #707070;
   padding: 50px;
   text-align; left;
+
 `;
 
 const Label = styled.label`
