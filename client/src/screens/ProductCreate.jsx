@@ -103,7 +103,7 @@ const Button = styled.button`
     flex-direction: column;
     margin: 20px auto;
   }
-  
+
   :focus {
     outline: none;
     border: 3px solid #2eaf56;
@@ -220,7 +220,7 @@ const ProductCreate = () => {
               onChange={handleChange}
             />
             <LabelContainer>Feature in Carousel:</LabelContainer>
-            <label class="container">
+            <label className="container">
               <input
                 type="checkbox"
                 checked={product.featured}

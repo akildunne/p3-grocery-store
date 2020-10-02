@@ -233,7 +233,7 @@ const ProductEdit = (props) => {
               onChange={handleChange}
             />
             <LabelContainer>Feature in Carousel:</LabelContainer>
-            <label class="container">
+            <label className="container">
               <input
                 type="checkbox"
                 checked={product.featured}
