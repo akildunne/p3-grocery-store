@@ -22,16 +22,15 @@ const DetailContainer = styled.div`
 
 const Form = styled.form`
   display: grid;
-  grid-template-columns: 250px 500px;
-  align-items: center;  
+  grid-template-columns: 250px 430px;
+  align-items: center;
   justify-items: flex-end;
 
-@media (max-width: 400px) {
-  display: flex;
-  flex-direction: column;
-  margin: 20px auto;
-}
-
+  @media (max-width: 400px) {
+    display: flex;
+    flex-direction: column;
+    margin: 20px auto;
+  }
 `;
 
 const LabelContainer = styled.label`
@@ -40,25 +39,21 @@ const LabelContainer = styled.label`
 `;
 
 const InputContainer = styled.input`
-width: 400px;
-height: 30px;
-margin: 10px;
-border: 1px solid #707070;
-border-radius: 22px;
-padding: 10px;
-font-family: regular, Helvetica;
-font-size: 25px;
-color: #707070;
-
-:focus {
-  outline: none;
-  border: 3px solid #2EAF56;
+  width: 30vw;
+  height: 30px;
+  margin: 10px;
+  border: 1px solid #707070;
   border-radius: 22px;
+  padding: 10px;
+  font-family: regular, Helvetica;
+  font-size: 25px;
+  color: #707070;
 
-}
-
-
-
+  :focus {
+    outline: none;
+    border: 3px solid #2eaf56;
+    border-radius: 22px;
+  }
 `;
 
 const LabelTextArea = styled.label`
@@ -70,7 +65,7 @@ const LabelTextArea = styled.label`
 
 const TextArea = styled.textarea`
   border-radius: 22px;
-  width: 400px;
+  width: 30vw;
   justify-self: flex-end;
   margin: 10px;
   padding: 10px;
@@ -81,7 +76,7 @@ const TextArea = styled.textarea`
 
   :focus {
     outline: none;
-    border: 3px solid #2EAF56;
+    border: 3px solid #2eaf56;
     border-radius: 22px;
   }
 `;
@@ -116,20 +111,17 @@ const Button = styled.button`
     transform: scale(1.1);
   }
 
-
-@media (max-width: 400px) {
-  display: flex;
-  flex-direction: column;
-  margin: 20px auto;
-}
-
+  @media (max-width: 400px) {
+    display: flex;
+    flex-direction: column;
+    margin: 20px auto;
+  }
 
   :focus {
     outline: none;
-    border: 3px solid #2EAF56;
+    border: 3px solid #2eaf56;
     border-radius: 22px;
   }
-
 `;
 
 const ProductEdit = (props) => {
@@ -251,21 +243,20 @@ const ProductEdit = (props) => {
               required
               onChange={handleChange}
             />
-            <LabelContainer>Feature in Carousel:</LabelContainer> 
-              <label class="container">
-                <input
-                  type="checkbox"
-                  checked={product.featured}
-                  name="featured"
-                  onChange={handleChange}
-                />
-                <span class="checkmark"></span> 
-              </label> 
+            <LabelContainer>Feature in Carousel:</LabelContainer>
+            <label class="container">
+              <input
+                type="checkbox"
+                checked={product.featured}
+                name="featured"
+                onChange={handleChange}
+              />
+              <span class="checkmark"></span>
+            </label>
             <Button>Save</Button>
           </Form>
         </DetailContainer>
       </MainContainer>
-
     </Layout>
   );
 };
