@@ -237,7 +237,7 @@ const ProductCreate = () => {
                 name="featured"
                 onChange={handleChange}
               />
-              <span class="checkmark"></span>
+              <span className="checkmark"></span>
             </label>
             <Button>Add Product</Button>
           </Form>
