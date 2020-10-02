@@ -222,13 +222,16 @@ const ProductEdit = (props) => {
               required
               onChange={handleChange}
             />
-            <LabelContainer>Feature in Carousel:</LabelContainer>
-            <CheckboxContainer
-              type="checkbox"
-              checked={product.featured}
-              name="featured"
-              onChange={handleChange}
-            />
+            <LabelContainer>Feature in Carousel:</LabelContainer> 
+              <label class="container">
+                <input
+                  type="checkbox"
+                  checked={product.featured}
+                  name="featured"
+                  onChange={handleChange}
+                />
+                <span class="checkmark"></span> 
+              </label> 
             <Button>Save</Button>
           </Form>
         </DetailContainer>
