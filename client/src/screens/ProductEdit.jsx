@@ -81,17 +81,6 @@ const TextArea = styled.textarea`
   }
 `;
 
-const CheckboxContainer = styled.input`
-  width: 30px;
-  height: 30px;
-  margin: 10px;
-  margin-left: 70px;
-  border: 1px solid #707070;
-  border-radius: 22px;
-  padding: 10px;
-  font-size: 18px;
-  justify-self: flex-start;
-`;
 
 const Button = styled.button`
   background-color: #2eaf56;
