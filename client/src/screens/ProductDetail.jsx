@@ -77,11 +77,6 @@ const ProductReviewContainer = styled.div`
 `;
 
 
-const ProductReview = styled.p`
-  font-size: 25px;
-  text-align: left;
-`;
-
 const ButtonContainer = styled.div`
   background-color: white;
   height: 100px;
@@ -166,7 +161,6 @@ const ProductDetail = () => {
       setActiveImage(product.imgURL);
     };
     fetchProduct();
-    console.log(product)
   }, [id]);
 
   const deleteConfirmation = () => {
