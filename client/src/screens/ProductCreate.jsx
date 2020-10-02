@@ -129,7 +129,6 @@ const ProductCreate = () => {
   };
 
   const handleSubmit = async (event) => {
-    alert("Product has been added!!!");
     event.preventDefault();
     const created = await createProduct(product);
     setCreated({ created });
