@@ -13,7 +13,7 @@ const NavBar = styled.nav`
 `
 
 const LogoContainer = styled.div`
-  background: #2EAF56;
+  background-color: #2EAF56;
   width: 320px;
   border: 1px solid #707070;
 `
@@ -52,7 +52,7 @@ const MottoContainer = styled.div`
   margin: auto 50px;
 
   @media (max-width: 1260px) {
-    margin: 10px 50px;
+    margin: auto;
   }
 `
 

@@ -8,39 +8,52 @@ const Logo = styled.img`
   width: 286px;
 
   @media (min-width: 1024px) {
-    height: 90px;
-    width: 200px;
+    // height: 90px;
+    // width: 200px;
   }
 `
 const Ul = styled.ul`
   display: grid;
-  grid-template-columns: 20% 20% 30% 15% 15%;
-  justify-content: space-between;
+  grid-template-columns: 20% 20% auto 15% 15%;
+  justify-content: space-around;
   align-items: center;
-  background: #564946;
+  background-color: #564946;
   border: 1px solid #707070;
   color: white;
-  padding: 0px 100px;
-
+  // padding: 0px 100px;
+  width: 100vw;
+  margin: 0 auto;
+  backgroundColor: "#F8F8F8",
+    borderTop: "1px solid #E7E7E7",
+    textAlign: "center",
+    padding: "20px",
+    position: "fixed",
+    left: "0",
+    bottom: "0",
+    height: "60px",
+    width: "100%",
+    padding-left: 0px;
+  padding-right: 0px;
+  
   @media (min-width: 1024px) {
     padding: 0px 25px;
+    width: 100vw;
+
   }
 
   @media (max-width: 480px) {
     display: flex;
     flex-direction: column;
   }
+  `
 
-`
 const Li = styled.li`
   list-style: none;
   font-size: 20px;
   text-align: left;
-  padding: 20px;
+  
 `
 
-const PageFooter = styled.footer`
-`
 function ScrollToTop({ children }) {
     const pathname = useLocation();
    
@@ -52,7 +65,8 @@ function ScrollToTop({ children }) {
   }
 
 const Footer = () => 
-  <PageFooter>
+  <footer>
+    <div>
     <Ul>
       <Li>D.T.'S Pantry <br/> 4545 Gravy Dr. <br/> Boston, MA 02101</Li>
       <Li>Customer Support <br/> (617) 898-2525</Li>
@@ -60,6 +74,7 @@ const Footer = () =>
       <Li>Hours <br/> M-F: 8AM-9PM <br/> <br/> S&S: 10AM-6PM</Li>
       <Li>Copyright <br/>2020</Li>
     </Ul>
-  </PageFooter>
+    </div>
+  </footer>
 
 export default Footer;
