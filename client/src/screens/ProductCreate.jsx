@@ -39,7 +39,7 @@ const LabelContainer = styled.label`
 `;
 
 const InputContainer = styled.input`
-  width: 30vw;
+  width: 375px;
   height: 30px;
   margin: 10px;
   border: 1px solid #707070;
@@ -54,6 +54,9 @@ const InputContainer = styled.input`
     border: 3px solid #2eaf56;
     border-radius: 22px;
   }
+  @media (max-width: 400px) {
+    width: 70vw;
+  }
 `;
 
 const LabelTextArea = styled.label`
@@ -65,7 +68,7 @@ const LabelTextArea = styled.label`
 
 const TextArea = styled.textarea`
   border-radius: 22px;
-  width: 30vw;
+  width: 375px;
   justify-self: flex-end;
   margin: 10px;
   padding: 10px;
@@ -77,6 +80,9 @@ const TextArea = styled.textarea`
     outline: none;
     border: 3px solid #2eaf56;
     border-radius: 22px;
+  }
+  @media (max-width: 400px) {
+    width: 70vw;
   }
 `;
 
