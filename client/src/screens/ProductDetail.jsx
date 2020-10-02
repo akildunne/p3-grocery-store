@@ -24,12 +24,29 @@ const ProductDetailContainer = styled.div`
   font: medium Futura;
   color: white;
   box-shadow: 0px 3px 6px #00000029;
+
+  @media (max-width: 800px) {
+    height: 494px
+  }
+
+  @media (max-width: 400px) {
+    flex-direction: column;
+    height: 520px;
+  }
 `;
 
 const ImageContainer = styled.div`
   display: flex;
   flex-flow: column;
   margin-left: 50px;
+
+  @media (max-width: 800px) {
+    margin-left: 40px;
+  }
+
+  @media (max-width: 400px) {
+    margin-left: 20px;
+  }
 `;
 
 const CoverPhoto = styled.img`
@@ -39,6 +56,16 @@ const CoverPhoto = styled.img`
   margin: 77px auto 25px;
   border-radius: 15%;
   border: 1px solid #707070;
+
+  @media (max-width: 800px) {
+    height: 221px;
+    width: 221px;
+  }
+
+  @media (max-width: 400px) {
+    flex-direction: column;
+    margin: 30px auto 25px;
+  }
 `;
 
 const ThumbnailContainer = styled.div`
@@ -55,32 +82,67 @@ const Thumbnails = styled.img`
 
   :hover {
     transform: scale(1.1);
+  }
+
+  @media (max-width: 800px) {
+    height: 62px;
+    width: 75px;
+    margin: 0px 7px;
+  }
+
+  @media (max-width: 400px) {
+    flex-direction: column;
+  }
 `;
 
 const ProductInfoContainer = styled.div`
   margin-top: 95px;
   margin-left: 45px;
+
+  @media (max-width: 800px) {
+  
+  }
+
+  @media (max-width: 400px) {
+    margin: 10px auto;
+  }
 `;
 
 const ProductName = styled.h4`
   font-size: 35px;
   margin: 10px auto;
+  text-align: left;
+
+  @media (max-width: 800px) {
+    font-size: 27px;
+    margin: 6px auto;
+  }
+
+  @media (max-width: 400px) {
+    font-size: 27px;
+    margin: 6px auto;
+  }
 `;
 
 const ProductDetails = styled.p`
   font-size: 25px;
   text-align: left;
+
+  @media (max-width: 800px) {
+    font-size: 22px;
+    margin: 6px auto;
+  }
+
+  @media (max-width: 400px) {
+    font-size: 20px;
+    margin: 6px auto;
+  }
 `;
 
 const ProductReviewContainer = styled.div`
   text-align: left;
 `;
 
-
-const ProductReview = styled.p`
-  font-size: 25px;
-  text-align: left;
-`;
 
 const ButtonContainer = styled.div`
   background-color: white;
@@ -90,6 +152,17 @@ const ButtonContainer = styled.div`
   justify-content: flex-start;
   align-items: flex-start;
   margin-left: 602px;
+
+  @media (max-width: 800px) {
+    justify-content: center;
+    margin-left: 0px;
+  }
+
+  @media (max-width: 400px) {
+    justify-content: center;
+    margin-left: 0px;
+    height: 80px;
+   }
 `;
 
 const EditButton = styled.button`
@@ -107,6 +180,13 @@ const EditButton = styled.button`
 
   :hover {
     transform: scale(1.1);
+  }
+
+  :focus {
+    outline: none;
+    border: 3px solid #2eaf56;
+    border-radius: 10px;
+  }
 `;
 
 const DeleteButton = styled.button`
@@ -125,6 +205,13 @@ const DeleteButton = styled.button`
 
   :hover {
     transform: scale(1.1);
+  }
+
+  :focus {
+    outline: none;
+    border: 3px solid #2eaf56;
+    border-radius: 10px;
+  }
 `;
 
 const ReviewContainer = styled.div`
@@ -138,7 +225,17 @@ const ReviewContainer = styled.div`
 const ReviewHeading = styled.h3`
   font-size: 20px;
   text-align: left;
-  margin-left: 50px;
+  margin-left: 100px;
+  
+  @media (max-width: 800px) {
+    font-size: 25px;
+    margin-left: 70px;
+   }
+ 
+   @media (max-width: 400px) {
+    font-size: 20px;
+     margin-left: 40px;
+    }
 `
 
 const ProductDetail = () => {
@@ -166,14 +263,12 @@ const ProductDetail = () => {
       setActiveImage(product.imgURL);
     };
     fetchProduct();
-    console.log(product)
   }, [id]);
 
   const deleteConfirmation = () => {
     let r = window.confirm("Are you sure you want to delete this product?");
     if (r === true) {
       productDeleted();
-      alert("Product deleted!");
     } else {
     }
   };
@@ -251,8 +346,8 @@ const ProductDetail = () => {
       {product.reviews.length === 0 
         ? null
         : <ReviewContainer>
-            <ReviewHeading>Customer reviews:</ReviewHeading>
-            <Reviews reviews={product.reviews} />        
+          <ReviewHeading>Customer reviews:</ReviewHeading>
+            <Reviews reviews={product.reviews} />   
           </ReviewContainer>
       }
     </Layout>

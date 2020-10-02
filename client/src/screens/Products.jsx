@@ -13,8 +13,19 @@ import styled from "styled-components";
 const LoadingMessage = styled.div`
   color: #40A48B;
   margin: 50px;
-  font: medium Futura;
+  font: medium, Futura;
   font-size: 45px;
+
+  @media (max-width: 800px) {
+    margin: 20px 25px;
+    font-size: 35px;
+  }
+
+  @media (max-width: 400px) {
+    margin: 10px 25px;
+    font-size: 35px;
+  }
+
 `;
 
 const BackDiv = styled.div`
@@ -32,6 +43,10 @@ const CardContainer = styled.div`
   @media (max-width: 800px) {
     margin: 20px auto;
   }
+
+  @media (max-width: 400px) {
+    margin: 20px auto;
+  }
 `;
 
 const SearchDiv = styled.div`
@@ -43,6 +58,11 @@ const SearchDiv = styled.div`
 
   @media (max-width: 800px) {
     flex-direction: column;
+  }
+
+  @media (max-width: 400px) {
+    flex-direction: column;
+    align-items: baseline;
   }
 `;
 
