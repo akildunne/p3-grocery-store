@@ -6,67 +6,53 @@ import { Link, useLocation } from 'react-router-dom'
 const Logo = styled.img`
   height: 136px;
   width: 286px;
-
   @media (min-width: 1024px) {
-    // height: 90px;
-    // width: 200px;
+    height: 50px;
+    width: 200px;
+  }
+  @media (max-width: 480px) {
+    height: 60px;
+    width: 120px;
   }
 `
 const Ul = styled.ul`
   display: grid;
-  grid-template-columns: 20% 20% auto 15% 15%;
-  justify-content: space-around;
+  grid-template-columns: 20% 20% 30% 15% 15%;
+  justify-content: space-between;
   align-items: center;
-  background-color: #564946;
+  background: #564946;
   border: 1px solid #707070;
   color: white;
-  // padding: 0px 100px;
-  width: 100vw;
-  margin: 0 auto;
-  backgroundColor: "#F8F8F8",
-    borderTop: "1px solid #E7E7E7",
-    textAlign: "center",
-    padding: "20px",
-    position: "fixed",
-    left: "0",
-    bottom: "0",
-    height: "60px",
-    width: "100%",
-    padding-left: 0px;
-  padding-right: 0px;
-  
+  padding: 0px 100px;
   @media (min-width: 1024px) {
     padding: 0px 25px;
-    width: 100vw;
-
   }
-
   @media (max-width: 480px) {
     display: flex;
     flex-direction: column;
+    padding: 0px 10px;
   }
-  `
-
+`
 const Li = styled.li`
   list-style: none;
   font-size: 20px;
   text-align: left;
-  
+  padding: 20px;
+  @media (max-width: 480px) {
+    padding: 5px;
+  }
 `
-
+const PageFooter = styled.footer`
+`
 function ScrollToTop({ children }) {
     const pathname = useLocation();
-   
     useEffect(() => {
       if (pathname !== "/") window.scrollTo(0, 0);
     }, [pathname]);
-   
     return children;
   }
-
 const Footer = () => 
-  <footer>
-    <div>
+  <PageFooter>
     <Ul>
       <Li>D.T.'S Pantry <br/> 4545 Gravy Dr. <br/> Boston, MA 02101</Li>
       <Li>Customer Support <br/> (617) 898-2525</Li>
@@ -74,7 +60,5 @@ const Footer = () =>
       <Li>Hours <br/> M-F: 8AM-9PM <br/> <br/> S&S: 10AM-6PM</Li>
       <Li>Copyright <br/>2020</Li>
     </Ul>
-    </div>
-  </footer>
-
+  </PageFooter>
 export default Footer;
