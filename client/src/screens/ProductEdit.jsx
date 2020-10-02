@@ -250,7 +250,7 @@ const ProductEdit = (props) => {
                 name="featured"
                 onChange={handleChange}
               />
-              <span class="checkmark"></span>
+              <span className="checkmark"></span>
             </label>
             <Button>Save</Button>
           </Form>
