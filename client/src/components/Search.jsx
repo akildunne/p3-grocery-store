@@ -20,6 +20,14 @@ const SearchBar = styled.input`
     border: 3px solid #2EAF56;
     border-radius: 22px;
   }
+
+  @media (max-width: 800px) {
+    width: 70vw;
+  }
+
+  @media (max-width: 400px) {
+    width: 72vw;
+  }
 `;
 
 const SearchIcon = styled.span`
