@@ -7,6 +7,7 @@ import styled from "styled-components";
 
 const MainContainer = styled.div`
   display: flex;
+
 `;
 
 const BackDiv = styled.div`
@@ -18,6 +19,7 @@ const BackDiv = styled.div`
 const DetailContainer = styled.div`
   display: flex;
   margin: 50px auto;
+  
 `;
 
 const Form = styled.form`
@@ -25,6 +27,11 @@ const Form = styled.form`
   grid-template-columns: 250px 500px;
   align-items: center;  
   justify-items: flex-end;
+  @media (max-width: 400px) {
+    display: flex;
+    flex-direction: column;
+    margin: 20px auto;
+  }
 `;
 
 const LabelContainer = styled.label`
