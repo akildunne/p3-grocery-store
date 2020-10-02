@@ -24,6 +24,15 @@ const ProductDetailContainer = styled.div`
   font: medium Futura;
   color: white;
   box-shadow: 0px 3px 6px #00000029;
+
+  @media (max-width: 800px) {
+    height: 494px
+  }
+
+  @media (max-width: 400px) {
+    flex-direction: column;
+    height: 520px;
+  }
 `;
 
 const ImageContainer = styled.div`
@@ -32,7 +41,7 @@ const ImageContainer = styled.div`
   margin-left: 50px;
 
   @media (max-width: 800px) {
-    margin-left: 20px;
+    margin-left: 40px;
   }
 
   @media (max-width: 400px) {
@@ -55,6 +64,7 @@ const CoverPhoto = styled.img`
 
   @media (max-width: 400px) {
     flex-direction: column;
+    margin: 30px auto 25px;
   }
 `;
 
@@ -88,6 +98,14 @@ const Thumbnails = styled.img`
 const ProductInfoContainer = styled.div`
   margin-top: 95px;
   margin-left: 45px;
+
+  @media (max-width: 800px) {
+  
+  }
+
+  @media (max-width: 400px) {
+    margin: 10px auto;
+  }
 `;
 
 const ProductName = styled.h4`
@@ -99,6 +117,11 @@ const ProductName = styled.h4`
     font-size: 27px;
     margin: 6px auto;
   }
+
+  @media (max-width: 400px) {
+    font-size: 27px;
+    margin: 6px auto;
+  }
 `;
 
 const ProductDetails = styled.p`
@@ -107,6 +130,11 @@ const ProductDetails = styled.p`
 
   @media (max-width: 800px) {
     font-size: 22px;
+    margin: 6px auto;
+  }
+
+  @media (max-width: 400px) {
+    font-size: 20px;
     margin: 6px auto;
   }
 `;
@@ -126,11 +154,14 @@ const ButtonContainer = styled.div`
   margin-left: 602px;
 
   @media (max-width: 800px) {
-   margin-left: 270px;
+    justify-content: center;
+    margin-left: 0px;
   }
 
   @media (max-width: 400px) {
-    margin-left: 50px;
+    justify-content: center;
+    margin-left: 0px;
+    height: 80px;
    }
 `;
 
@@ -183,10 +214,12 @@ const ReviewHeading = styled.h3`
   margin-left: 100px;
   
   @media (max-width: 800px) {
+    font-size: 25px;
     margin-left: 70px;
    }
  
    @media (max-width: 400px) {
+    font-size: 20px;
      margin-left: 40px;
     }
 `
