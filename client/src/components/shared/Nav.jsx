@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom'
 
 const NavBar = styled.nav`
   display: flex;
-  height: 90px;
   background: #40A48B;
   border: 1px solid #707070;
   color: white;
@@ -14,7 +13,6 @@ const NavBar = styled.nav`
   @media (max-width: 480px) {
     display: flex;
     flex-direction: column;
-    height: 300px;
   }
 `
 
