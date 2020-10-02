@@ -27,12 +27,15 @@ const Form = styled.form`
   grid-template-columns: 250px 500px;
   align-items: center;  
   justify-items: flex-end;
+  
   @media (max-width: 400px) {
     display: flex;
     flex-direction: column;
     margin: 20px auto;
   }
+
 `;
+
 
 const LabelContainer = styled.label`
   color: #707070;
@@ -74,6 +77,7 @@ const TextArea = styled.textarea`
   font-family: regular, Helvetica;
   font-size: 25px;
   color: #707070;
+  
 
   :focus {
     outline: none;
@@ -112,7 +116,13 @@ const Button = styled.button`
   :hover {
     transform: scale(1.1);
   }
-`;
+  @media (max-width: 400px) {
+    display: flex;
+    flex-direction: column;
+    margin: 20px auto;
+  }
+  
+  `;
 
 const ProductCreate = () => {
   const [redirect, setRedirect] = useState(false);
