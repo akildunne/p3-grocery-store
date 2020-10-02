@@ -22,7 +22,7 @@ const LogoContainer = styled.div`
   border: 1px solid #707070;
 
   @media (max-width: 480px) {
-    width: 100vw;
+    width: 99vw;
   }
 `
 
