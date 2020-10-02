@@ -3,6 +3,7 @@ import DTPantryLogo from '../assets/DTPantryLogo.png'
 import styled from "styled-components";
 import { Link, useLocation } from 'react-router-dom'
 
+ 
 const Logo = styled.img`
   height: 136px;
   width: 286px;
@@ -26,6 +27,7 @@ const Ul = styled.ul`
   border: 1px solid #707070;
   color: white;
   padding: 0px 100px;
+  margin-bottom: 0px;
 
   @media (min-width: 1024px) {
     padding: 0px 25px;
