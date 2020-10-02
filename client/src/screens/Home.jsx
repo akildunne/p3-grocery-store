@@ -234,7 +234,7 @@ const Home = () => {
               : <>
                   <CarouselTitle>FEATURED PRODUCTS</CarouselTitle>
                   <CarouselContainer>
-                    <Carousel pagination={false} breakPoints={breakPoints}>
+                    <Carousel pagination={false} itemPosition={consts.CENTER} breakPoints={breakPoints}>
                       {featuredJSX}
                     </Carousel>
                   </CarouselContainer>
