@@ -20,7 +20,6 @@ const LogoContainer = styled.div`
   background: #2EAF56;
   width: 320px;
   border: 1px solid #707070;
-  // margin: auto 0;
 
   @media (max-width: 480px) {
     width: 99vw;
@@ -42,6 +41,10 @@ const NavOptionContainers = styled.div`
   align-items: center;
   flex-grow: 1;
 
+  @media (max-width: 800px) {
+    margin: 0px 5px;
+  }
+
   @media (max-width: 480px) {
     display: flex;
     flex-direction: column;
@@ -50,6 +53,10 @@ const NavOptionContainers = styled.div`
 
 const NavItemsContainer = styled.div`
   display: flex;
+
+  @media (max-width: 800px) {
+    margin: 0px 5px;
+  }
 
   @media (max-width: 480px) {
     display: flex;
@@ -68,6 +75,10 @@ const NavOptions = styled.p`
     margin: 0px 20px;
   }
 
+  @media (max-width: 800px) {
+    margin: 0px 10px;
+  }
+
   @media (max-width: 480px) {
     margin: 10px;
   }
@@ -78,12 +89,8 @@ const MottoContainer = styled.div`
   flex-grow: 1;
   margin: auto 50px;
 
-  @media (max-width: 1260px) {
-    margin: 10px 50px;
-  }
-
   @media (max-width: 800px) {
-    margin: 5px 50px;
+    margin: 3px 15px;
   }
 
   @media (max-width: 480px) {
