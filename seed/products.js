@@ -18,7 +18,7 @@ const main = async () => {
       reviews: [{
         title: "Would buy again!!!!",
         author: "Ashik U.",
-        location: "NYC",
+        location: "New York, New York",
         rating: "5",
         description: "Always ripe!!!"
       }]
@@ -34,9 +34,9 @@ const main = async () => {
       review: "5",
       price: "1.00/lb",
       reviews: [{
-        title: "Would buy again!!!!",
+        title: "Best prices in town!",
         author: "Ashley K.,",
-        location: "NYC",
+        location: "San Jose, California",
         rating: "5",
         description: "My adorable son loves these apples!!!"
       }]
@@ -52,9 +52,9 @@ const main = async () => {
       review: "5",
       price: "1.00/lb",
       reviews: [{
-        title: "Would buy again!!!!",
+        title: "Who doesn't love avocado?",
         author: "Brianna L.,",
-        location: "NYC",
+        location: "Boston, Massachusetts",
         rating: "5",
         description: "Always fresh and so tasty!!."
       }]
@@ -70,11 +70,11 @@ const main = async () => {
       price: "2.00",
       review: "4",
       reviews: [{
-        title: "Would buy again!!!!",
+        title: "The best cream chesse out there!",
         author: "Nina J.,",
-        location: "NYC",
+        location: "New York, New York",
         rating: "5",
-        description: "My go to with bagels in the morning!!"
+        description: "My go to with bagels in the morning. You can't beat these prices!!"
       }]
     },
     {
@@ -88,9 +88,9 @@ const main = async () => {
       review: "5",
       price: "3.50/lb",
       reviews: [{
-        title: "Would buy again!!!!",
+        title: "Simply delicious!!",
         author: "Chris A.,",
-        location: "NYC",
+        location: "New Brunswick, New Jersey",
         rating: "5",
         description: "I don't usually eat chocolate but when I do, I always buy these from here!!"
       }]
@@ -108,7 +108,7 @@ const main = async () => {
       reviews: [{
         title: "Would buy again!!!!",
         author: "Dana C.,",
-        location: "NYC",
+        location: "Detroit, Michigan",
         rating: "5",
         description: "Hits the spot with tea!!"
       }]
@@ -144,9 +144,9 @@ const main = async () => {
       review: "5",
       price: "5.00",
       reviews: [{
-        title: "Would buy again!!!!",
+        title: "Would buy again!",
         author: "Billy C.",
-        location: "NYC",
+        location: "Miami, Florida",
         rating: "5",
         description: "Best prices in town!!"
       }]
@@ -163,8 +163,8 @@ const main = async () => {
       price: "5.50",
       reviews: [{
         title: "Would buy again!!!!",
-        author: "Brianna",
-        location: "NYC",
+        author: "Manny R.,",
+        location: "Boston, Massachusetts",
         rating: "5",
         description: "Simply delicious!!!!"
       }]
@@ -180,9 +180,9 @@ const main = async () => {
       review: "4",
       price: "6.50",
       reviews: [{
-        title: "Would buy again!!!!",
-        author: "Ashik",
-        location: "NYC",
+        title: "These prices are something you can't beat!!!",
+        author: "Leslie S.,",
+        location: "Philadelphia, Pennsylvania",
         rating: "5",
         description: "Always fully restocked daily and delicious!!"
       }]
