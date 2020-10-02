@@ -33,7 +33,9 @@ const Form = styled.form`
     flex-direction: column;
     margin: 20px auto;
   }
+
 `;
+
 
 const LabelContainer = styled.label`
   color: #707070;
@@ -75,6 +77,7 @@ const TextArea = styled.textarea`
   font-family: regular, Helvetica;
   font-size: 25px;
   color: #707070;
+  
 
   :focus {
     outline: none;
@@ -103,12 +106,21 @@ const Button = styled.button`
     transform: scale(1.1);
   }
 
+  @media (max-width: 400px) {
+    display: flex;
+    flex-direction: column;
+    margin: 20px auto;
+  }
+  
+
+
   :focus {
     outline: none;
     border: 3px solid #40A48B;
     border-radius: 22px;
   }
 `;
+
 
 const ProductCreate = () => {
   const [redirect, setRedirect] = useState(false);
