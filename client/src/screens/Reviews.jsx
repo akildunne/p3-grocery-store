@@ -7,6 +7,7 @@ const ReviewCard = styled.div`
   flex-direction: column;
   text-align: left;
   margin-left: 50px;
+  margin-bottom: 25px;
   text-size: 22px;
 
   @media (max-width: 400px) {

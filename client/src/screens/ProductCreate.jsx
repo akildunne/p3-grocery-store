@@ -51,7 +51,7 @@ const InputContainer = styled.input`
 
   :focus {
     outline: none;
-    border: 3px solid #40a48b;
+    border: 3px solid #2eaf56;
     border-radius: 22px;
   }
 `;
@@ -75,7 +75,7 @@ const TextArea = styled.textarea`
 
   :focus {
     outline: none;
-    border: 3px solid #40a48b;
+    border: 3px solid #2eaf56;
     border-radius: 22px;
   }
 `;
@@ -103,10 +103,10 @@ const Button = styled.button`
     flex-direction: column;
     margin: 20px auto;
   }
-
+  
   :focus {
     outline: none;
-    border: 3px solid #40a48b;
+    border: 3px solid #2eaf56;
     border-radius: 22px;
   }
 `;
