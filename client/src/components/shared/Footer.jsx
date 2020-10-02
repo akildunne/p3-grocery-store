@@ -8,8 +8,13 @@ const Logo = styled.img`
   width: 286px;
 
   @media (min-width: 1024px) {
-    height: 90px;
+    height: 100px;
     width: 200px;
+  }
+
+  @media (max-width: 480px) {
+    height: 60px;
+    width: 120px;
   }
 `
 const Ul = styled.ul`
@@ -29,14 +34,19 @@ const Ul = styled.ul`
   @media (max-width: 480px) {
     display: flex;
     flex-direction: column;
+    padding: 0px 10px;
+    align-items: flex-start;
   }
-
 `
 const Li = styled.li`
   list-style: none;
   font-size: 20px;
   text-align: left;
   padding: 20px;
+
+  @media (max-width: 480px) {
+    padding: 5px;
+  }
 `
 
 const PageFooter = styled.footer`
@@ -61,5 +71,6 @@ const Footer = () =>
       <Li>Copyright <br/>2020</Li>
     </Ul>
   </PageFooter>
+
 
 export default Footer;

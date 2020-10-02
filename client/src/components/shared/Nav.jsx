@@ -20,9 +20,10 @@ const LogoContainer = styled.div`
   background: #2EAF56;
   width: 320px;
   border: 1px solid #707070;
+  // margin: auto 0;
 
   @media (max-width: 480px) {
-    width: 100vw;
+    width: 99vw;
   }
 `
 
@@ -30,7 +31,7 @@ const Img = styled.img`
   width: 130px;
   height: 60px;
   padding: 15px;
-
+  
   @media (max-width: 480px) {
     text-align: center;
   }
@@ -81,6 +82,10 @@ const MottoContainer = styled.div`
     margin: 10px 50px;
   }
 
+  @media (max-width: 800px) {
+    margin: 5px 50px;
+  }
+
   @media (max-width: 480px) {
     display: none;
   }
@@ -88,6 +93,10 @@ const MottoContainer = styled.div`
 
 const MottoText = styled.h4`
   font-weight: 300;
+
+  @media (max-width: 800px) {
+    margin: 0;
+  }
 
   @media (max-width: 480px) {
     text-align: center;
