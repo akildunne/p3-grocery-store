@@ -1,20 +1,22 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Button = styled.div`
+const Icon = styled.i`
   display: flex;
   text-decoration: none;
   color: #939191;
   font-size: 45px;
   margin: 0;
+  cursor: pointer;
 
   :hover {
-    transform: scale(1.1);
+    transform: scale(1.3);
+  }   
 `;
 
 const BackButton = (props) => {
   return (
-    <Button onClick={props.onClick}><i className="fas fa-caret-left"></i></Button>
+    <div onClick={props.onClick}><Icon className="fas fa-caret-left"></Icon></div>
   )
 }
 

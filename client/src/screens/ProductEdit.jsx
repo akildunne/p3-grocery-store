@@ -86,6 +86,7 @@ const TextArea = styled.textarea`
     border: 3px solid #2eaf56;
     border-radius: 22px;
   }
+  
   @media (max-width: 400px) {
     width: 70vw;
   }

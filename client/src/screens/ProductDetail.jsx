@@ -145,17 +145,19 @@ const ProductReviewContainer = styled.div`
 
 
 const ButtonContainer = styled.div`
+  display: flex;
   background-color: white;
   height: 100px;
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: flex-start;
-  margin-left: 602px;
+  
 
   @media (max-width: 800px) {
     justify-content: center;
     margin-left: 0px;
+    margin: 0 auto;
   }
 
   @media (max-width: 400px) {
