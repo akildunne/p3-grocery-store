@@ -42,7 +42,8 @@ const InputContainer = styled.input`
   font: regular, Helvetica;
   font-size: 25px;
   color: #707070;
-    :focus {
+
+  :focus {
     outline: none;
     border: 3px solid #2EAF56;
     border-radius: 22px;
@@ -65,6 +66,7 @@ const TextArea = styled.textarea`
   font-family: regular, Helvetica;
   font-size: 25px;
   color: #707070;
+
   :focus {
     outline: none;
     border: 3px solid #2EAF56;
@@ -100,6 +102,12 @@ const Button = styled.button`
 
   :hover {
     transform: scale(1.1);
+  }
+
+  :focus {
+    outline: none;
+    border: 3px solid #2EAF56;
+    border-radius: 22px;
   }
 `;
 
