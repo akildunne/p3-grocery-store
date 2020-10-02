@@ -22,9 +22,15 @@ const DetailContainer = styled.div`
 
 const Form = styled.form`
   display: grid;
-  grid-template-columns: 250px 500px;
-  align-items: center;  
+  grid-template-columns: 250px 430px;
+  align-items: center;
   justify-items: flex-end;
+
+  @media (max-width: 400px) {
+    display: flex;
+    flex-direction: column;
+    margin: 20px auto;
+  }
 `;
 
 const LabelContainer = styled.label`
@@ -33,18 +39,19 @@ const LabelContainer = styled.label`
 `;
 
 const InputContainer = styled.input`
-  width: 400px;
+  width: 30vw;
   height: 30px;
   margin: 10px;
   border: 1px solid #707070;
   border-radius: 22px;
   padding: 10px;
-  font: regular, Helvetica;
+  font-family: regular, Helvetica;
   font-size: 25px;
   color: #707070;
-    :focus {
+
+  :focus {
     outline: none;
-    border: 3px solid #2EAF56;
+    border: 3px solid #2eaf56;
     border-radius: 22px;
   }
 `;
@@ -58,31 +65,22 @@ const LabelTextArea = styled.label`
 
 const TextArea = styled.textarea`
   border-radius: 22px;
-  width: 400px;
+  width: 30vw;
   justify-self: flex-end;
   margin: 10px;
   padding: 10px;
   font-family: regular, Helvetica;
   font-size: 25px;
   color: #707070;
+  height: 120px;
+
   :focus {
     outline: none;
-    border: 3px solid #2EAF56;
+    border: 3px solid #2eaf56;
     border-radius: 22px;
   }
 `;
 
-const CheckboxContainer = styled.input`
-  width: 30px;
-  height: 30px;
-  margin: 10px;
-  margin-left: 70px;
-  border: 1px solid #707070;
-  border-radius: 22px;
-  padding: 10px;
-  font-size: 18px;
-  justify-self: flex-start;
-`;
 
 const Button = styled.button`
   background-color: #2eaf56;
@@ -100,6 +98,18 @@ const Button = styled.button`
 
   :hover {
     transform: scale(1.1);
+  }
+
+  @media (max-width: 400px) {
+    display: flex;
+    flex-direction: column;
+    margin: 20px auto;
+  }
+
+  :focus {
+    outline: none;
+    border: 3px solid #2eaf56;
+    border-radius: 22px;
   }
 `;
 
@@ -223,17 +233,19 @@ const ProductEdit = (props) => {
               onChange={handleChange}
             />
             <LabelContainer>Feature in Carousel:</LabelContainer>
-            <CheckboxContainer
-              type="checkbox"
-              checked={product.featured}
-              name="featured"
-              onChange={handleChange}
-            />
+            <label class="container">
+              <input
+                type="checkbox"
+                checked={product.featured}
+                name="featured"
+                onChange={handleChange}
+              />
+              <span class="checkmark"></span>
+            </label>
             <Button>Save</Button>
           </Form>
         </DetailContainer>
       </MainContainer>
-
     </Layout>
   );
 };

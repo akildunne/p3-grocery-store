@@ -30,6 +30,14 @@ const ImageContainer = styled.div`
   display: flex;
   flex-flow: column;
   margin-left: 50px;
+
+  @media (max-width: 800px) {
+    margin-left: 20px;
+  }
+
+  @media (max-width: 400px) {
+    margin-left: 20px;
+  }
 `;
 
 const CoverPhoto = styled.img`
@@ -39,6 +47,15 @@ const CoverPhoto = styled.img`
   margin: 77px auto 25px;
   border-radius: 15%;
   border: 1px solid #707070;
+
+  @media (max-width: 800px) {
+    height: 221px;
+    width: 221px;
+  }
+
+  @media (max-width: 400px) {
+    flex-direction: column;
+  }
 `;
 
 const ThumbnailContainer = styled.div`
@@ -55,6 +72,17 @@ const Thumbnails = styled.img`
 
   :hover {
     transform: scale(1.1);
+  }
+
+  @media (max-width: 800px) {
+    height: 62px;
+    width: 75px;
+    margin: 0px 7px;
+  }
+
+  @media (max-width: 400px) {
+    flex-direction: column;
+  }
 `;
 
 const ProductInfoContainer = styled.div`
@@ -65,22 +93,28 @@ const ProductInfoContainer = styled.div`
 const ProductName = styled.h4`
   font-size: 35px;
   margin: 10px auto;
+  text-align: left;
+
+  @media (max-width: 800px) {
+    font-size: 27px;
+    margin: 6px auto;
+  }
 `;
 
 const ProductDetails = styled.p`
   font-size: 25px;
   text-align: left;
+
+  @media (max-width: 800px) {
+    font-size: 22px;
+    margin: 6px auto;
+  }
 `;
 
 const ProductReviewContainer = styled.div`
   text-align: left;
 `;
 
-
-const ProductReview = styled.p`
-  font-size: 25px;
-  text-align: left;
-`;
 
 const ButtonContainer = styled.div`
   background-color: white;
@@ -90,6 +124,14 @@ const ButtonContainer = styled.div`
   justify-content: flex-start;
   align-items: flex-start;
   margin-left: 602px;
+
+  @media (max-width: 800px) {
+   margin-left: 270px;
+  }
+
+  @media (max-width: 400px) {
+    margin-left: 50px;
+   }
 `;
 
 const EditButton = styled.button`
@@ -138,7 +180,15 @@ const ReviewContainer = styled.div`
 const ReviewHeading = styled.h3`
   font-size: 20px;
   text-align: left;
-  margin-left: 50px;
+  margin-left: 100px;
+  
+  @media (max-width: 800px) {
+    margin-left: 70px;
+   }
+ 
+   @media (max-width: 400px) {
+     margin-left: 40px;
+    }
 `
 
 const ProductDetail = () => {
@@ -146,7 +196,7 @@ const ProductDetail = () => {
   const [isDeleted, setIsDeleted] = useState(false);
   const [activeImage, setActiveImage] = useState("");
   const [product, setProduct] = useState({
-    review: "",
+    review: undefined,
     product: "",
     imgURL: "",
     imgURL2: "",
@@ -172,7 +222,6 @@ const ProductDetail = () => {
     let r = window.confirm("Are you sure you want to delete this product?");
     if (r === true) {
       productDeleted();
-      alert("Product deleted!");
     } else {
     }
   };
@@ -232,12 +281,12 @@ const ProductDetail = () => {
           <ProductDetails>${product.price}</ProductDetails>
           <ProductReviewContainer>
             <StarRatings
-              rating={product.reviews.rating}
+              rating={product.review}
               starRatedColor="white"
               starDimension="25px"
-              starSpacing="0px" />
+              starSpacing="0px"
+            />
           </ProductReviewContainer>
-          <ProductReview>{product.review}</ProductReview>
           <ProductDetails>{product.description}</ProductDetails>
         </ProductInfoContainer>
       </ProductDetailContainer>
@@ -250,8 +299,8 @@ const ProductDetail = () => {
       {product.reviews.length === 0 
         ? null
         : <ReviewContainer>
-            <ReviewHeading>Customer reviews:</ReviewHeading>
-            <Reviews reviews={product.reviews} />        
+          <ReviewHeading>Customer reviews:</ReviewHeading>
+            <Reviews reviews={product.reviews} />   
           </ReviewContainer>
       }
     </Layout>
