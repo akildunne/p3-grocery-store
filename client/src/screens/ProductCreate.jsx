@@ -51,7 +51,7 @@ const InputContainer = styled.input`
 
   :focus {
     outline: none;
-    border: 3px solid #40a48b;
+    border: 3px solid #2eaf56;
     border-radius: 22px;
   }
 `;
@@ -75,7 +75,7 @@ const TextArea = styled.textarea`
 
   :focus {
     outline: none;
-    border: 3px solid #40a48b;
+    border: 3px solid #2eaf56;
     border-radius: 22px;
   }
 `;
@@ -106,7 +106,7 @@ const Button = styled.button`
 
   :focus {
     outline: none;
-    border: 3px solid #40a48b;
+    border: 3px solid #2eaf56;
     border-radius: 22px;
   }
 `;
@@ -220,7 +220,7 @@ const ProductCreate = () => {
               onChange={handleChange}
             />
             <LabelContainer>Feature in Carousel:</LabelContainer>
-            <label class="container">
+            <label className="container">
               <input
                 type="checkbox"
                 checked={product.featured}

@@ -180,6 +180,13 @@ const EditButton = styled.button`
 
   :hover {
     transform: scale(1.1);
+  }
+
+  :focus {
+    outline: none;
+    border: 3px solid #2eaf56;
+    border-radius: 10px;
+  }
 `;
 
 const DeleteButton = styled.button`
@@ -198,6 +205,13 @@ const DeleteButton = styled.button`
 
   :hover {
     transform: scale(1.1);
+  }
+
+  :focus {
+    outline: none;
+    border: 3px solid #2eaf56;
+    border-radius: 10px;
+  }
 `;
 
 const ReviewContainer = styled.div`
