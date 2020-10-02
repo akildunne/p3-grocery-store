@@ -77,11 +77,6 @@ const ProductReviewContainer = styled.div`
 `;
 
 
-const ProductReview = styled.p`
-  font-size: 25px;
-  text-align: left;
-`;
-
 const ButtonContainer = styled.div`
   background-color: white;
   height: 100px;
@@ -146,7 +141,7 @@ const ProductDetail = () => {
   const [isDeleted, setIsDeleted] = useState(false);
   const [activeImage, setActiveImage] = useState("");
   const [product, setProduct] = useState({
-    review: "",
+    review: undefined,
     product: "",
     imgURL: "",
     imgURL2: "",
@@ -172,7 +167,6 @@ const ProductDetail = () => {
     let r = window.confirm("Are you sure you want to delete this product?");
     if (r === true) {
       productDeleted();
-      alert("Product deleted!");
     } else {
     }
   };
@@ -232,12 +226,12 @@ const ProductDetail = () => {
           <ProductDetails>${product.price}</ProductDetails>
           <ProductReviewContainer>
             <StarRatings
-              rating={product.reviews.rating}
+              rating={product.review}
               starRatedColor="white"
               starDimension="25px"
-              starSpacing="0px" />
+              starSpacing="0px"
+            />
           </ProductReviewContainer>
-          <ProductReview>{product.review}</ProductReview>
           <ProductDetails>{product.description}</ProductDetails>
         </ProductInfoContainer>
       </ProductDetailContainer>

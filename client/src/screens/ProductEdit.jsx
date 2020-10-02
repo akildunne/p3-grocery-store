@@ -54,7 +54,10 @@ color: #707070;
   outline: none;
   border: 3px solid #2EAF56;
   border-radius: 22px;
+
 }
+
+
 
 `;
 
@@ -75,6 +78,7 @@ const TextArea = styled.textarea`
   font-size: 25px;
   color: #707070;
   height: 120px;
+
   :focus {
     outline: none;
     border: 3px solid #2EAF56;
@@ -112,11 +116,19 @@ const Button = styled.button`
     transform: scale(1.1);
   }
 
+
 @media (max-width: 400px) {
   display: flex;
   flex-direction: column;
   margin: 20px auto;
 }
+
+
+  :focus {
+    outline: none;
+    border: 3px solid #2EAF56;
+    border-radius: 22px;
+  }
 
 `;
 
@@ -239,13 +251,16 @@ const ProductEdit = (props) => {
               required
               onChange={handleChange}
             />
-            <LabelContainer>Feature in Carousel:</LabelContainer>
-            <CheckboxContainer
-              type="checkbox"
-              checked={product.featured}
-              name="featured"
-              onChange={handleChange}
-            />
+            <LabelContainer>Feature in Carousel:</LabelContainer> 
+              <label class="container">
+                <input
+                  type="checkbox"
+                  checked={product.featured}
+                  name="featured"
+                  onChange={handleChange}
+                />
+                <span class="checkmark"></span> 
+              </label> 
             <Button>Save</Button>
           </Form>
         </DetailContainer>
